@@ -15,6 +15,9 @@
 		F8E2EA7523DD82D60025DBF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8E2EA7323DD82D60025DBF4 /* LaunchScreen.storyboard */; };
 		F8E2EA8023DD82D60025DBF4 /* HAK_V1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA7F23DD82D60025DBF4 /* HAK_V1Tests.swift */; };
 		F8E2EA8B23DD82D60025DBF4 /* HAK_V1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA8A23DD82D60025DBF4 /* HAK_V1UITests.swift */; };
+		F8E2EA9923DD92CE0025DBF4 /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA9823DD92CE0025DBF4 /* homeViewController.swift */; };
+		F8E2EA9B23DD92F20025DBF4 /* signInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA9A23DD92F20025DBF4 /* signInViewController.swift */; };
+		F8E2EA9D23DD93120025DBF4 /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA9C23DD93120025DBF4 /* signUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		F8E2EA8623DD82D60025DBF4 /* HAK_V1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HAK_V1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8E2EA8A23DD82D60025DBF4 /* HAK_V1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAK_V1UITests.swift; sourceTree = "<group>"; };
 		F8E2EA8C23DD82D60025DBF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8E2EA9823DD92CE0025DBF4 /* homeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
+		F8E2EA9A23DD92F20025DBF4 /* signInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInViewController.swift; sourceTree = "<group>"; };
+		F8E2EA9C23DD93120025DBF4 /* signUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +105,9 @@
 		F8E2EA6723DD82D50025DBF4 /* HAK_V1 */ = {
 			isa = PBXGroup;
 			children = (
+				F8E2EA9E23DD931F0025DBF4 /* ViewControllers */,
 				F8E2EA6823DD82D50025DBF4 /* AppDelegate.swift */,
 				F8E2EA6A23DD82D50025DBF4 /* SceneDelegate.swift */,
-				F8E2EA6C23DD82D50025DBF4 /* ViewController.swift */,
 				F8E2EA6E23DD82D50025DBF4 /* Main.storyboard */,
 				F8E2EA7123DD82D60025DBF4 /* Assets.xcassets */,
 				F8E2EA7323DD82D60025DBF4 /* LaunchScreen.storyboard */,
@@ -126,6 +132,17 @@
 				F8E2EA8C23DD82D60025DBF4 /* Info.plist */,
 			);
 			path = HAK_V1UITests;
+			sourceTree = "<group>";
+		};
+		F8E2EA9E23DD931F0025DBF4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F8E2EA6C23DD82D50025DBF4 /* ViewController.swift */,
+				F8E2EA9823DD92CE0025DBF4 /* homeViewController.swift */,
+				F8E2EA9A23DD92F20025DBF4 /* signInViewController.swift */,
+				F8E2EA9C23DD93120025DBF4 /* signUpViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,7 +278,10 @@
 			files = (
 				F8E2EA6D23DD82D50025DBF4 /* ViewController.swift in Sources */,
 				F8E2EA6923DD82D50025DBF4 /* AppDelegate.swift in Sources */,
+				F8E2EA9D23DD93120025DBF4 /* signUpViewController.swift in Sources */,
 				F8E2EA6B23DD82D50025DBF4 /* SceneDelegate.swift in Sources */,
+				F8E2EA9923DD92CE0025DBF4 /* homeViewController.swift in Sources */,
+				F8E2EA9B23DD92F20025DBF4 /* signInViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
