@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F85EFF6833A3D6B88F13099 /* Pods_HAK_V1_HAK_V1UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DB5A9926FE875F897F83177 /* Pods_HAK_V1_HAK_V1UITests.framework */; };
+		87FA10D576639278B3111FBC /* Pods_HAK_V1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F41D8C5FF59F5832766B0BD /* Pods_HAK_V1.framework */; };
+		B8A53FB9319C1CD0963E8613 /* Pods_HAK_V1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 809CC4ADB418F69F3C0EA3BF /* Pods_HAK_V1Tests.framework */; };
 		F8E2EA6923DD82D50025DBF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA6823DD82D50025DBF4 /* AppDelegate.swift */; };
 		F8E2EA6B23DD82D50025DBF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA6A23DD82D50025DBF4 /* SceneDelegate.swift */; };
 		F8E2EA6D23DD82D50025DBF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA6C23DD82D50025DBF4 /* ViewController.swift */; };
@@ -18,6 +21,7 @@
 		F8E2EA9923DD92CE0025DBF4 /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA9823DD92CE0025DBF4 /* homeViewController.swift */; };
 		F8E2EA9B23DD92F20025DBF4 /* signInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA9A23DD92F20025DBF4 /* signInViewController.swift */; };
 		F8E2EA9D23DD93120025DBF4 /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA9C23DD93120025DBF4 /* signUpViewController.swift */; };
+		F8E2EAA023DDB1490025DBF4 /* config_file_icon_72dp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8E2EA9F23DDB1490025DBF4 /* config_file_icon_72dp@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +42,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6CBB82BDD8FB8F41F56CE148 /* Pods-HAK_V1-HAK_V1UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAK_V1-HAK_V1UITests.debug.xcconfig"; path = "Target Support Files/Pods-HAK_V1-HAK_V1UITests/Pods-HAK_V1-HAK_V1UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6F41D8C5FF59F5832766B0BD /* Pods_HAK_V1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HAK_V1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77F97ADE50996A77AD4D8AC4 /* Pods-HAK_V1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAK_V1.debug.xcconfig"; path = "Target Support Files/Pods-HAK_V1/Pods-HAK_V1.debug.xcconfig"; sourceTree = "<group>"; };
+		809CC4ADB418F69F3C0EA3BF /* Pods_HAK_V1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HAK_V1Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DB5A9926FE875F897F83177 /* Pods_HAK_V1_HAK_V1UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HAK_V1_HAK_V1UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		955DC205C50643B52A10296F /* Pods-HAK_V1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAK_V1Tests.release.xcconfig"; path = "Target Support Files/Pods-HAK_V1Tests/Pods-HAK_V1Tests.release.xcconfig"; sourceTree = "<group>"; };
+		B4DC0C9A5689E8A9A0FC6E34 /* Pods-HAK_V1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAK_V1.release.xcconfig"; path = "Target Support Files/Pods-HAK_V1/Pods-HAK_V1.release.xcconfig"; sourceTree = "<group>"; };
+		B6B5DB408D11D489ADC75542 /* Pods-HAK_V1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAK_V1Tests.debug.xcconfig"; path = "Target Support Files/Pods-HAK_V1Tests/Pods-HAK_V1Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		C7F04EB26167AFB89271740F /* Pods-HAK_V1-HAK_V1UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAK_V1-HAK_V1UITests.release.xcconfig"; path = "Target Support Files/Pods-HAK_V1-HAK_V1UITests/Pods-HAK_V1-HAK_V1UITests.release.xcconfig"; sourceTree = "<group>"; };
 		F8E2EA6523DD82D50025DBF4 /* HAK_V1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HAK_V1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8E2EA6823DD82D50025DBF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8E2EA6A23DD82D50025DBF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +68,7 @@
 		F8E2EA9823DD92CE0025DBF4 /* homeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
 		F8E2EA9A23DD92F20025DBF4 /* signInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInViewController.swift; sourceTree = "<group>"; };
 		F8E2EA9C23DD93120025DBF4 /* signUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
+		F8E2EA9F23DDB1490025DBF4 /* config_file_icon_72dp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "config_file_icon_72dp@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87FA10D576639278B3111FBC /* Pods_HAK_V1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8A53FB9319C1CD0963E8613 /* Pods_HAK_V1Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +92,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F85EFF6833A3D6B88F13099 /* Pods_HAK_V1_HAK_V1UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27BBC46A038FB032032814C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				77F97ADE50996A77AD4D8AC4 /* Pods-HAK_V1.debug.xcconfig */,
+				B4DC0C9A5689E8A9A0FC6E34 /* Pods-HAK_V1.release.xcconfig */,
+				6CBB82BDD8FB8F41F56CE148 /* Pods-HAK_V1-HAK_V1UITests.debug.xcconfig */,
+				C7F04EB26167AFB89271740F /* Pods-HAK_V1-HAK_V1UITests.release.xcconfig */,
+				B6B5DB408D11D489ADC75542 /* Pods-HAK_V1Tests.debug.xcconfig */,
+				955DC205C50643B52A10296F /* Pods-HAK_V1Tests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A59736D2549C897ED6A7228A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6F41D8C5FF59F5832766B0BD /* Pods_HAK_V1.framework */,
+				8DB5A9926FE875F897F83177 /* Pods_HAK_V1_HAK_V1UITests.framework */,
+				809CC4ADB418F69F3C0EA3BF /* Pods_HAK_V1Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F8E2EA5C23DD82D40025DBF4 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +130,9 @@
 				F8E2EA7E23DD82D60025DBF4 /* HAK_V1Tests */,
 				F8E2EA8923DD82D60025DBF4 /* HAK_V1UITests */,
 				F8E2EA6623DD82D50025DBF4 /* Products */,
+				F8E2EA9F23DDB1490025DBF4 /* config_file_icon_72dp@2x.png */,
+				27BBC46A038FB032032814C6 /* Pods */,
+				A59736D2549C897ED6A7228A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,9 +196,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8E2EA8F23DD82D60025DBF4 /* Build configuration list for PBXNativeTarget "HAK_V1" */;
 			buildPhases = (
+				AFE756E31E926E0D571350AC /* [CP] Check Pods Manifest.lock */,
 				F8E2EA6123DD82D50025DBF4 /* Sources */,
 				F8E2EA6223DD82D50025DBF4 /* Frameworks */,
 				F8E2EA6323DD82D50025DBF4 /* Resources */,
+				3DCD3C877019625E22AFB408 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,6 +215,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8E2EA9223DD82D60025DBF4 /* Build configuration list for PBXNativeTarget "HAK_V1Tests" */;
 			buildPhases = (
+				D9FB4B73A35D393192B8C356 /* [CP] Check Pods Manifest.lock */,
 				F8E2EA7723DD82D60025DBF4 /* Sources */,
 				F8E2EA7823DD82D60025DBF4 /* Frameworks */,
 				F8E2EA7923DD82D60025DBF4 /* Resources */,
@@ -187,9 +234,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8E2EA9523DD82D60025DBF4 /* Build configuration list for PBXNativeTarget "HAK_V1UITests" */;
 			buildPhases = (
+				37FD7F55DCBB99E4B767BCC8 /* [CP] Check Pods Manifest.lock */,
 				F8E2EA8223DD82D60025DBF4 /* Sources */,
 				F8E2EA8323DD82D60025DBF4 /* Frameworks */,
 				F8E2EA8423DD82D60025DBF4 /* Resources */,
+				83E6C5214DFE9A72F93FE477 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -251,6 +300,7 @@
 			files = (
 				F8E2EA7523DD82D60025DBF4 /* LaunchScreen.storyboard in Resources */,
 				F8E2EA7223DD82D60025DBF4 /* Assets.xcassets in Resources */,
+				F8E2EAA023DDB1490025DBF4 /* config_file_icon_72dp@2x.png in Resources */,
 				F8E2EA7023DD82D50025DBF4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +320,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		37FD7F55DCBB99E4B767BCC8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HAK_V1-HAK_V1UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3DCD3C877019625E22AFB408 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HAK_V1/Pods-HAK_V1-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HAK_V1/Pods-HAK_V1-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HAK_V1/Pods-HAK_V1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83E6C5214DFE9A72F93FE477 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HAK_V1-HAK_V1UITests/Pods-HAK_V1-HAK_V1UITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HAK_V1-HAK_V1UITests/Pods-HAK_V1-HAK_V1UITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HAK_V1-HAK_V1UITests/Pods-HAK_V1-HAK_V1UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFE756E31E926E0D571350AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HAK_V1-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D9FB4B73A35D393192B8C356 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HAK_V1Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F8E2EA6123DD82D50025DBF4 /* Sources */ = {
@@ -452,6 +605,7 @@
 		};
 		F8E2EA9023DD82D60025DBF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77F97ADE50996A77AD4D8AC4 /* Pods-HAK_V1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -470,6 +624,7 @@
 		};
 		F8E2EA9123DD82D60025DBF4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B4DC0C9A5689E8A9A0FC6E34 /* Pods-HAK_V1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -488,6 +643,7 @@
 		};
 		F8E2EA9323DD82D60025DBF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6B5DB408D11D489ADC75542 /* Pods-HAK_V1Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +666,7 @@
 		};
 		F8E2EA9423DD82D60025DBF4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 955DC205C50643B52A10296F /* Pods-HAK_V1Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -532,6 +689,7 @@
 		};
 		F8E2EA9623DD82D60025DBF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CBB82BDD8FB8F41F56CE148 /* Pods-HAK_V1-HAK_V1UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -552,6 +710,7 @@
 		};
 		F8E2EA9723DD82D60025DBF4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7F04EB26167AFB89271740F /* Pods-HAK_V1-HAK_V1UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

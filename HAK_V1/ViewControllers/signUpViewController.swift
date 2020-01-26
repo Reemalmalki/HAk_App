@@ -10,13 +10,33 @@ import UIKit
 
 class signUpViewController: UIViewController {
 
+    //..form fields
+    
+    
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var email: UITextField!
+    
+    @IBOutlet weak var nationalId: UITextField!
+    @IBOutlet weak var password: UITextField!
+    
+    @IBOutlet weak var confirmPassword: UITextField!
+    
+    @IBOutlet weak var signUp: UIButton!
+    
+    @IBOutlet weak var errorMsg: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+setUpForm()
         // Do any additional setup after loading the view.
     }
     
-
+    func setUpForm(){
+        //hide error msg
+        errorMsg.alpha=0
+        
+        
+    }
     /*
     // MARK: - Navigation
 
@@ -27,4 +47,6 @@ class signUpViewController: UIViewController {
     }
     */
 
+    @IBAction func signUpTapped(_ sender: Any) {
+    }
 }

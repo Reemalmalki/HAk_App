@@ -10,13 +10,26 @@ import UIKit
 
 class signInViewController: UIViewController {
 
+    @IBOutlet weak var email: UITextField!
+    
+    @IBOutlet weak var password: UITextField!
+    
+    @IBOutlet weak var signInB: UIButton!
+    
+    
+    @IBOutlet weak var errorMsg: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+setUpForm()
         // Do any additional setup after loading the view.
     }
     
-
+    func setUpForm(){
+        //hide errormsg
+        errorMsg.alpha=0
+        
+    }
     /*
     // MARK: - Navigation
 
@@ -27,4 +40,6 @@ class signInViewController: UIViewController {
     }
     */
 
+    @IBAction func signInTapped(_ sender: Any) {
+    }
 }

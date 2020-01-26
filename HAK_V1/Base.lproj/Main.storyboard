@@ -50,6 +50,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Itk-G2-jut"/>
+                    <connections>
+                        <outlet property="signInB" destination="kwg-jl-djy" id="CKc-hc-3rV"/>
+                        <outlet property="signUpB" destination="2bK-OX-yts" id="pOd-RI-1wy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -82,6 +86,9 @@
                                             <constraint firstAttribute="height" constant="40" id="xoO-ci-aTU"/>
                                         </constraints>
                                         <state key="normal" title="تسجيل الدخول"/>
+                                        <connections>
+                                            <action selector="signInTapped:" destination="1FV-Lb-tK6" eventType="touchUpInside" id="obs-Dd-ybJ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rag-wp-fww">
                                         <rect key="frame" x="0.0" y="180" width="334" height="30"/>
@@ -114,6 +121,12 @@
                         <viewLayoutGuide key="safeArea" id="9sB-eo-3Qd"/>
                     </view>
                     <navigationItem key="navigationItem" id="pff-Ae-SWE"/>
+                    <connections>
+                        <outlet property="email" destination="C5E-Oa-ALv" id="qbX-xS-pTE"/>
+                        <outlet property="errorMsg" destination="5lu-gf-h9t" id="DvO-yT-t3o"/>
+                        <outlet property="password" destination="Vhr-zc-8V5" id="kaf-vn-GEk"/>
+                        <outlet property="signInB" destination="Tap-fQ-Wka" id="Iix-ce-gOw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ges-pE-DNh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,6 +174,9 @@
                                             <constraint firstAttribute="height" constant="40" id="WmJ-V0-Oqz"/>
                                         </constraints>
                                         <state key="normal" title="تسجيل"/>
+                                        <connections>
+                                            <action selector="signUpTapped:" destination="gV7-4s-wA9" eventType="touchUpInside" id="wC4-i8-aQ7"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error msg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siH-BV-UFU">
                                         <rect key="frame" x="0.0" y="360" width="334" height="40"/>
@@ -188,6 +204,15 @@
                         <viewLayoutGuide key="safeArea" id="zFd-3q-hLT"/>
                     </view>
                     <navigationItem key="navigationItem" id="WcM-9I-euT"/>
+                    <connections>
+                        <outlet property="confirmPassword" destination="Lza-pU-37a" id="xeR-Ap-Mq9"/>
+                        <outlet property="email" destination="VmX-Sz-3PX" id="eBg-6q-cD3"/>
+                        <outlet property="errorMsg" destination="siH-BV-UFU" id="C8y-j1-1mR"/>
+                        <outlet property="name" destination="9j5-ZN-ZhF" id="SJx-tc-gDq"/>
+                        <outlet property="nationalId" destination="oxL-Qj-hCW" id="cNa-uX-lnL"/>
+                        <outlet property="password" destination="a3R-nO-wTe" id="ELs-9F-tjG"/>
+                        <outlet property="signUp" destination="7tb-ua-dHv" id="JoB-eK-kdE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ogq-Gz-x0A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -196,7 +221,6 @@
         <!--Home View Controller-->
         <scene sceneID="LUw-pP-LbR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mI6-pI-8xI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="DaJ-Gv-7tD" customClass="homeViewController" customModule="HAK_V1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rkz-XB-UqL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -219,6 +243,7 @@
                         <viewLayoutGuide key="safeArea" id="Pb5-mf-3I0"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mI6-pI-8xI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2637.68115942029" y="96.428571428571431"/>
         </scene>
