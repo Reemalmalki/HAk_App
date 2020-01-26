@@ -24,10 +24,16 @@
                                             <constraint firstAttribute="height" constant="40" id="Aix-2Q-oRq"/>
                                         </constraints>
                                         <state key="normal" title="التسجيل"/>
+                                        <connections>
+                                            <segue destination="gV7-4s-wA9" kind="show" id="SHK-l5-BDw"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwg-jl-djy">
                                         <rect key="frame" x="0.0" y="60" width="334" height="30"/>
                                         <state key="normal" title="تسجيل الدخول"/>
+                                        <connections>
+                                            <segue destination="1FV-Lb-tK6" kind="show" id="6W8-BI-mVd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -49,53 +55,128 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="112.5"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Sign In View Controller-->
+        <scene sceneID="oQM-sh-3DO">
+            <objects>
+                <viewController id="1FV-Lb-tK6" customClass="signInViewController" customModule="HAK_V1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gEM-xi-APG">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pl2-Yn-38L">
+                                <rect key="frame" x="40" y="128" width="334" height="270"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="البريد الإلكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C5E-Oa-ALv">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="كلمة المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vhr-zc-8V5">
+                                        <rect key="frame" x="0.0" y="60" width="334" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tap-fQ-Wka">
+                                        <rect key="frame" x="0.0" y="120" width="334" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="xoO-ci-aTU"/>
+                                        </constraints>
+                                        <state key="normal" title="تسجيل الدخول"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rag-wp-fww">
+                                        <rect key="frame" x="0.0" y="180" width="334" height="30"/>
+                                        <state key="normal" title="إنشاء حساب جديد"/>
+                                        <connections>
+                                            <segue destination="gV7-4s-wA9" kind="show" id="8X8-cT-TxC"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error msg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lu-gf-h9t">
+                                        <rect key="frame" x="0.0" y="230" width="334" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5lu-gf-h9t" firstAttribute="height" secondItem="C5E-Oa-ALv" secondAttribute="height" id="IRd-6o-kVQ"/>
+                                    <constraint firstItem="Vhr-zc-8V5" firstAttribute="height" secondItem="C5E-Oa-ALv" secondAttribute="height" id="MLv-sx-NEM"/>
+                                    <constraint firstItem="Tap-fQ-Wka" firstAttribute="width" secondItem="Rag-wp-fww" secondAttribute="width" id="VRs-eg-o2F"/>
+                                    <constraint firstItem="Tap-fQ-Wka" firstAttribute="height" secondItem="C5E-Oa-ALv" secondAttribute="height" id="buE-1s-aCf"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pl2-Yn-38L" firstAttribute="leading" secondItem="9sB-eo-3Qd" secondAttribute="leading" constant="40" id="BqD-SM-m4V"/>
+                            <constraint firstItem="9sB-eo-3Qd" firstAttribute="trailing" secondItem="pl2-Yn-38L" secondAttribute="trailing" constant="40" id="ZAU-sm-3NL"/>
+                            <constraint firstItem="pl2-Yn-38L" firstAttribute="top" secondItem="9sB-eo-3Qd" secondAttribute="top" constant="40" id="lC2-EI-c65"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9sB-eo-3Qd"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pff-Ae-SWE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ges-pE-DNh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1763" y="509"/>
+        </scene>
+        <!--Sign Up View Controller-->
         <scene sceneID="8Qs-qa-qb4">
             <objects>
-                <viewController id="gV7-4s-wA9" customClass="homeViewController" customModule="HAK_V1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gV7-4s-wA9" customClass="signUpViewController" customModule="HAK_V1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tY5-Sd-fab" customClass="UICollectionView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sB5-5o-l5N">
-                                <rect key="frame" x="40" y="84" width="334" height="340.5"/>
+                                <rect key="frame" x="40" y="128" width="334" height="400"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="الاسم" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9j5-ZN-ZhF">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="البريد الإلكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VmX-Sz-3PX">
-                                        <rect key="frame" x="0.0" y="54" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="60" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="رقم الهوية الوطنية/الإقامة" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oxL-Qj-hCW">
-                                        <rect key="frame" x="0.0" y="108" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="120" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="كلمة المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a3R-nO-wTe">
-                                        <rect key="frame" x="0.0" y="162" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="180" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="إعادة كلمة المرور" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lza-pU-37a">
-                                        <rect key="frame" x="0.0" y="216" width="334" height="34"/>
+                                        <rect key="frame" x="0.0" y="240" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7tb-ua-dHv">
-                                        <rect key="frame" x="0.0" y="270" width="334" height="30"/>
+                                        <rect key="frame" x="0.0" y="300" width="334" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="WmJ-V0-Oqz"/>
+                                        </constraints>
                                         <state key="normal" title="تسجيل"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error msg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siH-BV-UFU">
-                                        <rect key="frame" x="0.0" y="320" width="334" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="360" width="334" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="Lza-pU-37a" firstAttribute="height" secondItem="9j5-ZN-ZhF" secondAttribute="height" id="7EF-Tg-0G1"/>
+                                    <constraint firstItem="VmX-Sz-3PX" firstAttribute="height" secondItem="9j5-ZN-ZhF" secondAttribute="height" id="9UZ-yJ-qrs"/>
+                                    <constraint firstItem="a3R-nO-wTe" firstAttribute="height" secondItem="9j5-ZN-ZhF" secondAttribute="height" id="KTr-0z-6Ql"/>
+                                    <constraint firstItem="oxL-Qj-hCW" firstAttribute="height" secondItem="9j5-ZN-ZhF" secondAttribute="height" id="hXz-mH-gBN"/>
+                                    <constraint firstItem="7tb-ua-dHv" firstAttribute="height" secondItem="9j5-ZN-ZhF" secondAttribute="height" id="j4z-kR-7Tk"/>
+                                    <constraint firstItem="siH-BV-UFU" firstAttribute="height" secondItem="9j5-ZN-ZhF" secondAttribute="height" id="z9O-9I-5ly"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -106,10 +187,40 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zFd-3q-hLT"/>
                     </view>
+                    <navigationItem key="navigationItem" id="WcM-9I-euT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ogq-Gz-x0A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1768" y="-179"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="LUw-pP-LbR">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mI6-pI-8xI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="DaJ-Gv-7tD" customClass="homeViewController" customModule="HAK_V1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rkz-XB-UqL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الصفحة الرئيسية" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJP-Cc-yjY">
+                                <rect key="frame" x="40" y="94" width="334" height="718"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="sJP-Cc-yjY" firstAttribute="leading" secondItem="Pb5-mf-3I0" secondAttribute="leading" constant="40" id="5YA-X7-i2P"/>
+                            <constraint firstItem="Pb5-mf-3I0" firstAttribute="trailing" secondItem="sJP-Cc-yjY" secondAttribute="trailing" constant="40" id="Pig-18-oac"/>
+                            <constraint firstItem="Pb5-mf-3I0" firstAttribute="bottom" secondItem="sJP-Cc-yjY" secondAttribute="bottom" constant="50" id="UgF-mj-qQO"/>
+                            <constraint firstItem="sJP-Cc-yjY" firstAttribute="top" secondItem="Pb5-mf-3I0" secondAttribute="top" constant="50" id="zgS-bC-bi4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Pb5-mf-3I0"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2637.68115942029" y="96.428571428571431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VtM-LH-Fpc">
@@ -130,4 +241,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="SHK-l5-BDw"/>
+    </inferredMetricsTieBreakers>
 </document>
