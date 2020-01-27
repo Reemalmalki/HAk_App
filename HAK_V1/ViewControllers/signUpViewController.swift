@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class signUpViewController: UIViewController {
 
@@ -46,7 +47,34 @@ setUpForm()
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func validateFields() -> String? {
+        
+        
+        //to be written -Raghad
+        
+        
+        //check no empty
+        
+        
+        //check is password valid
+        
+        return  nil
+    }
 
     @IBAction func signUpTapped(_ sender: Any) {
+        
+        
+        let error = validateFields()
+        
+        if error != nil {
+        }
+        else {
+            
+    let emailText=email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+    
+            Auth.auth().createUser(withEmail: emailText, password: password.text!.trimmingCharacters(in: .whitespacesAndNewlines))
+        }
+        
     }
 }

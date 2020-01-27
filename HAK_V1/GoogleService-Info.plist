@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>974115471883-a151doku9p63cu5ba89dedqpnjbtenk7.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.974115471883-a151doku9p63cu5ba89dedqpnjbtenk7</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCZWkrBhD0GDSylAzWPSFFB1P5Z5jTkH2E</string>
+	<key>GCM_SENDER_ID</key>
+	<string>974115471883</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>KSU.com.HAK-V1</string>
+	<key>PROJECT_ID</key>
+	<string>hak-c8290</string>
+	<key>STORAGE_BUCKET</key>
+	<string>hak-c8290.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:974115471883:ios:e02a1a8cb328414cb43d0e</string>
+	<key>DATABASE_URL</key>
+	<string>https://hak-c8290.firebaseio.com</string>
+</dict>
+</plist>

@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1005C5C923DE9445000E7891 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1005C5C823DE9445000E7891 /* GoogleService-Info.plist */; };
 		2F85EFF6833A3D6B88F13099 /* Pods_HAK_V1_HAK_V1UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DB5A9926FE875F897F83177 /* Pods_HAK_V1_HAK_V1UITests.framework */; };
 		87FA10D576639278B3111FBC /* Pods_HAK_V1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F41D8C5FF59F5832766B0BD /* Pods_HAK_V1.framework */; };
 		B8A53FB9319C1CD0963E8613 /* Pods_HAK_V1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 809CC4ADB418F69F3C0EA3BF /* Pods_HAK_V1Tests.framework */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1005C5C823DE9445000E7891 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6CBB82BDD8FB8F41F56CE148 /* Pods-HAK_V1-HAK_V1UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAK_V1-HAK_V1UITests.debug.xcconfig"; path = "Target Support Files/Pods-HAK_V1-HAK_V1UITests/Pods-HAK_V1-HAK_V1UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F41D8C5FF59F5832766B0BD /* Pods_HAK_V1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HAK_V1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F97ADE50996A77AD4D8AC4 /* Pods-HAK_V1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAK_V1.debug.xcconfig"; path = "Target Support Files/Pods-HAK_V1/Pods-HAK_V1.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,7 +111,6 @@
 				B6B5DB408D11D489ADC75542 /* Pods-HAK_V1Tests.debug.xcconfig */,
 				955DC205C50643B52A10296F /* Pods-HAK_V1Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -149,6 +150,7 @@
 		F8E2EA6723DD82D50025DBF4 /* HAK_V1 */ = {
 			isa = PBXGroup;
 			children = (
+				1005C5C823DE9445000E7891 /* GoogleService-Info.plist */,
 				F8E2EA9E23DD931F0025DBF4 /* ViewControllers */,
 				F8E2EA6823DD82D50025DBF4 /* AppDelegate.swift */,
 				F8E2EA6A23DD82D50025DBF4 /* SceneDelegate.swift */,
@@ -300,6 +302,7 @@
 			files = (
 				F8E2EA7523DD82D60025DBF4 /* LaunchScreen.storyboard in Resources */,
 				F8E2EA7223DD82D60025DBF4 /* Assets.xcassets in Resources */,
+				1005C5C923DE9445000E7891 /* GoogleService-Info.plist in Resources */,
 				F8E2EAA023DDB1490025DBF4 /* config_file_icon_72dp@2x.png in Resources */,
 				F8E2EA7023DD82D50025DBF4 /* Main.storyboard in Resources */,
 			);
