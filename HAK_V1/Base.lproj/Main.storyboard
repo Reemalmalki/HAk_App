@@ -221,7 +221,7 @@
         <!--Home View Controller-->
         <scene sceneID="LUw-pP-LbR">
             <objects>
-                <viewController id="DaJ-Gv-7tD" customClass="homeViewController" customModule="HAK_V1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="DaJ-Gv-7tD" customClass="homeViewController" customModule="HAK_V1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rkz-XB-UqL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

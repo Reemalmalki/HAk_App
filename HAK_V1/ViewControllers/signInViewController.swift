@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class signInViewController: UIViewController {
 
@@ -41,5 +42,24 @@ setUpForm()
     */
 
     @IBAction func signInTapped(_ sender: Any) {
+        // validate feilds
+        
+        // create clean version of fields
+        let emailFeild = email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let pass = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        // sign in user
+        Auth.auth().signIn(withEmail:emailFeild , password: pass){
+        (result , error) in
+        if error != nil {
+            self.errorMsg.text="البريد الإلكتروني او كلمة المرور خاطئة "
+            self.errorMsg.alpha=1
+        }
+        else{
+            let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.storyboard.homeViewController) as? homeViewController
+            self.view.window?.rootViewController = homeViewController
+            self.view.window?.makeKeyAndVisible()
+        }
+        
     }
+}
 }
