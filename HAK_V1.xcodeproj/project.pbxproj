@@ -12,6 +12,7 @@
 		87FA10D576639278B3111FBC /* Pods_HAK_V1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F41D8C5FF59F5832766B0BD /* Pods_HAK_V1.framework */; };
 		B8A53FB9319C1CD0963E8613 /* Pods_HAK_V1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 809CC4ADB418F69F3C0EA3BF /* Pods_HAK_V1Tests.framework */; };
 		F8BDB9FD23E017F900D5714D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDB9FC23E017F900D5714D /* Constants.swift */; };
+		F8BDB9FF23E01C0000D5714D /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDB9FE23E01C0000D5714D /* Styles.swift */; };
 		F8E2EA6923DD82D50025DBF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA6823DD82D50025DBF4 /* AppDelegate.swift */; };
 		F8E2EA6B23DD82D50025DBF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA6A23DD82D50025DBF4 /* SceneDelegate.swift */; };
 		F8E2EA6D23DD82D50025DBF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA6C23DD82D50025DBF4 /* ViewController.swift */; };
@@ -55,6 +56,7 @@
 		B6B5DB408D11D489ADC75542 /* Pods-HAK_V1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAK_V1Tests.debug.xcconfig"; path = "Target Support Files/Pods-HAK_V1Tests/Pods-HAK_V1Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C7F04EB26167AFB89271740F /* Pods-HAK_V1-HAK_V1UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAK_V1-HAK_V1UITests.release.xcconfig"; path = "Target Support Files/Pods-HAK_V1-HAK_V1UITests/Pods-HAK_V1-HAK_V1UITests.release.xcconfig"; sourceTree = "<group>"; };
 		F8BDB9FC23E017F900D5714D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F8BDB9FE23E01C0000D5714D /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		F8E2EA6523DD82D50025DBF4 /* HAK_V1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HAK_V1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8E2EA6823DD82D50025DBF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8E2EA6A23DD82D50025DBF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F8BDBA0023E01DA300D5714D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F8BDB9FE23E01C0000D5714D /* Styles.swift */,
+				F8BDB9FC23E017F900D5714D /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		F8E2EA5C23DD82D40025DBF4 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +163,7 @@
 		F8E2EA6723DD82D50025DBF4 /* HAK_V1 */ = {
 			isa = PBXGroup;
 			children = (
+				F8BDBA0023E01DA300D5714D /* Helpers */,
 				1005C5C823DE9445000E7891 /* GoogleService-Info.plist */,
 				F8E2EA9E23DD931F0025DBF4 /* ViewControllers */,
 				F8E2EA6823DD82D50025DBF4 /* AppDelegate.swift */,
@@ -160,7 +172,6 @@
 				F8E2EA7123DD82D60025DBF4 /* Assets.xcassets */,
 				F8E2EA7323DD82D60025DBF4 /* LaunchScreen.storyboard */,
 				F8E2EA7623DD82D60025DBF4 /* Info.plist */,
-				F8BDB9FC23E017F900D5714D /* Constants.swift */,
 			);
 			path = HAK_V1;
 			sourceTree = "<group>";
@@ -438,6 +449,7 @@
 				F8E2EA6D23DD82D50025DBF4 /* ViewController.swift in Sources */,
 				F8E2EA6923DD82D50025DBF4 /* AppDelegate.swift in Sources */,
 				F8E2EA9D23DD93120025DBF4 /* signUpViewController.swift in Sources */,
+				F8BDB9FF23E01C0000D5714D /* Styles.swift in Sources */,
 				F8E2EA6B23DD82D50025DBF4 /* SceneDelegate.swift in Sources */,
 				F8BDB9FD23E017F900D5714D /* Constants.swift in Sources */,
 				F8E2EA9923DD92CE0025DBF4 /* homeViewController.swift in Sources */,
