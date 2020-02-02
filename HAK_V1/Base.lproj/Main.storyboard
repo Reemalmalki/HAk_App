@@ -226,26 +226,111 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الصفحة الرئيسية" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJP-Cc-yjY">
-                                <rect key="frame" x="40" y="94" width="334" height="718"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNz-Wj-ilU">
+                                <rect key="frame" x="40" y="792" width="334" height="30"/>
+                                <state key="normal" title="أضف غرفة دراسية "/>
+                                <connections>
+                                    <action selector="onClick:" destination="DaJ-Gv-7tD" eventType="touchUpInside" id="ja2-dZ-2ic"/>
+                                    <segue destination="DYW-Qt-dGg" kind="show" id="Dxp-gB-5be"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="sJP-Cc-yjY" firstAttribute="leading" secondItem="Pb5-mf-3I0" secondAttribute="leading" constant="40" id="5YA-X7-i2P"/>
-                            <constraint firstItem="Pb5-mf-3I0" firstAttribute="trailing" secondItem="sJP-Cc-yjY" secondAttribute="trailing" constant="40" id="Pig-18-oac"/>
-                            <constraint firstItem="Pb5-mf-3I0" firstAttribute="bottom" secondItem="sJP-Cc-yjY" secondAttribute="bottom" constant="50" id="UgF-mj-qQO"/>
-                            <constraint firstItem="sJP-Cc-yjY" firstAttribute="top" secondItem="Pb5-mf-3I0" secondAttribute="top" constant="50" id="zgS-bC-bi4"/>
+                            <constraint firstItem="Pb5-mf-3I0" firstAttribute="bottom" secondItem="QNz-Wj-ilU" secondAttribute="bottom" constant="40" id="CKJ-Ne-TRB"/>
+                            <constraint firstItem="QNz-Wj-ilU" firstAttribute="leading" secondItem="Pb5-mf-3I0" secondAttribute="leading" constant="40" id="gna-qm-mhr"/>
+                            <constraint firstItem="Pb5-mf-3I0" firstAttribute="trailing" secondItem="QNz-Wj-ilU" secondAttribute="trailing" constant="40" id="v1W-w4-odG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pb5-mf-3I0"/>
                     </view>
+                    <navigationItem key="navigationItem" id="9MY-T1-1sW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mI6-pI-8xI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2637.68115942029" y="96.428571428571431"/>
+            <point key="canvasLocation" x="3547.826086956522" y="96.428571428571431"/>
+        </scene>
+        <!--Create Classroom View Controller-->
+        <scene sceneID="GJu-Hh-5qQ">
+            <objects>
+                <viewController storyboardIdentifier="createClassroom" id="DYW-Qt-dGg" customClass="createClassroomViewController" customModule="HAK_V1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iDF-OY-QWo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Sfg-a0-8dd">
+                                <rect key="frame" x="122.5" y="128" width="169" height="327"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="إنشاء غرفة دراسية جديدة" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqr-cA-xI3">
+                                        <rect key="frame" x="0.0" y="0.0" width="169" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="المادة" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lxS-hS-wCt">
+                                        <rect key="frame" x="0.0" y="40.5" width="169" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="DYW-Qt-dGg" id="hMg-qe-shv"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="المرحلة الدراسية" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="smB-nw-9mJ">
+                                        <rect key="frame" x="0.0" y="94.5" width="169" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="DYW-Qt-dGg" id="ezZ-Vq-Y4n"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="الفصل الدراسي" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dEI-ZV-54h">
+                                        <rect key="frame" x="0.0" y="148.5" width="169" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="DYW-Qt-dGg" id="SVd-pn-WDO"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="اسم الغرفة" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E8C-Wd-GbX">
+                                        <rect key="frame" x="0.0" y="202.5" width="169" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46r-xX-RkY">
+                                        <rect key="frame" x="0.0" y="256.5" width="169" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAr-cK-6Pq">
+                                        <rect key="frame" x="0.0" y="297" width="169" height="30"/>
+                                        <state key="normal" title="أنشئ الغرفة الدرسية"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="lxS-hS-wCt" firstAttribute="width" secondItem="yqr-cA-xI3" secondAttribute="width" id="mg7-Cy-6yc"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Sfg-a0-8dd" firstAttribute="top" secondItem="zfv-hv-BZZ" secondAttribute="top" constant="40" id="Fhk-ri-sau"/>
+                            <constraint firstItem="Sfg-a0-8dd" firstAttribute="centerX" secondItem="iDF-OY-QWo" secondAttribute="centerX" id="NMO-sL-MrN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zfv-hv-BZZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5Ht-Ji-JVV"/>
+                    <connections>
+                        <outlet property="createB" destination="xAr-cK-6Pq" id="sTm-PL-sga"/>
+                        <outlet property="errorLable" destination="46r-xX-RkY" id="xvj-TJ-Lyb"/>
+                        <outlet property="levelMenu" destination="smB-nw-9mJ" id="qmU-GE-NFn"/>
+                        <outlet property="roomName" destination="E8C-Wd-GbX" id="VHt-Fe-yrt"/>
+                        <outlet property="semesterMenu" destination="dEI-ZV-54h" id="Hab-oJ-M7X"/>
+                        <outlet property="subjectMenu" destination="lxS-hS-wCt" id="4yC-Ot-WZx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pva-jW-3KF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4284.057971014493" y="-157.36607142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VtM-LH-Fpc">
@@ -265,8 +350,26 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hec-0V-tMy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AH0-Er-RUI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="D7I-qm-VrL">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DaJ-Gv-7tD" kind="relationship" relationship="rootViewController" id="fsg-jx-Myf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yoD-ll-Kpb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2637.68115942029" y="96.428571428571431"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="SHK-l5-BDw"/>
+        <segue reference="8X8-cT-TxC"/>
     </inferredMetricsTieBreakers>
 </document>

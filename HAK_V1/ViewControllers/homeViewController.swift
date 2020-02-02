@@ -10,6 +10,9 @@ import UIKit
 
 class homeViewController: UIViewController {
 
+    @IBOutlet weak var createClassroom: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,14 +20,12 @@ class homeViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func onClick(_ sender: UIButton) {
+        
+        let createClassroomViewController = self.storyboard?.instantiateViewController(identifier: Constants.storyboard.createClassroomViewController) as? createClassroomViewController
+        self.view.window?.rootViewController = createClassroomViewController
+        self.view.window?.makeKeyAndVisible()
     }
-    */
-
+    
 }
