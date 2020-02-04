@@ -14,6 +14,7 @@
 		F8BDB9FD23E017F900D5714D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDB9FC23E017F900D5714D /* Constants.swift */; };
 		F8BDB9FF23E01C0000D5714D /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDB9FE23E01C0000D5714D /* Styles.swift */; };
 		F8BDBA0323E6B1AC00D5714D /* createClassroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDBA0223E6B1AC00D5714D /* createClassroomViewController.swift */; };
+		F8C0595223E9DA3B00D051BE /* createdClassroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C0595123E9DA3B00D051BE /* createdClassroomViewController.swift */; };
 		F8E2EA6923DD82D50025DBF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA6823DD82D50025DBF4 /* AppDelegate.swift */; };
 		F8E2EA6B23DD82D50025DBF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA6A23DD82D50025DBF4 /* SceneDelegate.swift */; };
 		F8E2EA6D23DD82D50025DBF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA6C23DD82D50025DBF4 /* ViewController.swift */; };
@@ -59,6 +60,7 @@
 		F8BDB9FC23E017F900D5714D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F8BDB9FE23E01C0000D5714D /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		F8BDBA0223E6B1AC00D5714D /* createClassroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createClassroomViewController.swift; sourceTree = "<group>"; };
+		F8C0595123E9DA3B00D051BE /* createdClassroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createdClassroomViewController.swift; sourceTree = "<group>"; };
 		F8E2EA6523DD82D50025DBF4 /* HAK_V1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HAK_V1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8E2EA6823DD82D50025DBF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8E2EA6A23DD82D50025DBF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				F8E2EA9A23DD92F20025DBF4 /* signInViewController.swift */,
 				F8E2EA9C23DD93120025DBF4 /* signUpViewController.swift */,
 				F8BDBA0223E6B1AC00D5714D /* createClassroomViewController.swift */,
+				F8C0595123E9DA3B00D051BE /* createdClassroomViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -454,6 +457,7 @@
 				F8E2EA6923DD82D50025DBF4 /* AppDelegate.swift in Sources */,
 				F8E2EA9D23DD93120025DBF4 /* signUpViewController.swift in Sources */,
 				F8BDB9FF23E01C0000D5714D /* Styles.swift in Sources */,
+				F8C0595223E9DA3B00D051BE /* createdClassroomViewController.swift in Sources */,
 				F8E2EA6B23DD82D50025DBF4 /* SceneDelegate.swift in Sources */,
 				F8BDB9FD23E017F900D5714D /* Constants.swift in Sources */,
 				F8E2EA9923DD92CE0025DBF4 /* homeViewController.swift in Sources */,

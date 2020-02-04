@@ -20,12 +20,12 @@ class homeViewController: UIViewController {
     }
     
 
-    
+    /*
     @IBAction func onClick(_ sender: UIButton) {
         
         let createClassroomViewController = self.storyboard?.instantiateViewController(identifier: Constants.storyboard.createClassroomViewController) as? createClassroomViewController
         self.view.window?.rootViewController = createClassroomViewController
         self.view.window?.makeKeyAndVisible()
     }
-    
+    */
 }
