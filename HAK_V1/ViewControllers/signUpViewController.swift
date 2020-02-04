@@ -51,14 +51,35 @@ setUpForm()
     func validateFields() -> String? {
         
         
-        //to be written -Raghad
+        if name.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || email.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || nationalId.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || password.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || confirmPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+    
+            return "فضلًا تأكد/ي من تبعئة جميع الخانات"
+            
+        }
         
         
-        //check no empty
         
+        let cleanedPassword = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        //check is password valid
+        if Utilities.isPasswordValid(cleanedPassword) == false {
+            
+            return "يجب أن تكون كلمة المرور  مكونة على الأقل من ٨ أحرف وتحتوي على الأقل أحد الرموز الخاصة التالية $@$#!%*?&"
+            
+        }
         
+        if password.text!.trimmingCharacters(in: .whitespacesAndNewlines) != confirmPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines) {
+            
+            return "يرجى التأكد من تطابق كلمة المرور وتأكيدها"
+            
+            
+        }
+        
+        if nationalId.text!.count != 10  || nationalId.text![nationalId.text!.startIndex] != "1" ||
+        nationalId.text![nationalId.text!.startIndex] != "2" {
+            return "يجب أن يتكون رقم الهوية الوطنية من ١٠ ارقام ويبدأ ب ١ أو ٢"
+        }
+
+
         return  nil
     }
 
@@ -68,7 +89,11 @@ setUpForm()
         let error = validateFields()
         
         if error != nil {
+            
+            showError(error!)
         }
+            
+            
         else {
             
     let emailText=email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -77,4 +102,12 @@ setUpForm()
         }
         
     }
+    
+    func showError(_ message:String) {
+           
+           errorMsg.text = message
+           errorMsg.alpha = 1
+       }
+    
+    
 }
