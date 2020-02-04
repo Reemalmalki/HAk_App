@@ -74,8 +74,7 @@ setUpForm()
             
         }
         
-        if nationalId.text!.count != 10  || nationalId.text![nationalId.text!.startIndex] != "1" ||
-        nationalId.text![nationalId.text!.startIndex] != "2" {
+        if nationalId.text!.count != 10   {
             return "يجب أن يتكون رقم الهوية الوطنية من ١٠ ارقام ويبدأ ب ١ أو ٢"
         }
 
