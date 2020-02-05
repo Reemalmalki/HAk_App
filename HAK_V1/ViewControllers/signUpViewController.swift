@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
+
 
 class signUpViewController: UIViewController {
 
@@ -38,6 +40,13 @@ setUpForm()
         
         
     }
+    
+    
+    func showError(_ message:String) {
+           
+           errorMsg.text = message
+           errorMsg.alpha = 1
+       }
     /*
     // MARK: - Navigation
 
@@ -80,6 +89,7 @@ setUpForm()
 
 
         return  nil
+        
     }
 
     @IBAction func signUpTapped(_ sender: Any) {
@@ -96,17 +106,46 @@ setUpForm()
         else {
             
     let emailText=email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+    let nationalId_ = nationalId.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+    let name_ = name.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+  
+   
     
-            Auth.auth().createUser(withEmail: emailText, password: password.text!.trimmingCharacters(in: .whitespacesAndNewlines))
+            Auth.auth().createUser(withEmail: emailText, password: password.text!.trimmingCharacters(in: .whitespacesAndNewlines)) { (result, err) in
+
+     
+        
+        
+        if err != nil {
+                          
+                          // There was an error creating the user
+            self.showError("Error creating user")
+                      }
+        else {
+            // User was created successfully, now store the first name and last name
+                          let db = Firestore.firestore()
+                          
+            db.collection("teachers").addDocument(data: ["name":name_, "email":emailText, "nationalID":nationalId_, "uid": result!.user.uid ]) { (error) in
+                              
+                              if error != nil {
+                                  // Show error message
+                                  self.showError("Error saving user data")
+                              }
+                          }
+                          
+                          // Transition to the home screen
+                          //self.transitionToHome()
+            
+            
+                }
         }
+        
+        
         
     }
     
-    func showError(_ message:String) {
-           
-           errorMsg.text = message
-           errorMsg.alpha = 1
-       }
+
     
     
+}
 }
