@@ -68,7 +68,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pl2-Yn-38L">
-                                <rect key="frame" x="40" y="128" width="334" height="270"/>
+                                <rect key="frame" x="40" y="128" width="334" height="320"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="البريد الإلكتروني" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C5E-Oa-ALv">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="40"/>
@@ -80,8 +80,21 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tap-fQ-Wka">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error msg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lu-gf-h9t">
                                         <rect key="frame" x="0.0" y="120" width="334" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSi-V1-wvK">
+                                        <rect key="frame" x="0.0" y="180" width="334" height="30"/>
+                                        <state key="normal" title="نسيت كلمة المرور ؟"/>
+                                        <connections>
+                                            <action selector="resetPass:" destination="1FV-Lb-tK6" eventType="touchUpInside" id="h4L-vh-gie"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tap-fQ-Wka">
+                                        <rect key="frame" x="0.0" y="230" width="334" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="xoO-ci-aTU"/>
                                         </constraints>
@@ -91,18 +104,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rag-wp-fww">
-                                        <rect key="frame" x="0.0" y="180" width="334" height="30"/>
+                                        <rect key="frame" x="0.0" y="290" width="334" height="30"/>
                                         <state key="normal" title="إنشاء حساب جديد"/>
                                         <connections>
                                             <segue destination="gV7-4s-wA9" kind="show" id="8X8-cT-TxC"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error msg" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lu-gf-h9t">
-                                        <rect key="frame" x="0.0" y="230" width="334" height="40"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="5lu-gf-h9t" firstAttribute="height" secondItem="C5E-Oa-ALv" secondAttribute="height" id="IRd-6o-kVQ"/>
@@ -126,6 +133,7 @@
                         <outlet property="errorMsg" destination="5lu-gf-h9t" id="DvO-yT-t3o"/>
                         <outlet property="password" destination="Vhr-zc-8V5" id="kaf-vn-GEk"/>
                         <outlet property="signInB" destination="Tap-fQ-Wka" id="Iix-ce-gOw"/>
+                        <segue destination="DaJ-Gv-7tD" kind="presentation" identifier="userId" id="wq3-Kz-Qkj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ges-pE-DNh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -223,27 +231,37 @@
             <objects>
                 <viewController storyboardIdentifier="HomeVC" id="DaJ-Gv-7tD" customClass="homeViewController" customModule="HAK_V1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rkz-XB-UqL">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNz-Wj-ilU">
-                                <rect key="frame" x="40" y="792" width="334" height="30"/>
+                                <rect key="frame" x="40" y="738" width="334" height="30"/>
                                 <state key="normal" title="أضف غرفة دراسية "/>
                                 <connections>
                                     <action selector="onClick:" destination="DaJ-Gv-7tD" eventType="touchUpInside" id="ja2-dZ-2ic"/>
-                                    <segue destination="68k-9p-rGH" kind="show" id="E0e-Sp-xka"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nx6-7K-X1L">
+                                <rect key="frame" x="200" y="410.5" width="14" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Pb5-mf-3I0" firstAttribute="bottom" secondItem="QNz-Wj-ilU" secondAttribute="bottom" constant="40" id="CKJ-Ne-TRB"/>
+                            <constraint firstItem="Nx6-7K-X1L" firstAttribute="centerX" secondItem="rkz-XB-UqL" secondAttribute="centerX" id="ZfW-8A-WGm"/>
+                            <constraint firstItem="Nx6-7K-X1L" firstAttribute="centerY" secondItem="rkz-XB-UqL" secondAttribute="centerY" id="glL-zU-U8L"/>
                             <constraint firstItem="QNz-Wj-ilU" firstAttribute="leading" secondItem="Pb5-mf-3I0" secondAttribute="leading" constant="40" id="gna-qm-mhr"/>
                             <constraint firstItem="Pb5-mf-3I0" firstAttribute="trailing" secondItem="QNz-Wj-ilU" secondAttribute="trailing" constant="40" id="v1W-w4-odG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pb5-mf-3I0"/>
                     </view>
                     <navigationItem key="navigationItem" id="9MY-T1-1sW"/>
+                    <connections>
+                        <outlet property="label" destination="Nx6-7K-X1L" id="zav-S9-Urt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mI6-pI-8xI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -268,7 +286,7 @@
         <!--Created Classroom View Controller-->
         <scene sceneID="Oa0-gM-24v">
             <objects>
-                <viewController id="68k-9p-rGH" customClass="createdClassroomViewController" customModule="HAK_V1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="createdClassroom" id="68k-9p-rGH" customClass="createdClassroomViewController" customModule="HAK_V1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lIO-PT-Iuc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -399,6 +417,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="wq3-Kz-Qkj"/>
         <segue reference="8X8-cT-TxC"/>
     </inferredMetricsTieBreakers>
 </document>

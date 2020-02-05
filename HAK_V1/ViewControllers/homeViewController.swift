@@ -7,25 +7,36 @@
 //
 
 import UIKit
-
+import Firebase
 class homeViewController: UIViewController {
-
+    var userId = ""
     @IBOutlet weak var createClassroom: UIButton!
     
+    @IBOutlet weak var label: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+       
+        label.alpha = 1
+        if Auth.auth().currentUser != nil {
+            let user = Auth.auth().currentUser
+            userId = user!.uid
+            
+            label.text = "User is signed in." + userId
+          // ...
+        } else {
+          label.text = "No user is signed in."
+          // ...
+        }
     }
     
 
-    /*
+    
     @IBAction func onClick(_ sender: UIButton) {
         
-        let createClassroomViewController = self.storyboard?.instantiateViewController(identifier: Constants.storyboard.createClassroomViewController) as? createClassroomViewController
-        self.view.window?.rootViewController = createClassroomViewController
+        let createdClassroomViewController = self.storyboard?.instantiateViewController(identifier: Constants.storyboard.createdClassroomViewController) as? createdClassroomViewController
+        self.view.window?.rootViewController = createdClassroomViewController
         self.view.window?.makeKeyAndVisible()
     }
-    */
+    
 }

@@ -20,10 +20,12 @@ class signInViewController: UIViewController {
     
     @IBOutlet weak var errorMsg: UILabel!
     
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 setUpForm()
-        // Do any additional setup after loading the view.
     }
     
     func setUpForm(){
@@ -31,19 +33,19 @@ setUpForm()
         errorMsg.alpha=0
         
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+   
+   func validateFields() -> String? {
+    if email.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || password.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+        return "فضلًا تأكد/ي من تبعئة جميع الخانات" }
+   return nil
     }
-    */
-
+     
     @IBAction func signInTapped(_ sender: Any) {
-        // validate feilds
-        
+        let validationError = validateFields()
+        if validationError != nil {
+            errorMsg.text = validationError
+            errorMsg.alpha=1
+            return  }
         // create clean version of fields
         let emailFeild = email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let pass = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -55,11 +57,41 @@ setUpForm()
             self.errorMsg.alpha=1
         }
         else{
+          
             let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.storyboard.homeViewController) as? homeViewController
             self.view.window?.rootViewController = homeViewController
             self.view.window?.makeKeyAndVisible()
         }
         
     }
+        
+        
 }
-}
+    
+// tooDo
+        @IBAction func resetPass(_ sender: Any) {
+        
+        Auth.auth().sendPasswordReset(withEmail: "reemalamlki98@gmail.com" ) { error in
+          // ...
+        }
+        }
+        
+        
+     }
+    /*
+     // code for passUserId
+    func passUserId(_ sender: Any) {
+        
+        
+        
+        
+       // performSegue(withIdentifier: "userId", sender: self)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! homeViewController
+        vc.userid = "Hi Reem"
+    }
+    */
+

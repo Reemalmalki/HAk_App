@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+//import FirebaseFirestore
+//import FirebaseFirestoreSwift
 
 class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, UIPickerViewDataSource  {
 
@@ -106,5 +108,8 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
                B1.setTitle(semester[row], for: .normal)
                 pickerView1.isHidden = true }
         }
-       
+    func addToDatabase(){
+        
+      // Firestore db = Firestore.firestore()
+    }
     }
