@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 class homeViewController: UIViewController {
     var userId = ""
     @IBOutlet weak var createClassroom: UIButton!
@@ -17,12 +18,17 @@ class homeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        let db = Firestore.firestore()
+        
+    
+        
+        
         label.alpha = 1
         if Auth.auth().currentUser != nil {
             let user = Auth.auth().currentUser
             userId = user!.uid
             
-            label.text = "User is signed in." + userId
+            label.text = "User is signed in."
           // ...
         } else {
           label.text = "No user is signed in."
