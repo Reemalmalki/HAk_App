@@ -11,37 +11,26 @@ import Firebase
 import FirebaseFirestore
 class homeViewController: UIViewController , UICollectionViewDelegate ,UICollectionViewDataSource {
     var userId = ""
-    var estimateWidth = 160.0
+    var estimateWidth = 140.0
     var cellMarginSize = 16.0
     @IBOutlet weak var createClassroom: UIButton!
     
     @IBOutlet weak var collectionView: UICollectionView!
-    //var data : [String] = []
-    //var dataImg :[UIImage] = []
-    var data = ["Reem1" , "Reem2" , "Reem3", "Reem4", "Reem5", "Reem6", "Reem6", "Reem6", "Reem6", "Reem6", "Reem6", "Reem6", "Reem6"]
-    var dataImg :[UIImage] = [
-    UIImage(named:"img1-1")!,
-    UIImage(named:"img1-1")!,
-    UIImage(named:"img1-1")!,
-    UIImage(named:"img1-1")!,
-    UIImage(named:"img1-1")!,
-    UIImage(named:"img1-1")!,
-    UIImage(named:"img1-1")!,
-    UIImage(named:"img1-1")!,
-    UIImage(named:"img1-1")!,
-    UIImage(named:"img1-1")!,
-    UIImage(named:"img1-1")!]
-
+var data : [String] = []
+var dataImg :[UIImage] = []
+var cellId :[String] = []
+    var selectedCell : String = ""
     
     @IBOutlet weak var classroomNameLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.getData()
        collectionView.delegate = self
        collectionView.dataSource = self
         let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.sectionInset = UIEdgeInsets(top: 2,left: 5,bottom: 2,right: 5 )
+        layout.sectionInset = UIEdgeInsets(top: 10,left: 5,bottom: 2,right: 5 )
         let width = self.calculateWith()
         layout.itemSize = CGSize(width: width, height: width)
         collectionView?.setCollectionViewLayout(layout, animated: false)
@@ -59,18 +48,21 @@ class homeViewController: UIViewController , UICollectionViewDelegate ,UICollect
                 .getDocuments() { (querySnapshot, err) in
                     if let err = err {
                         print("Error getting documents: \(err)")
-                    } else {
+                    } else {// No classrooom
                         if querySnapshot?.count == 0 {
                             
                          print("No classroom ")
-                            
                         }else {
                         for document in querySnapshot!.documents {
                             self.data.append(document.get("name") as! String)
                             self.dataImg.append(UIImage(named:"img1-1")!)
-                    
+                            self.cellId.append(document.get("id") as! String)
+
                             }
-                            
+                         
+                            DispatchQueue.main.async{
+                              self.collectionView.reloadData()
+                            }
                         }
                     }
             }
@@ -94,12 +86,15 @@ class homeViewController: UIViewController , UICollectionViewDelegate ,UICollect
               let cell = collectionView.cellForItem(at: indexPath)
               cell?.layer.borderColor = UIColor.lightGray.cgColor
               cell?.layer.borderWidth = 2
+            cell?.layer.borderColor = UIColor.gray.cgColor
+            self.selectedCell = cellId[indexPath.item]
           }
           
           func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
               let cell = collectionView.cellForItem(at: indexPath)
               cell?.layer.borderColor = UIColor.white.cgColor
               cell?.layer.borderWidth = 0.5
+            cell?.layer.borderColor = UIColor.gray.cgColor
           }
       
     

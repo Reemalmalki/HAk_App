@@ -309,6 +309,7 @@
                     <navigationItem key="navigationItem" title="الصفحة الرئيسية" largeTitleDisplayMode="always" id="9MY-T1-1sW"/>
                     <connections>
                         <outlet property="collectionView" destination="PZH-f6-ZeD" id="hDq-y7-y4f"/>
+                        <segue destination="J1h-Gn-pZN" kind="presentation" identifier="singleClass" modalPresentationStyle="fullScreen" id="l3J-em-8di"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mI6-pI-8xI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -329,7 +330,84 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pva-jW-3KF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5238" y="113"/>
+            <point key="canvasLocation" x="5241" y="96"/>
+        </scene>
+        <!--Single Class View Controller-->
+        <scene sceneID="HDr-Nh-1Lc">
+            <objects>
+                <viewController id="J1h-Gn-pZN" customClass="singleClassViewController" customModule="HAK_V1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="19s-q5-jyt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9cZ-v4-xTJ">
+                                <rect key="frame" x="40" y="84" width="334" height="259"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم الغرفة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPx-8g-Stn">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="٣٩٣٩" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wof-cQ-IcY">
+                                        <rect key="frame" x="0.0" y="20.5" width="334" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الباركود" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcH-tL-mo6">
+                                        <rect key="frame" x="0.0" y="41" width="334" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pwx-Zj-QLi">
+                                        <rect key="frame" x="0.0" y="61.5" width="334" height="197.5"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Yth-cC-DtN">
+                                <rect key="frame" x="40" y="393" width="334" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMv-2G-SYW">
+                                        <rect key="frame" x="0.0" y="0.0" width="237" height="110"/>
+                                        <state key="normal" title="قائمة الالعاب"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FwM-lv-ITe">
+                                        <rect key="frame" x="257" y="0.0" width="77" height="110"/>
+                                        <state key="normal" title="قائمة الطلاب"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E4Q-E3-bim">
+                                <rect key="frame" x="40" y="752" width="334" height="30"/>
+                                <state key="normal" title="حذف الغرفة"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hZx-xW-TjL" firstAttribute="trailing" secondItem="E4Q-E3-bim" secondAttribute="trailing" constant="40" id="JbG-GS-EF0"/>
+                            <constraint firstItem="9cZ-v4-xTJ" firstAttribute="top" secondItem="hZx-xW-TjL" secondAttribute="top" constant="40" id="PCg-HB-zVx"/>
+                            <constraint firstItem="hZx-xW-TjL" firstAttribute="bottom" secondItem="E4Q-E3-bim" secondAttribute="bottom" constant="80" id="SsY-AY-Zgw"/>
+                            <constraint firstItem="hZx-xW-TjL" firstAttribute="bottom" secondItem="Yth-cC-DtN" secondAttribute="bottom" constant="359" id="Ua3-cr-Xle"/>
+                            <constraint firstItem="9cZ-v4-xTJ" firstAttribute="leading" secondItem="hZx-xW-TjL" secondAttribute="leading" constant="40" id="bYM-nN-5Mo"/>
+                            <constraint firstItem="hZx-xW-TjL" firstAttribute="trailing" secondItem="9cZ-v4-xTJ" secondAttribute="trailing" constant="40" id="bqG-sj-jHz"/>
+                            <constraint firstItem="Yth-cC-DtN" firstAttribute="centerY" secondItem="19s-q5-jyt" secondAttribute="centerY" id="frd-XN-K7Z"/>
+                            <constraint firstItem="E4Q-E3-bim" firstAttribute="leading" secondItem="hZx-xW-TjL" secondAttribute="leading" constant="40" id="hEl-ff-kW7"/>
+                            <constraint firstItem="Yth-cC-DtN" firstAttribute="leading" secondItem="hZx-xW-TjL" secondAttribute="leading" constant="40" id="iix-55-ziA"/>
+                            <constraint firstItem="hZx-xW-TjL" firstAttribute="trailing" secondItem="Yth-cC-DtN" secondAttribute="trailing" constant="40" id="nj0-SC-mmi"/>
+                            <constraint firstItem="Yth-cC-DtN" firstAttribute="top" secondItem="9cZ-v4-xTJ" secondAttribute="bottom" constant="50" id="wtP-dQ-aYG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hZx-xW-TjL"/>
+                    </view>
+                    <connections>
+                        <outlet property="QRImg" destination="Pwx-Zj-QLi" id="5Qp-6L-3nk"/>
+                        <outlet property="classIdLabel" destination="wof-cQ-IcY" id="u9S-cw-oSV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jzs-at-3y2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4124.6376811594209" y="-593.30357142857144"/>
         </scene>
         <!--Created Classroom View Controller-->
         <scene sceneID="Oa0-gM-24v">
