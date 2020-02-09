@@ -9,34 +9,100 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
-class homeViewController: UIViewController {
+class homeViewController: UIViewController , UICollectionViewDelegate ,UICollectionViewDataSource {
     var userId = ""
+    var estimateWidth = 160.0
+    var cellMarginSize = 16.0
     @IBOutlet weak var createClassroom: UIButton!
     
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
+    //var data : [String] = []
+    //var dataImg :[UIImage] = []
+    var data = ["Reem1" , "Reem2" , "Reem3", "Reem4", "Reem5", "Reem6", "Reem6", "Reem6", "Reem6", "Reem6", "Reem6", "Reem6", "Reem6"]
+    var dataImg :[UIImage] = [
+    UIImage(named:"img1-1")!,
+    UIImage(named:"img1-1")!,
+    UIImage(named:"img1-1")!,
+    UIImage(named:"img1-1")!,
+    UIImage(named:"img1-1")!,
+    UIImage(named:"img1-1")!,
+    UIImage(named:"img1-1")!,
+    UIImage(named:"img1-1")!,
+    UIImage(named:"img1-1")!,
+    UIImage(named:"img1-1")!,
+    UIImage(named:"img1-1")!]
+
+    
+    @IBOutlet weak var classroomNameLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        let db = Firestore.firestore()
-        
-    
-        
-        
-        label.alpha = 1
-        if Auth.auth().currentUser != nil {
-            let user = Auth.auth().currentUser
-            userId = user!.uid
+       collectionView.delegate = self
+       collectionView.dataSource = self
+        let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.sectionInset = UIEdgeInsets(top: 2,left: 5,bottom: 2,right: 5 )
+        let width = self.calculateWith()
+        layout.itemSize = CGSize(width: width, height: width)
+        collectionView?.setCollectionViewLayout(layout, animated: false)
+   
             
-            label.text = "User is signed in."
-          // ...
-        } else {
-          label.text = "No user is signed in."
-          // ...
-        }
+        
     }
+        func getData(){
+            let db = Firestore.firestore()
+                
+                if Auth.auth().currentUser != nil {
+                    let user = Auth.auth().currentUser
+                    userId = user!.uid
+            db.collection("sciences").whereField("teacherId", isEqualTo: userId)
+                .getDocuments() { (querySnapshot, err) in
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else {
+                        if querySnapshot?.count == 0 {
+                            
+                         print("No classroom ")
+                            
+                        }else {
+                        for document in querySnapshot!.documents {
+                            self.data.append(document.get("name") as! String)
+                            self.dataImg.append(UIImage(named:"img1-1")!)
+                    
+                            }
+                            
+                        }
+                    }
+            }
+        }
     
-
+       }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return data.count    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
+        cell.className.text = data[indexPath.item]
+        cell.image.image = dataImg[indexPath.item]
+        cell.layer.borderColor = UIColor.white.cgColor
+        cell.layer.borderWidth = 0.5
+        cell.layer.borderColor = UIColor.gray.cgColor
+        return cell
+    }
+  
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+              let cell = collectionView.cellForItem(at: indexPath)
+              cell?.layer.borderColor = UIColor.lightGray.cgColor
+              cell?.layer.borderWidth = 2
+          }
+          
+          func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+              let cell = collectionView.cellForItem(at: indexPath)
+              cell?.layer.borderColor = UIColor.white.cgColor
+              cell?.layer.borderWidth = 0.5
+          }
+      
+    
     
     @IBAction func onClick(_ sender: UIButton) {
         
@@ -44,5 +110,14 @@ class homeViewController: UIViewController {
         self.view.window?.rootViewController = createdClassroomViewController
         self.view.window?.makeKeyAndVisible()
     }
-    
+    func calculateWith() -> CGFloat {
+        let estimatedWidth = CGFloat(estimateWidth)
+        let cellCount = floor(CGFloat(self.view.frame.size.width / estimatedWidth))
+        
+        let margin = CGFloat(cellMarginSize * 2)
+        let width = (self.view.frame.size.width - CGFloat(cellMarginSize) * (cellCount - 1) - margin) / cellCount
+        
+        return width
+    }
 }
+

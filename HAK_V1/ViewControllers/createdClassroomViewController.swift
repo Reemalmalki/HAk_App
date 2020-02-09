@@ -19,6 +19,8 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
     var teacherId = Auth.auth().currentUser?.uid
     var ID = ""
     
+    @IBOutlet weak var IdLabel: UILabel!
+    
     @IBOutlet weak var successView: UIView!
     
     @IBOutlet weak var B1: UIButton!
@@ -118,11 +120,13 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
     @IBAction func selectCreate(_ sender: Any) {
         if  getUniqueId() == false && addToDatabase() == false  {
             self.errorLabel.alpha = 1 }
-            else{}
-             //successView.isHidden = false
+        else{
+             successView.isHidden = false
             // move to other screen
+        IdLabel.text = self.uniqueId
+        
             
-    }
+    }}
     
     // validation
     

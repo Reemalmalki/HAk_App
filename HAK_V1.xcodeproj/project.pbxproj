@@ -12,6 +12,7 @@
 		2F85EFF6833A3D6B88F13099 /* Pods_HAK_V1_HAK_V1UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DB5A9926FE875F897F83177 /* Pods_HAK_V1_HAK_V1UITests.framework */; };
 		87FA10D576639278B3111FBC /* Pods_HAK_V1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F41D8C5FF59F5832766B0BD /* Pods_HAK_V1.framework */; };
 		B8A53FB9319C1CD0963E8613 /* Pods_HAK_V1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 809CC4ADB418F69F3C0EA3BF /* Pods_HAK_V1Tests.framework */; };
+		F80F6AB123EF18900020C81E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80F6AB023EF18900020C81E /* CollectionViewCell.swift */; };
 		F8BDB9FD23E017F900D5714D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDB9FC23E017F900D5714D /* Constants.swift */; };
 		F8BDB9FF23E01C0000D5714D /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDB9FE23E01C0000D5714D /* Styles.swift */; };
 		F8BDBA0323E6B1AC00D5714D /* createClassroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDBA0223E6B1AC00D5714D /* createClassroomViewController.swift */; };
@@ -59,6 +60,7 @@
 		B4DC0C9A5689E8A9A0FC6E34 /* Pods-HAK_V1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAK_V1.release.xcconfig"; path = "Target Support Files/Pods-HAK_V1/Pods-HAK_V1.release.xcconfig"; sourceTree = "<group>"; };
 		B6B5DB408D11D489ADC75542 /* Pods-HAK_V1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAK_V1Tests.debug.xcconfig"; path = "Target Support Files/Pods-HAK_V1Tests/Pods-HAK_V1Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C7F04EB26167AFB89271740F /* Pods-HAK_V1-HAK_V1UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAK_V1-HAK_V1UITests.release.xcconfig"; path = "Target Support Files/Pods-HAK_V1-HAK_V1UITests/Pods-HAK_V1-HAK_V1UITests.release.xcconfig"; sourceTree = "<group>"; };
+		F80F6AB023EF18900020C81E /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		F8BDB9FC23E017F900D5714D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F8BDB9FE23E01C0000D5714D /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		F8BDBA0223E6B1AC00D5714D /* createClassroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createClassroomViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				F8E2EA9C23DD93120025DBF4 /* signUpViewController.swift */,
 				F8BDBA0223E6B1AC00D5714D /* createClassroomViewController.swift */,
 				F8C0595123E9DA3B00D051BE /* createdClassroomViewController.swift */,
+				F80F6AB023EF18900020C81E /* CollectionViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 			files = (
 				F8E2EA6D23DD82D50025DBF4 /* ViewController.swift in Sources */,
 				F8BDBA0323E6B1AC00D5714D /* createClassroomViewController.swift in Sources */,
+				F80F6AB123EF18900020C81E /* CollectionViewCell.swift in Sources */,
 				F8E2EA6923DD82D50025DBF4 /* AppDelegate.swift in Sources */,
 				F8E2EA9D23DD93120025DBF4 /* signUpViewController.swift in Sources */,
 				F8BDB9FF23E01C0000D5714D /* Styles.swift in Sources */,
