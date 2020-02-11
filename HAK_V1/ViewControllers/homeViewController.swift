@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseFirestore
-class homeViewController: UIViewController , UICollectionViewDelegate ,UICollectionViewDataSource {
+class homeViewController: BaseViewController, UICollectionViewDelegate ,UICollectionViewDataSource {
     var userId = ""
     var estimateWidth = 140.0
     var cellMarginSize = 16.0
@@ -26,6 +26,7 @@ var cellId :[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSlideMenuButton()
         self.getData()
        collectionView.delegate = self
        collectionView.dataSource = self
@@ -33,7 +34,7 @@ var cellId :[String] = []
         layout.sectionInset = UIEdgeInsets(top: 10,left: 5,bottom: 2,right: 5 )
         let width = self.calculateWith()
         layout.itemSize = CGSize(width: width, height: width)
-        collectionView?.setCollectionViewLayout(layout, animated: false)
+        collectionView?.setCollectionViewLayout(layout, animated: false) //was false
    
             
         
