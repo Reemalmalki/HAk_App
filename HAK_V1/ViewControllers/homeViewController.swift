@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseFirestore
+import FirebaseAuth
+import FirebaseDatabase
 class homeViewController: BaseViewController, UICollectionViewDelegate ,UICollectionViewDataSource {
     var userId = ""
     var estimateWidth = 140.0
@@ -25,51 +25,49 @@ var cellId :[String] = []
     
     
     override func viewDidLoad() {
+        if UserDefaults.standard.bool(forKey: "IsUserSignedIn") == false {            
+// go login
+        }
         super.viewDidLoad()
-        addSlideMenuButton()
+        addSlideMenuButton()        
         self.getData()
+        
        collectionView.delegate = self
        collectionView.dataSource = self
         let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.sectionInset = UIEdgeInsets(top: 10,left: 5,bottom: 2,right: 5 )
         let width = self.calculateWith()
         layout.itemSize = CGSize(width: width, height: width)
-        collectionView?.setCollectionViewLayout(layout, animated: false) //was false
-   
-            
-        
+        collectionView?.setCollectionViewLayout(layout, animated: true) //was false
     }
-        func getData(){
-            let db = Firestore.firestore()
-                
-                if Auth.auth().currentUser != nil {
-                    let user = Auth.auth().currentUser
-                    userId = user!.uid
-            db.collection("sciences").whereField("teacherId", isEqualTo: userId)
-                .getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                    } else {// No classrooom
-                        if querySnapshot?.count == 0 {
-                            
-                         print("No classroom ")
-                        }else {
-                        for document in querySnapshot!.documents {
-                            self.data.append(document.get("name") as! String)
-                            self.dataImg.append(UIImage(named:"img1-1")!)
-                            self.cellId.append(document.get("id") as! String)
-
-                            }
-                         
-                            DispatchQueue.main.async{
-                              self.collectionView.reloadData()
-                            }
-                        }
-                    }
-            }
-        }
     
-       }
+        func getData(){
+            if Auth.auth().currentUser != nil {
+                let user = Auth.auth().currentUser
+                userId = user!.uid }
+            // db ref
+            let ref = Database.database().reference().child("sciences").child(userId)
+              // query + set data
+                    ref.observe(.value) { snapshot in
+                        
+                        if snapshot.childrenCount == 0 {
+                            let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+                            label.center = self.view.center
+                            label.textAlignment = .center
+                            label.text = "لا يوجد غرف دراسية مضافة"
+                            self.view.addSubview(label)
+                        }else{
+                        for case let child as DataSnapshot in snapshot.children {
+                        if let value = child.value as? [String:AnyObject]{
+                        self.data.append(value["name"] as! String)
+                        self.dataImg.append(UIImage(named:"img1-1")!)
+                        self.cellId.append(value["id"] as! String)}
+                        } // end for
+                        }// end else
+                        DispatchQueue.main.async{
+                        self.collectionView.reloadData()}
+                        }// end ret
+           }// end method getData
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.count    }
     
@@ -89,13 +87,20 @@ var cellId :[String] = []
               cell?.layer.borderWidth = 2
             cell?.layer.borderColor = UIColor.gray.cgColor
             self.selectedCell = cellId[indexPath.item]
+            performSegue(withIdentifier: "singleClass", sender: self)
           }
-          
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! singleClassViewController
+        vc.classId = self.selectedCell
+        vc.userId = self.userId
+    }
+    
           func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
               let cell = collectionView.cellForItem(at: indexPath)
               cell?.layer.borderColor = UIColor.white.cgColor
               cell?.layer.borderWidth = 0.5
             cell?.layer.borderColor = UIColor.gray.cgColor
+            
           }
       
     
@@ -115,5 +120,7 @@ var cellId :[String] = []
         
         return width
     }
+    
+   
 }
 

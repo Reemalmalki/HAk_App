@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseDatabase
 import FirebaseAuth
 
 
@@ -37,7 +37,9 @@ setUpForm()
     func setUpForm(){
         //hide error msg
         errorMsg.alpha=0
-        
+        errorMsg.numberOfLines = 3
+        errorMsg.adjustsFontSizeToFitWidth = true
+        errorMsg.minimumScaleFactor = 0.5
         
     }
     
@@ -62,17 +64,17 @@ setUpForm()
         
         if name.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || email.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || nationalId.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || password.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || confirmPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
     
-            return "فضلًا تأكد/ي من تبعئة جميع الخانات"
+            return "فضلًا تأكد من تبعئة جميع الخانات"
             
         }
         
         
         
-        let cleanedPassword = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+       let cleanedPassword = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        if Utilities.isPasswordValid(cleanedPassword) == false {
+        if cleanedPassword.count < 6 {
             
-            return "يجب أن تكون كلمة المرور  مكونة على الأقل من ٨ أحرف وتحتوي على الأقل أحد الرموز الخاصة التالية $@$#!%*?&"
+            return "يجب أن تكون كلمة المرور  مكونة على الأقل من ٦ أحرف "
             
         }
         
@@ -86,12 +88,38 @@ setUpForm()
         if nationalId.text!.count != 10   {
             return "يجب أن يتكون رقم الهوية الوطنية من ١٠ ارقام ويبدأ ب ١ أو ٢"
         }
+        if isValidEmailAddress(emailAddressString: email.text!) == false {
+            return "فضلاً تاكد من البريد الالكتدوني"
 
+        }
 
         return  nil
         
     }
+    func isValidEmailAddress(emailAddressString: String) -> Bool {
+        
+        var returnValue = true
+        let emailRegEx = "[A-Z0-9a-z.-_]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,3}"
+        
+        do {
+            let regex = try NSRegularExpression(pattern: emailRegEx)
+            let nsString = emailAddressString as NSString
+            let results = regex.matches(in: emailAddressString, range: NSRange(location: 0, length: nsString.length))
+            
+            if results.count == 0
+            {
+                returnValue = false
+            }
+            
+        } catch let error as NSError {
+            returnValue = false
+        }
+        
+        return  returnValue
+    }
 
+    
+    
     @IBAction func signUpTapped(_ sender: Any) {
         
         
@@ -119,25 +147,27 @@ setUpForm()
         if err != nil {
                           
                           // There was an error creating the user
-            self.showError("Error creating user")
+            self.showError("لم يتم التسجيل بنجاح ! حاول مرة اخرى auth")
                       }
         else {
             // User was created successfully, now store the first name and last name
-                          let db = Firestore.firestore()
-                          
-            db.collection("teachers").addDocument(data: ["name":name_, "email":emailText, "nationalID":nationalId_, "uid": result!.user.uid ]) { (error) in
+            let ref = Database.database().reference().child("teachers")
+            ref.child(result!.user.uid).setValue(["name":name_, "email":emailText , "nationalID":nationalId_]) { (error, DatabaseReference) in
                               
-                              if error != nil {
+            if error != nil {
                                   // Show error message
-                                  self.showError("Error saving user data")
-                              }
-                          }
-                          
-                          // Transition to the home screen
-                          //self.transitionToHome()
+            self.showError("لم يتم التسجيل بنجاح ! حاول مرة اخرى ")
+                              
+            } else {
+                // go to home
+                UserDefaults.standard.set(true, forKey: "IsUserSignedIn")
+                UserDefaults.standard.synchronize()
+                let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.storyboard.homeViewController) as? homeViewController
+                           self.view.window?.rootViewController = homeViewController
+                           self.view.window?.makeKeyAndVisible()
+            }
             
-            
-                }
+            }
         }
         
         
@@ -147,5 +177,6 @@ setUpForm()
 
     
     
+}
 }
 }

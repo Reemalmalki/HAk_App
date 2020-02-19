@@ -7,22 +7,15 @@
 //
 
 import UIKit
-import Firebase
-import FirebaseFirestore
-
+import FirebaseAuth
+import FirebaseDatabase
+import FirebaseStorage
 class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, UIPickerViewDataSource  {
-    let db = Firestore.firestore()
     var selectedSubject = ""
     var selectedLevel = ""
     var selectedSeme = ""
     var uniqueId = ""
     var teacherId = Auth.auth().currentUser?.uid
-    var ID = ""
-    
-    @IBOutlet weak var IdLabel: UILabel!
-    
-    @IBOutlet weak var successView: UIView!
-    
     @IBOutlet weak var B1: UIButton!
     @IBOutlet weak var B2: UIButton!
     @IBOutlet weak var B3: UIButton!
@@ -52,10 +45,13 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
     let subjects = ["اختر المادة","العلوم"]
     let levels = ["اختر المرحلة" , "رابع ابتدائي"]
     let semester = [ "الفصل الدراسي الاول","الفصل الدراسي الثاني" ]
-
+    var sharedResourse = [String]()
+   
+    
+    let semaphore = DispatchSemaphore(value: 1)
+    let queue = DispatchQueue.global(qos: .background)
     override func viewDidLoad() {
         super.viewDidLoad()
-        successView.isHidden = true
         self.errorLabel.text = ""
         self.errorLabel.alpha = 0
         pickerView1.isHidden = true
@@ -67,10 +63,17 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
         pickerView2.delegate = self
         pickerView3.dataSource = self
         pickerView3.delegate = self
+        let ref = Database.database().reference().child("sciences")
+                  ref.observeSingleEvent(of: DataEventType.value) { (DataSnapshot) in
+                   if DataSnapshot.exists(){
+                      let value = DataSnapshot.value as? NSDictionary
+                     var id = Int(value?["idIncremental"] as! String)!
+                    id = id + 1
+                       self.uniqueId = String(id)
+                    }}
     }
     
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{ return 1}
-     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
             
            
@@ -113,61 +116,111 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
             }else  if pickerView == pickerView3 {
                B3.setTitle(semester[row], for: .normal)
                 selectedSeme=semester[row]
-                pickerView1.isHidden = true }
+                pickerView3.isHidden = true }
         }
     
     
     @IBAction func selectCreate(_ sender: Any) {
-        if  getUniqueId() == false && addToDatabase() == false  {
-            self.errorLabel.alpha = 1 }
-        else{
-             successView.isHidden = false
-            // move to other screen
-        IdLabel.text = self.uniqueId
-        
-            
-    }}
+       var done = false
+       let qr = qrCode()
+        //if URL == "" {done = false}
+               let ref = Database.database().reference().child("sciences")
+               ref.child(teacherId as! String).childByAutoId().setValue(["id" : "", "subject":selectedSubject ,  "level":selectedLevel,"semester":selectedSeme, "name":className.text as Any ,  "uniqueId" : self.uniqueId , "teacherId":teacherId]) { (Error, DatabaseReference) in
+                   if Error != nil {
+                       self.errorLabel.text = "لم يتم إنشاء الغرفة بنجاح"
+                    self.errorLabel.alpha = 1
+                    done = false
+                   }else {
+                  
+                       DatabaseReference.updateChildValues(["uniqueId" : self.uniqueId ])
+                       DatabaseReference.updateChildValues(["id" : DatabaseReference.key!  ])
+                       ref.updateChildValues(["idIncremental" : self.uniqueId ])
+                    qr.uploadImg(uniqueId: self.uniqueId , userId : self.teacherId! , classId : DatabaseReference.key!  )
+                                  }
+               }
+       
+    }// end method 
+    }// end class
     
-    // validation
     
-    
-    
-    
-    
-    
-    
-    // backend
-    
-    func addToDatabase() -> Bool {
-        var done = false
-        let newDoucument =  self.db.collection("sciences").document()
-        ID = newDoucument.documentID
-        newDoucument.setData(["id" : ID, "subject":selectedSubject ,  "level":selectedLevel,"semester":selectedSeme, "name":className.text as Any ,  "uniqeId" : self.uniqueId , "teacherId":teacherId]) { (error) in
-            if error != nil {
+  /*  func addToDatabase() -> Bool {
+        let qr = qrCode()
+        let URL : String = qr.uploadImg(uniqueId: self.uniqueId , id : teacherId!)
+        if URL == "" {return false}
+        print(URL)
+        var done = true
+        let ref = Database.database().reference().child("sciences")
+        ref.child(teacherId as! String).childByAutoId().setValue(["id" : "", "subject":selectedSubject ,  "level":selectedLevel,"semester":selectedSeme, "name":className.text as Any ,  "uniqueId" : self.uniqueId , "teacherId":teacherId]) { (Error, DatabaseReference) in
+            if Error != nil {
                 self.errorLabel.text = "لم يتم إنشاء الغرفة بنجاح"
-            } else {
-                done = true
-            }}
-        return done
-    }// end method
-        
-    
-    
-    func getUniqueId()-> Bool {
-        var done = false
-        self.db.collection("sciences").document("uniqeId").getDocument { (DocumentSnapshot, error) in
-            if error != nil {
-            self.errorLabel.text = "لم يتم إنشاء الغرفة بنجاح"
+                done = false
             }else {
-            var id = 0
-                id = Int((DocumentSnapshot?.get("id") as! NSString ).intValue)
-            id = id + 1
-                self.uniqueId = String(id)
-                self.db.collection("sciences").document(self.ID).updateData(["uniqeId" :self.uniqueId])
-                self.db.collection("sciences").document("uniqeId").updateData(["id" :self.uniqueId])
-        done = true
-                
-            }}
+                DatabaseReference.updateChildValues(["uniqueId" : self.uniqueId ])
+                DatabaseReference.updateChildValues(["url" : URL ])
+                DatabaseReference.updateChildValues(["id" : DatabaseReference.key!  ])
+                 ref.updateChildValues(["idIncremental" : self.uniqueId ])
+                done = true
+                           }
+        }
         return done
+       }// end method
+        */
+    
+    
+
+/*
+class QRcode : UIViewController {
+    
+    var teacherId :String = ""
+    var URL = ""
+    
+    required init?(coder: NSCoder) {
+        
     }
-}
+    
+    func uploadImg(uniqueId : String , id : String )-> String {
+    let imageName:String = String("\(uniqueId).png")
+        let image : UIImage = self.generateQRCode(from: uniqueId)!
+        let ref = Storage.storage().reference().child("sciences").child(self.teacherId).child(imageName)
+        // 1
+        let imageData = image.jpegData(compressionQuality: 0.1)!
+
+        // 2
+        ref.putData(imageData, metadata: nil, completion: { (metadata, error) in
+            
+            // 3
+            ref.downloadURL(completion: { (url, error) in
+                if let error = error {
+                    assertionFailure(error.localizedDescription)
+                   // return done
+                }
+                self.URL = url!.absoluteString
+           
+            })
+        })
+        return URL
+    }
+    
+    func generateQRCode(from string: String) -> UIImage? {
+        let data = string.data(using: String.Encoding.ascii)
+
+        if let filter = CIFilter(name: "CIQRCodeGenerator") {
+            filter.setValue(data, forKey: "inputMessage")
+            let transform = CGAffineTransform(scaleX: 3, y: 3)
+
+            if let output = filter.outputImage?.transformed(by: transform) {
+                let colorParameters = [
+                       "inputColor0": CIColor(color: UIColor.purple), // Foreground
+                       "inputColor1": CIColor(color: UIColor.clear) // Background
+                   ]
+                   let colored = output.applyingFilter("CIFalseColor", parameters: colorParameters)
+                return UIImage(ciImage: colored)
+            }
+        }
+
+        return nil
+    }
+    
+    
+}*/
+

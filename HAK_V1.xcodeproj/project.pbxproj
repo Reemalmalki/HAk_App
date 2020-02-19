@@ -32,6 +32,8 @@
 		F8E2EA9B23DD92F20025DBF4 /* signInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA9A23DD92F20025DBF4 /* signInViewController.swift */; };
 		F8E2EA9D23DD93120025DBF4 /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA9C23DD93120025DBF4 /* signUpViewController.swift */; };
 		F8E2EAA023DDB1490025DBF4 /* config_file_icon_72dp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8E2EA9F23DDB1490025DBF4 /* config_file_icon_72dp@2x.png */; };
+		F8EB381123FC8FBD009DAF81 /* qrCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB381023FC8FBD009DAF81 /* qrCode.swift */; };
+		F8EB381323FD542B009DAF81 /* successViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB381223FD542B009DAF81 /* successViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,9 +69,9 @@
 		C7F04EB26167AFB89271740F /* Pods-HAK_V1-HAK_V1UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAK_V1-HAK_V1UITests.release.xcconfig"; path = "Target Support Files/Pods-HAK_V1-HAK_V1UITests/Pods-HAK_V1-HAK_V1UITests.release.xcconfig"; sourceTree = "<group>"; };
 		F80F6AB023EF18900020C81E /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		F80F6AB223F0875A0020C81E /* singleClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = singleClassViewController.swift; sourceTree = "<group>"; };
+		F8AA963D23FBF62E002A8021 /* NViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NViewController.swift; sourceTree = "<group>"; };
 		F8BDB9FC23E017F900D5714D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F8BDB9FE23E01C0000D5714D /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
-		F8BDBA0223E6B1AC00D5714D /* createClassroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createClassroomViewController.swift; sourceTree = "<group>"; };
 		F8C0595123E9DA3B00D051BE /* createdClassroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createdClassroomViewController.swift; sourceTree = "<group>"; };
 		F8E2EA6523DD82D50025DBF4 /* HAK_V1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HAK_V1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8E2EA6823DD82D50025DBF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,8 @@
 		F8E2EA9A23DD92F20025DBF4 /* signInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInViewController.swift; sourceTree = "<group>"; };
 		F8E2EA9C23DD93120025DBF4 /* signUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
 		F8E2EA9F23DDB1490025DBF4 /* config_file_icon_72dp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "config_file_icon_72dp@2x.png"; sourceTree = "<group>"; };
+		F8EB381023FC8FBD009DAF81 /* qrCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = qrCode.swift; sourceTree = "<group>"; };
+		F8EB381223FD542B009DAF81 /* successViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = successViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,16 +216,18 @@
 		F8E2EA9E23DD931F0025DBF4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F8E2EA6C23DD82D50025DBF4 /* ViewController.swift */,
-				F8E2EA9823DD92CE0025DBF4 /* homeViewController.swift */,
-				F8E2EA9A23DD92F20025DBF4 /* signInViewController.swift */,
 				F8E2EA9C23DD93120025DBF4 /* signUpViewController.swift */,
-				F8BDBA0223E6B1AC00D5714D /* createClassroomViewController.swift */,
+				F8E2EA9A23DD92F20025DBF4 /* signInViewController.swift */,
 				F8C0595123E9DA3B00D051BE /* createdClassroomViewController.swift */,
+				F8E2EA9823DD92CE0025DBF4 /* homeViewController.swift */,
+				F8E2EA6C23DD82D50025DBF4 /* ViewController.swift */,
 				F80F6AB023EF18900020C81E /* CollectionViewCell.swift */,
 				106E0CEA23F28CF80087DA27 /* MenuViewController.swift */,
 				F80F6AB223F0875A0020C81E /* singleClassViewController.swift */,
 				106E0CEC23F28DAD0087DA27 /* BaseViewController.swift */,
+				F8AA963D23FBF62E002A8021 /* NViewController.swift */,
+				F8EB381023FC8FBD009DAF81 /* qrCode.swift */,
+				F8EB381223FD542B009DAF81 /* successViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -468,7 +474,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8E2EA6D23DD82D50025DBF4 /* ViewController.swift in Sources */,
-				F8BDBA0323E6B1AC00D5714D /* createClassroomViewController.swift in Sources */,
+				F8EB381323FD542B009DAF81 /* successViewController.swift in Sources */,
+				F8AA963E23FBF62E002A8021 /* NViewController.swift in Sources */,
 				F80F6AB123EF18900020C81E /* CollectionViewCell.swift in Sources */,
 				106E0CEB23F28CF80087DA27 /* MenuViewController.swift in Sources */,
 				F8E2EA6923DD82D50025DBF4 /* AppDelegate.swift in Sources */,
@@ -482,6 +489,7 @@
 				10C95CE123E9320D00E80EE9 /* Utilities.swift in Sources */,
 				F8E2EA9923DD92CE0025DBF4 /* homeViewController.swift in Sources */,
 				F8E2EA9B23DD92F20025DBF4 /* signInViewController.swift in Sources */,
+				F8EB381123FC8FBD009DAF81 /* qrCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

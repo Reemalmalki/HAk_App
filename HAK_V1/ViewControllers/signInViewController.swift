@@ -25,6 +25,9 @@ class signInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        
+     
 setUpForm()
     }
     
@@ -36,7 +39,7 @@ setUpForm()
    
    func validateFields() -> String? {
     if email.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || password.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
-        return "فضلًا تأكد/ي من تبعئة جميع الخانات" }
+        return "فضلًا تأكد من تبعئة جميع الخانات" }
    return nil
     }
      
@@ -57,7 +60,8 @@ setUpForm()
             self.errorMsg.alpha=1
         }
         else{
-          
+            UserDefaults.standard.set(true, forKey: "IsUserSignedIn")
+            UserDefaults.standard.synchronize()
             let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.storyboard.homeViewController) as? homeViewController
             self.view.window?.rootViewController = homeViewController
             self.view.window?.makeKeyAndVisible()
@@ -75,23 +79,9 @@ setUpForm()
           // ...
         }
         }
+   
         
-        
-     }
-    /*
-     // code for passUserId
-    func passUserId(_ sender: Any) {
-        
-        
-        
-        
-       // performSegue(withIdentifier: "userId", sender: self)
     }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! homeViewController
-        vc.userid = "Hi Reem"
-    }
-    */
+        
+     
 

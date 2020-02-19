@@ -11,10 +11,7 @@ import UIKit
 class ViewController: BaseViewController {
 
     
-    @IBOutlet weak var signUpB: UIButton!
-    
-    
-    @IBOutlet weak var signInB: UIButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
