@@ -16,9 +16,9 @@
 		B8A53FB9319C1CD0963E8613 /* Pods_HAK_V1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 809CC4ADB418F69F3C0EA3BF /* Pods_HAK_V1Tests.framework */; };
 		F80F6AB123EF18900020C81E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80F6AB023EF18900020C81E /* CollectionViewCell.swift */; };
 		F80F6AB323F0875A0020C81E /* singleClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80F6AB223F0875A0020C81E /* singleClassViewController.swift */; };
+		F8AA963E23FBF62E002A8021 /* NViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AA963D23FBF62E002A8021 /* NViewController.swift */; };
 		F8BDB9FD23E017F900D5714D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDB9FC23E017F900D5714D /* Constants.swift */; };
 		F8BDB9FF23E01C0000D5714D /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDB9FE23E01C0000D5714D /* Styles.swift */; };
-		F8BDBA0323E6B1AC00D5714D /* createClassroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDBA0223E6B1AC00D5714D /* createClassroomViewController.swift */; };
 		F8C0595223E9DA3B00D051BE /* createdClassroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C0595123E9DA3B00D051BE /* createdClassroomViewController.swift */; };
 		F8E2EA6923DD82D50025DBF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA6823DD82D50025DBF4 /* AppDelegate.swift */; };
 		F8E2EA6B23DD82D50025DBF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA6A23DD82D50025DBF4 /* SceneDelegate.swift */; };
