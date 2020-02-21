@@ -140,14 +140,10 @@ setUpForm()
    
     
             Auth.auth().createUser(withEmail: emailText, password: password.text!.trimmingCharacters(in: .whitespacesAndNewlines)) { (result, err) in
-
-     
-        
-        
         if err != nil {
                           
                           // There was an error creating the user
-            self.showError("لم يتم التسجيل بنجاح ! حاول مرة اخرى auth")
+            self.showError("لم يتم التسجيل بنجاح ! حاول مرة اخرى ")
                       }
         else {
             // User was created successfully, now store the first name and last name
@@ -168,10 +164,7 @@ setUpForm()
             }
             
             }
-        }
-        
-        
-        
+        } // end else
     }
     
 

@@ -50,7 +50,7 @@ var cellId :[String] = []
               // query + set data
                     ref.observe(.value) { snapshot in
                         
-                        if snapshot.childrenCount == 0 {
+                        if snapshot.exists() == false {
                             let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
                             label.center = self.view.center
                             label.textAlignment = .center
@@ -78,6 +78,8 @@ var cellId :[String] = []
         cell.layer.borderColor = UIColor.white.cgColor
         cell.layer.borderWidth = 0.5
         cell.layer.borderColor = UIColor.gray.cgColor
+        cell.layer.cornerRadius = 18
+         cell.layer.masksToBounds = true
         return cell
     }
   
@@ -88,11 +90,13 @@ var cellId :[String] = []
             cell?.layer.borderColor = UIColor.gray.cgColor
             self.selectedCell = cellId[indexPath.item]
             performSegue(withIdentifier: "singleClass", sender: self)
-          }
+            }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! singleClassViewController
         vc.classId = self.selectedCell
         vc.userId = self.userId
+       
+        
     }
     
           func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {

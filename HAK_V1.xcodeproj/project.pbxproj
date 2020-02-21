@@ -17,6 +17,10 @@
 		F80F6AB123EF18900020C81E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80F6AB023EF18900020C81E /* CollectionViewCell.swift */; };
 		F80F6AB323F0875A0020C81E /* singleClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80F6AB223F0875A0020C81E /* singleClassViewController.swift */; };
 		F8AA963E23FBF62E002A8021 /* NViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AA963D23FBF62E002A8021 /* NViewController.swift */; };
+		F8BC5CDC23FDCEDD00D9345E /* gamesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BC5CDB23FDCEDD00D9345E /* gamesCollectionViewCell.swift */; };
+		F8BC5CDE23FEDFE500D9345E /* gameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BC5CDD23FEDFE500D9345E /* gameViewController.swift */; };
+		F8BC5CE123FEEF8900D9345E /* studentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BC5CE023FEEF8900D9345E /* studentsListViewController.swift */; };
+		F8BC5CE323FF18F600D9345E /* studentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BC5CE223FF18F600D9345E /* studentCollectionViewCell.swift */; };
 		F8BDB9FD23E017F900D5714D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDB9FC23E017F900D5714D /* Constants.swift */; };
 		F8BDB9FF23E01C0000D5714D /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BDB9FE23E01C0000D5714D /* Styles.swift */; };
 		F8C0595223E9DA3B00D051BE /* createdClassroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C0595123E9DA3B00D051BE /* createdClassroomViewController.swift */; };
@@ -34,6 +38,7 @@
 		F8E2EAA023DDB1490025DBF4 /* config_file_icon_72dp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8E2EA9F23DDB1490025DBF4 /* config_file_icon_72dp@2x.png */; };
 		F8EB381123FC8FBD009DAF81 /* qrCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB381023FC8FBD009DAF81 /* qrCode.swift */; };
 		F8EB381323FD542B009DAF81 /* successViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB381223FD542B009DAF81 /* successViewController.swift */; };
+		F8EB381523FDC175009DAF81 /* gamesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB381423FDC175009DAF81 /* gamesListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +75,10 @@
 		F80F6AB023EF18900020C81E /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		F80F6AB223F0875A0020C81E /* singleClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = singleClassViewController.swift; sourceTree = "<group>"; };
 		F8AA963D23FBF62E002A8021 /* NViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NViewController.swift; sourceTree = "<group>"; };
+		F8BC5CDB23FDCEDD00D9345E /* gamesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gamesCollectionViewCell.swift; sourceTree = "<group>"; };
+		F8BC5CDD23FEDFE500D9345E /* gameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameViewController.swift; sourceTree = "<group>"; };
+		F8BC5CE023FEEF8900D9345E /* studentsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = studentsListViewController.swift; sourceTree = "<group>"; };
+		F8BC5CE223FF18F600D9345E /* studentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = studentCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8BDB9FC23E017F900D5714D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F8BDB9FE23E01C0000D5714D /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		F8C0595123E9DA3B00D051BE /* createdClassroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createdClassroomViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +102,7 @@
 		F8E2EA9F23DDB1490025DBF4 /* config_file_icon_72dp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "config_file_icon_72dp@2x.png"; sourceTree = "<group>"; };
 		F8EB381023FC8FBD009DAF81 /* qrCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = qrCode.swift; sourceTree = "<group>"; };
 		F8EB381223FD542B009DAF81 /* successViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = successViewController.swift; sourceTree = "<group>"; };
+		F8EB381423FDC175009DAF81 /* gamesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gamesListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,18 +226,23 @@
 		F8E2EA9E23DD931F0025DBF4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F8BC5CE223FF18F600D9345E /* studentCollectionViewCell.swift */,
+				F8BC5CDB23FDCEDD00D9345E /* gamesCollectionViewCell.swift */,
 				F8E2EA9C23DD93120025DBF4 /* signUpViewController.swift */,
 				F8E2EA9A23DD92F20025DBF4 /* signInViewController.swift */,
-				F8C0595123E9DA3B00D051BE /* createdClassroomViewController.swift */,
-				F8E2EA9823DD92CE0025DBF4 /* homeViewController.swift */,
-				F8E2EA6C23DD82D50025DBF4 /* ViewController.swift */,
 				F80F6AB023EF18900020C81E /* CollectionViewCell.swift */,
-				106E0CEA23F28CF80087DA27 /* MenuViewController.swift */,
+				F8C0595123E9DA3B00D051BE /* createdClassroomViewController.swift */,
+				F8EB381023FC8FBD009DAF81 /* qrCode.swift */,
+				F8BC5CDD23FEDFE500D9345E /* gameViewController.swift */,
 				F80F6AB223F0875A0020C81E /* singleClassViewController.swift */,
+				F8E2EA6C23DD82D50025DBF4 /* ViewController.swift */,
+				106E0CEA23F28CF80087DA27 /* MenuViewController.swift */,
 				106E0CEC23F28DAD0087DA27 /* BaseViewController.swift */,
 				F8AA963D23FBF62E002A8021 /* NViewController.swift */,
-				F8EB381023FC8FBD009DAF81 /* qrCode.swift */,
 				F8EB381223FD542B009DAF81 /* successViewController.swift */,
+				F8EB381423FDC175009DAF81 /* gamesListViewController.swift */,
+				F8E2EA9823DD92CE0025DBF4 /* homeViewController.swift */,
+				F8BC5CE023FEEF8900D9345E /* studentsListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -481,10 +496,15 @@
 				F8E2EA6923DD82D50025DBF4 /* AppDelegate.swift in Sources */,
 				106E0CED23F28DAD0087DA27 /* BaseViewController.swift in Sources */,
 				F8E2EA9D23DD93120025DBF4 /* signUpViewController.swift in Sources */,
+				F8BC5CDE23FEDFE500D9345E /* gameViewController.swift in Sources */,
 				F8BDB9FF23E01C0000D5714D /* Styles.swift in Sources */,
 				F8C0595223E9DA3B00D051BE /* createdClassroomViewController.swift in Sources */,
+				F8BC5CDC23FDCEDD00D9345E /* gamesCollectionViewCell.swift in Sources */,
+				F8BC5CE323FF18F600D9345E /* studentCollectionViewCell.swift in Sources */,
+				F8EB381523FDC175009DAF81 /* gamesListViewController.swift in Sources */,
 				F8E2EA6B23DD82D50025DBF4 /* SceneDelegate.swift in Sources */,
 				F80F6AB323F0875A0020C81E /* singleClassViewController.swift in Sources */,
+				F8BC5CE123FEEF8900D9345E /* studentsListViewController.swift in Sources */,
 				F8BDB9FD23E017F900D5714D /* Constants.swift in Sources */,
 				10C95CE123E9320D00E80EE9 /* Utilities.swift in Sources */,
 				F8E2EA9923DD92CE0025DBF4 /* homeViewController.swift in Sources */,

@@ -136,10 +136,18 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
                        DatabaseReference.updateChildValues(["id" : DatabaseReference.key!  ])
                        ref.updateChildValues(["idIncremental" : self.uniqueId ])
                     qr.uploadImg(uniqueId: self.uniqueId , userId : self.teacherId! , classId : DatabaseReference.key!  )
-                                  }
-               }
-       
-    }// end method 
+                   for i in 1..<6 {
+                    DatabaseReference.child("gamesList").child("game\(i)").child("status").setValue("closed")
+                    }
+                                  } // end for
+               }// ind else
+       let alert = UIAlertController(title: "Alert", message: "تم أنشاء الغرفة بنجاح", preferredStyle: .alert)
+             alert.addAction(UIAlertAction(title: "حسناً", style: .default, handler: { action in
+                 let Home = self.storyboard?.instantiateViewController(identifier: Constants.storyboard.homeViewController) as? homeViewController
+                        self.view.window?.rootViewController = Home
+                        self.view.window?.makeKeyAndVisible()
+             }))
+    }// end method
     }// end class
     
     
