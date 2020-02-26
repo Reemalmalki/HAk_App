@@ -16,6 +16,14 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
     var selectedSeme = ""
     var uniqueId = ""
     var teacherId = Auth.auth().currentUser?.uid
+    
+    @IBOutlet weak var subView: UIView!
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var classroomID: UILabel!
+    
+    
     @IBOutlet weak var B1: UIButton!
     @IBOutlet weak var B2: UIButton!
     @IBOutlet weak var B3: UIButton!
@@ -42,9 +50,9 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
         if pickerView2.isHidden == false { pickerView2.isHidden = true }
     }
     
-    let subjects = ["اختر المادة","العلوم"]
-    let levels = ["اختر المرحلة" , "رابع ابتدائي"]
-    let semester = [ "الفصل الدراسي الاول","الفصل الدراسي الثاني" ]
+    let subjects = [ "", "العلوم" ]
+    let levels = [ "" ,  "رابع ابتدائي" ]
+    let semester = [ "" , "الفصل الدراسي الاول","الفصل الدراسي الثاني"  ]
     var sharedResourse = [String]()
    
     
@@ -52,6 +60,7 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
     let queue = DispatchQueue.global(qos: .background)
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.subView.isHidden = true
         self.errorLabel.text = ""
         self.errorLabel.alpha = 0
         pickerView1.isHidden = true
@@ -121,8 +130,16 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
     
     
     @IBAction func selectCreate(_ sender: Any) {
+        if self.selectedSubject == "" || self.selectedLevel == "" || self.selectedSeme == "" || className.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""  {
+            
+            self.errorLabel.text = "الرجاء تعبئة جميع الحقول"
+            self.errorLabel.alpha = 1
+            
+            
+        } else {
        var done = false
        let qr = qrCode()
+            var image : UIImage = UIImage()
         //if URL == "" {done = false}
                let ref = Database.database().reference().child("sciences")
                ref.child(teacherId as! String).childByAutoId().setValue(["id" : "", "subject":selectedSubject ,  "level":selectedLevel,"semester":selectedSeme, "name":className.text as Any ,  "uniqueId" : self.uniqueId , "teacherId":teacherId]) { (Error, DatabaseReference) in
@@ -135,100 +152,59 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
                        DatabaseReference.updateChildValues(["uniqueId" : self.uniqueId ])
                        DatabaseReference.updateChildValues(["id" : DatabaseReference.key!  ])
                        ref.updateChildValues(["idIncremental" : self.uniqueId ])
-                    qr.uploadImg(uniqueId: self.uniqueId , userId : self.teacherId! , classId : DatabaseReference.key!  )
+                    image = qr.uploadImg(uniqueId: self.uniqueId , userId : self.teacherId! , classId : DatabaseReference.key!)
                    for i in 1..<6 {
                     DatabaseReference.child("gamesList").child("game\(i)").child("status").setValue("closed")
-                    }
+                    
                                   } // end for
-               }// ind else
-       let alert = UIAlertController(title: "Alert", message: "تم أنشاء الغرفة بنجاح", preferredStyle: .alert)
+              
+                    self.subView.isHidden = false
+                    self.imageView.image = image
+                    self.classroomID.text = self.uniqueId
+                    self.view.addSubview(self.subView)
+                    
+                    
+                    
+                    
+        /* let showAlert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+           let imageView = UIImageView(frame: CGRect(x: 10, y: 50, width: 250, height: 230))
+            imageView.image = image  // Your image here...
+            showAlert.view.addSubview(imageView)
+                let imageViewIcone = UIImageView(frame: CGRect(x: 80, y: 0 , width: 100, height: 100))
+               imageViewIcone.image = UIImage(named:"icons8-lock-50")
+               showAlert.view.addSubview(imageViewIcone)
+                    
+                    
+            let height = NSLayoutConstraint(item: showAlert.view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 320)
+            let width = NSLayoutConstraint(item: showAlert.view, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 250)
+            showAlert.view.addConstraint(height)
+            showAlert.view.addConstraint(width)
+            showAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                // your actions here...
+            }))
+            self.present(showAlert, animated: true, completion: nil)*/
+            
+            
+            
+            
+      /* let alert = UIAlertController(title: "تم", message: "تم أنشاء الغرفة بنجاح", preferredStyle: .alert)
              alert.addAction(UIAlertAction(title: "حسناً", style: .default, handler: { action in
                  let Home = self.storyboard?.instantiateViewController(identifier: Constants.storyboard.homeViewController) as? homeViewController
                         self.view.window?.rootViewController = Home
                         self.view.window?.makeKeyAndVisible()
              }))
-    }// end method
-    }// end class
-    
-    
-  /*  func addToDatabase() -> Bool {
-        let qr = qrCode()
-        let URL : String = qr.uploadImg(uniqueId: self.uniqueId , id : teacherId!)
-        if URL == "" {return false}
-        print(URL)
-        var done = true
-        let ref = Database.database().reference().child("sciences")
-        ref.child(teacherId as! String).childByAutoId().setValue(["id" : "", "subject":selectedSubject ,  "level":selectedLevel,"semester":selectedSeme, "name":className.text as Any ,  "uniqueId" : self.uniqueId , "teacherId":teacherId]) { (Error, DatabaseReference) in
-            if Error != nil {
-                self.errorLabel.text = "لم يتم إنشاء الغرفة بنجاح"
-                done = false
-            }else {
-                DatabaseReference.updateChildValues(["uniqueId" : self.uniqueId ])
-                DatabaseReference.updateChildValues(["url" : URL ])
-                DatabaseReference.updateChildValues(["id" : DatabaseReference.key!  ])
-                 ref.updateChildValues(["idIncremental" : self.uniqueId ])
-                done = true
-                           }
-        }
-        return done
-       }// end method
-        */
-    
-    
-
-/*
-class QRcode : UIViewController {
-    
-    var teacherId :String = ""
-    var URL = ""
-    
-    required init?(coder: NSCoder) {
-        
-    }
-    
-    func uploadImg(uniqueId : String , id : String )-> String {
-    let imageName:String = String("\(uniqueId).png")
-        let image : UIImage = self.generateQRCode(from: uniqueId)!
-        let ref = Storage.storage().reference().child("sciences").child(self.teacherId).child(imageName)
-        // 1
-        let imageData = image.jpegData(compressionQuality: 0.1)!
-
-        // 2
-        ref.putData(imageData, metadata: nil, completion: { (metadata, error) in
-            
-            // 3
-            ref.downloadURL(completion: { (url, error) in
-                if let error = error {
-                    assertionFailure(error.localizedDescription)
-                   // return done
-                }
-                self.URL = url!.absoluteString
-           
-            })
-        })
-        return URL
-    }
-    
-    func generateQRCode(from string: String) -> UIImage? {
-        let data = string.data(using: String.Encoding.ascii)
-
-        if let filter = CIFilter(name: "CIQRCodeGenerator") {
-            filter.setValue(data, forKey: "inputMessage")
-            let transform = CGAffineTransform(scaleX: 3, y: 3)
-
-            if let output = filter.outputImage?.transformed(by: transform) {
-                let colorParameters = [
-                       "inputColor0": CIColor(color: UIColor.purple), // Foreground
-                       "inputColor1": CIColor(color: UIColor.clear) // Background
-                   ]
-                   let colored = output.applyingFilter("CIFalseColor", parameters: colorParameters)
-                return UIImage(ciImage: colored)
+            self.present(alert, animated: true, completion: nil) }*/
+            } //end else
             }
         }
-
-        return nil
+    }// end method
+  
+    @IBAction func moveToHome(_ sender: Any) {
+        // go home
     }
     
     
-}*/
+    }// end class
+    
+ 
 

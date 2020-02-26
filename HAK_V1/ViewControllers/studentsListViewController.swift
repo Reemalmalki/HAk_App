@@ -13,9 +13,12 @@ class studentsListViewController: UIViewController , UICollectionViewDelegate ,U
     var studentsNames : [String] = []
     var studentsScores : [Double] = []
     var studentsID : [String] = []
+    var studentsUniqueID : [String] = []
     var studentsFinishedGames : [String] = []
     var userId = ""
     var classId = ""
+    let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -33,29 +36,55 @@ class studentsListViewController: UIViewController , UICollectionViewDelegate ,U
     
     
     @IBAction func addStudent(_ sender: Any) {
-        var userUniqueId = ""
+    
+    var userUniqueId = ""
       // alter the user for the user id
-       
-        let alert = UIAlertController(title: "إضافة طالب", message: "الرجاء ادخال رقم الطالب الخاص", preferredStyle: .alert)
+        let alert = UIAlertController(title: "إضافة طالب", message: "الرجاء ادخال رقم الطالب الخاص الذي يتكون من ٥ ارقام فقط باللغة الانجليزية", preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "12345"
         }
         alert.addAction(UIAlertAction(title: "إلغاء", style: .destructive, handler: nil))
         alert.addAction(UIAlertAction(title: "تأكيد", style: .default, handler: { [weak alert] (_) in
             userUniqueId = (alert?.textFields![0].text)!
-          print(userUniqueId)
-           if userUniqueId.elementsEqual("") {
+            if userUniqueId.elementsEqual("") || userUniqueId.count > 6 {
                  let alert = UIAlertController(title:"لم تتم الاضافة" , message: "لم تتم الاضافة ، الرجاء المحاولة مرة اخرى", preferredStyle: .alert)
                      alert.addAction(UIAlertAction(title: "حسناً", style: .default, handler: nil))
-                      self.present(alert, animated: true, completion: nil) }
-        }))
+                self.present(alert, animated: true, completion: nil) } else {
+                var isExist = false
+                // student is already add
+                for id in self.studentsUniqueID {
+                    if userUniqueId == id {
+                        isExist = true
+                        let alert = UIAlertController(title:"لم تتم الاضافة" , message: "الطالب مضاف من قبل", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "حسناً", style: .default, handler: nil))
+                             self.present(alert, animated: true, completion: nil)
+                        break
+                    } // end if
+                
+                }// end for
+              if(isExist == false){
+                    // get the student id
+                    let userInfoRef = Database.database().reference().child("students")
+                                         userInfoRef.observe(.value) { snapshot in
+                                             if snapshot.exists() == false {
+                                                print(" exists enterd")
+                                        let alert = UIAlertController(title:"لم تتم الاضافة" , message: "لم تتم الاضافة ، الرجاء المحاولة مرة اخرى", preferredStyle: .alert)
+                                            alert.addAction(UIAlertAction(title: "حسناً", style: .default, handler: nil))
+                                            self.present(alert, animated: true, completion: nil)
+                                             }else{
+                                             for case let child as DataSnapshot in snapshot.children {
+                                             if let value = child.value as? [String:AnyObject]{
+                                                if(value["StudentId"] as! String == userUniqueId){
+                                           let ref = Database.database().reference().child("sciences").child(self.userId).child(self.classId).child("studentsList")
+                                                   ref.child(child.key).setValue(["progress" : "0"])}
+                                                self.label.isHidden = true
+                                                } // end if
+                                             }// end for
+                                            }}
+                } }// end else
+    }))
         self.present(alert, animated: true, completion: nil)
-       
-
         
-        // sarch for the user with that Id
-        // use the uer id ad id in student list
-        //succeseful message
     } // end addStudent
     
 
@@ -68,18 +97,75 @@ class studentsListViewController: UIViewController , UICollectionViewDelegate ,U
         let view = cell.nearestAncestor(ofType: UICollectionView.self),
         let indexPath = view.indexPath(for: cell)
         else { return }
+        let name = self.studentsNames[indexPath.item]
         // ref
+        
         let ref = Database.database().reference().child("sciences").child(userId).child(classId).child("studentsList").child(self.studentsID[indexPath.item])
         // alter
             let alert = UIAlertController(title: "تنبيه", message: "هل تريد تأكيد الحذف ؟", preferredStyle: .alert)
                    alert.addAction(UIAlertAction(title: "إلغاء", style: .destructive, handler: nil))
                   alert.addAction(UIAlertAction(title: " تأكيد", style: .default, handler: { action in
                       ref.removeValue()
+                    self.studentsID.remove(at: indexPath.item)
+                    self.studentsUniqueID.remove(at: indexPath.item)
+                    if self.studentsID.count == 0 {
+                      
+                        print("enterd if")
+                        var indexPaths = [IndexPath]()
+                        indexPaths.append(indexPath)
+                        self.collectionView?.deleteItems(at: indexPaths)
+                          self.label.isHidden = false
+                    }
+                    let alert = UIAlertController(title: "تم حذف الطالب", message: " الطالب\(name) تم حذفه من الغرفة ", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "حسنا", style: .destructive, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                   }))
                   self.present(alert, animated: true, completion: nil)
     }
     
   
+    @IBAction func rewardStudent(_ sender: Any) {
+        var point = ""
+             // alter the user for the user id
+        let alert = UIAlertController(title: "مكافأة طالب", message :"ادخل القيمة العددية التي تريد مكافأة الطالب بها وسيتم إضافتها الى نقاطه" , preferredStyle: .alert)
+               alert.addTextField { (textField) in
+                   textField.placeholder = "50"
+               }
+               alert.addAction(UIAlertAction(title: "إلغاء", style: .destructive, handler: nil))
+               alert.addAction(UIAlertAction(title: "تأكيد", style: .default, handler: { [weak alert] (_) in
+                   point = (alert?.textFields![0].text)!
+                   print("user interd "+point)
+                if point.elementsEqual("") || Double(point) == nil  {
+                        let alert = UIAlertController(title:"حاول مرة اخرى" , message: "تأكد من كتابة الرقم بشكل صحيح", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "حسناً", style: .default, handler: nil))
+                       self.present(alert, animated: true, completion: nil) } else {
+                       // get user Id
+
+                    guard
+                    let button = sender as? UIView,
+                    let cell = button.nearestAncestor(ofType: UICollectionViewCell.self),
+                    let view = cell.nearestAncestor(ofType: UICollectionView.self),
+                    let indexPath = view.indexPath(for: cell)
+                    else { return }
+                    let doublePoints = Double(point)! + self.studentsScores[indexPath.item]
+                           // update student points
+                    let userInfoRef = Database.database().reference().child("students").child(self.studentsID[indexPath.item])
+                    userInfoRef.updateChildValues(["Points":  doublePoints])
+                    self.studentsScores[indexPath.item] = doublePoints
+                    var indexPaths = [IndexPath]()
+                   indexPaths.append(indexPath)
+
+                    if let collectionView = self.collectionView {
+                        collectionView.reloadItems(at: indexPaths)
+                    }
+                     let alert = UIAlertController(title:"تم تقديم المكافأة بنجاح" , message: "تم تحديث نقاط الطالب", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "حسناً", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                        }// end else
+           }))
+        self.present(alert, animated: true, completion: nil)
+ 
+    } // endrewardStudent
     
     
     
@@ -97,7 +183,7 @@ class studentsListViewController: UIViewController , UICollectionViewDelegate ,U
       }
       
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return studentsNames.count    }
+        return studentsID.count    }
      
         func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "studentCell", for: indexPath) as! studentCollectionViewCell
@@ -108,7 +194,7 @@ class studentsListViewController: UIViewController , UICollectionViewDelegate ,U
             cell.finishedGames.text = studentsFinishedGames[indexPath.item]
             cell.layer.borderWidth = 0.5
             cell.layer.borderColor = UIColor.lightGray.cgColor
-
+          
             return cell
         }
        
@@ -135,12 +221,16 @@ class studentsListViewController: UIViewController , UICollectionViewDelegate ,U
               let userInfoRef = Database.database().reference().child("students")
                       ref.observe(.value) { snapshot in
                           if snapshot.exists() == false {
-                              let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-                              label.center = self.view.center
-                              label.textAlignment = .center
-                              label.text = "لا يوجد طلاب "
-                              self.view.addSubview(label)
+                            self.label.center = self.view.center
+                            self.label.textAlignment = .center
+                            self.label.text = "لا يوجد طلاب "
+                            self.view.addSubview(self.label)
                           }else{
+                            self.studentsID.removeAll()
+                            self.studentsScores.removeAll()
+                            self.studentsUniqueID.removeAll()
+                            self.studentsFinishedGames.removeAll()
+                             self.studentsNames.removeAll()
                           for case let child as DataSnapshot in snapshot.children {
                           if let value = child.value as? [String:AnyObject]{
                            self.studentsID.append(child.key )
@@ -155,9 +245,11 @@ class studentsListViewController: UIViewController , UICollectionViewDelegate ,U
                         group.enter()
                          userInfoRef.child(singleUser).observeSingleEvent(of: .value, with: { (snapshot) in
                         // Get user value
-                         let value = snapshot.value as? NSDictionary
-                        self.studentsNames.append(value?["name"] as! String)
-                        self.studentsScores.append(value?["score"] as! Double)
+                        let value = snapshot.value as? NSDictionary
+                        self.studentsNames.append(value?["Name"] as! String)
+                        self.studentsScores.append(value?["Points"] as! Double)
+                            self.studentsUniqueID.append(value?["StudentId"] as! String)
+
                         group.leave()
                        }) { (error) in
                         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
@@ -170,13 +262,12 @@ class studentsListViewController: UIViewController , UICollectionViewDelegate ,U
                      }
                                                  
                        group.notify(queue: .main) {
-                        for i in self.studentsNames {
-                            print(i)
+                        DispatchQueue.main.async{
+                        self.collectionView.reloadData()}
                         }
-                    DispatchQueue.main.async{
-                    self.collectionView.reloadData()}
+                    
                                                         
-                            }
+                            
                         }// end else
                           }// end ret
             

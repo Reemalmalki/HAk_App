@@ -37,7 +37,6 @@
 		F8E2EA9D23DD93120025DBF4 /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA9C23DD93120025DBF4 /* signUpViewController.swift */; };
 		F8E2EAA023DDB1490025DBF4 /* config_file_icon_72dp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8E2EA9F23DDB1490025DBF4 /* config_file_icon_72dp@2x.png */; };
 		F8EB381123FC8FBD009DAF81 /* qrCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB381023FC8FBD009DAF81 /* qrCode.swift */; };
-		F8EB381323FD542B009DAF81 /* successViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB381223FD542B009DAF81 /* successViewController.swift */; };
 		F8EB381523FDC175009DAF81 /* gamesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EB381423FDC175009DAF81 /* gamesListViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -101,7 +100,6 @@
 		F8E2EA9C23DD93120025DBF4 /* signUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signUpViewController.swift; sourceTree = "<group>"; };
 		F8E2EA9F23DDB1490025DBF4 /* config_file_icon_72dp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "config_file_icon_72dp@2x.png"; sourceTree = "<group>"; };
 		F8EB381023FC8FBD009DAF81 /* qrCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = qrCode.swift; sourceTree = "<group>"; };
-		F8EB381223FD542B009DAF81 /* successViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = successViewController.swift; sourceTree = "<group>"; };
 		F8EB381423FDC175009DAF81 /* gamesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gamesListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -233,16 +231,15 @@
 				F80F6AB023EF18900020C81E /* CollectionViewCell.swift */,
 				F8C0595123E9DA3B00D051BE /* createdClassroomViewController.swift */,
 				F8EB381023FC8FBD009DAF81 /* qrCode.swift */,
-				F8BC5CDD23FEDFE500D9345E /* gameViewController.swift */,
 				F80F6AB223F0875A0020C81E /* singleClassViewController.swift */,
 				F8E2EA6C23DD82D50025DBF4 /* ViewController.swift */,
 				106E0CEA23F28CF80087DA27 /* MenuViewController.swift */,
 				106E0CEC23F28DAD0087DA27 /* BaseViewController.swift */,
 				F8AA963D23FBF62E002A8021 /* NViewController.swift */,
-				F8EB381223FD542B009DAF81 /* successViewController.swift */,
+				F8BC5CDD23FEDFE500D9345E /* gameViewController.swift */,
 				F8EB381423FDC175009DAF81 /* gamesListViewController.swift */,
-				F8E2EA9823DD92CE0025DBF4 /* homeViewController.swift */,
 				F8BC5CE023FEEF8900D9345E /* studentsListViewController.swift */,
+				F8E2EA9823DD92CE0025DBF4 /* homeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -489,7 +486,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8E2EA6D23DD82D50025DBF4 /* ViewController.swift in Sources */,
-				F8EB381323FD542B009DAF81 /* successViewController.swift in Sources */,
 				F8AA963E23FBF62E002A8021 /* NViewController.swift in Sources */,
 				F80F6AB123EF18900020C81E /* CollectionViewCell.swift in Sources */,
 				106E0CEB23F28CF80087DA27 /* MenuViewController.swift in Sources */,
