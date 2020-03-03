@@ -137,6 +137,7 @@ getData()
             vc.gameId = self.selectedCell
             vc.userId = self.userId
             vc.status =  self.statusImg
+            vc.classId = self.classId
         
         }
         

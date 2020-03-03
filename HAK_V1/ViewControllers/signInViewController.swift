@@ -69,17 +69,42 @@ setUpForm()
         
     }
         
-        
-}
+    }
+
     
 // tooDo
         @IBAction func resetPass(_ sender: Any) {
+        let alert = UIAlertController(title: "نسيت كلمةالمرور؟", message: "ادخل البريد الإلكتروني الخاص بك لتصلك رسالة إعادة تعيين كلمة المرور", preferredStyle: .alert)
+           alert.addTextField { (textField) in
+               textField.placeholder = "********@**"
+           }
+           alert.addAction(UIAlertAction(title: "إلغاء", style: .destructive, handler: nil))
+           alert.addAction(UIAlertAction(title: "تأكيد", style: .default, handler: { [weak alert] (_) in
+            
+            if self.isValidEmail((alert?.textFields![0].text)!) == true {
+            
+            Auth.auth().sendPasswordReset(withEmail: (alert?.textFields![0].text)! ) { error in}
         
-        Auth.auth().sendPasswordReset(withEmail: "reemalamlki98@gmail.com" ) { error in
-          // ...
-        }
-        }
-   
+         let alert = UIAlertController(title:"تم ارسال الرسالة" , message: "ستجد الرسالة في بريدك الإلكتروني", preferredStyle: .alert)
+                
+          alert.addAction(UIAlertAction(title: "حسناً", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+            }else {
+                
+                let alert = UIAlertController(title:"لم يتم الإرسال " , message: "تأكد من بريدك الإلكتروني وحاول مرة اخرى", preferredStyle: .alert)
+                         alert.addAction(UIAlertAction(title: "حسناً", style: .default, handler: nil))
+                       self.present(alert, animated: true, completion: nil)
+                
+                
+            }
+           })); self.present(alert, animated: true, completion: nil)
+            
+    }
+    
+   func isValidEmail(_ email: String) -> Bool {
+          return email.count > 0 && NSPredicate(format: "self matches %@", "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,64}").evaluate(with: email)
+      }
+
         
     }
         

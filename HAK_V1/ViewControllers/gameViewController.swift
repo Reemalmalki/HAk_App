@@ -14,6 +14,10 @@ class gameViewController: UIViewController {
     var userId = ""
     var gameId = ""
     var status : UIImage = UIImage(named:"icons8-padlock-50")!
+    
+    @IBOutlet weak var changeLabel: UILabel!
+    
+    
     @IBOutlet weak var gameGoals: UILabel!
     
     @IBOutlet weak var gameInstruction: UILabel!
@@ -40,6 +44,7 @@ class gameViewController: UIViewController {
             self.iconeView.image = self.status
             if self.status == UIImage(named:"icons8-padlock-50") {
                 self.switcher.isHidden = true
+                self.changeLabel.isHidden = true
             }
         }
     } // end method getDate
@@ -59,10 +64,13 @@ class gameViewController: UIViewController {
         if(switchStatus){
             ref.updateChildValues(["status" : "opened" ])
             self.status = UIImage(named:"icons8-padlock-50")!
+            self.iconeView.image = self.status
             let alert = UIAlertController(title: "تنبيه", message: "تم اتاحة اللعبة للطلاب", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "حسنا", style: .destructive, handler: nil))
             self.present(alert, animated: true, completion: nil)
             self.switcher.setOn(true, animated: true)
+            self.switcher.isHidden = true
+            self.changeLabel.isHidden = true
             }
             })) ; self.present(alert, animated: true, completion: nil)
     }
@@ -71,7 +79,7 @@ class gameViewController: UIViewController {
     
     
     
-    ///// img do not change 
+  
     
     
 }

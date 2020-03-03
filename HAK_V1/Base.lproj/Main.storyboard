@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DaJ-Gv-7tD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gV7-4s-wA9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -440,7 +440,7 @@
             </objects>
             <point key="canvasLocation" x="7060.8695652173919" y="95.758928571428569"/>
         </scene>
-        <!--Single Class View Controller-->
+        <!--غرفة دراسية -->
         <scene sceneID="HDr-Nh-1Lc">
             <objects>
                 <viewController storyboardIdentifier="singleClassViewController" id="J1h-Gn-pZN" customClass="singleClassViewController" customModule="HAK_V1" customModuleProvider="target" sceneMemberID="viewController">
@@ -523,6 +523,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="07g-tN-Rvk"/>
                     </view>
+                    <navigationItem key="navigationItem" title="غرفة دراسية " id="82p-cq-4Es"/>
                     <connections>
                         <outlet property="QRImg" destination="Pwx-Zj-QLi" id="5Qp-6L-3nk"/>
                         <outlet property="classIdLabel" destination="wof-cQ-IcY" id="u9S-cw-oSV"/>
@@ -607,6 +608,7 @@
         <!--Game View Controller-->
         <scene sceneID="efx-2X-kiL">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oIh-BL-HBw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="gameViewController" id="bsX-I3-dt4" customClass="gameViewController" customModule="HAK_V1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5QX-bm-Q5s">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -632,24 +634,18 @@
                                 <rect key="frame" x="40" y="104" width="334" height="87"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BeW-h2-cIU">
-                                        <rect key="frame" x="0.0" y="0.0" width="182" height="87"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="231" height="87"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="etF-nq-Xg7">
-                                        <rect key="frame" x="182" y="0.0" width="103" height="87"/>
+                                        <rect key="frame" x="231" y="0.0" width="103" height="87"/>
                                     </imageView>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="fill" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QAG-Z9-rVB">
-                                        <rect key="frame" x="285" y="0.0" width="51" height="87"/>
-                                        <connections>
-                                            <action selector="changeStatus:" destination="bsX-I3-dt4" eventType="valueChanged" id="bwE-Tf-dcZ"/>
-                                        </connections>
-                                    </switch>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="59" translatesAutoresizingMaskIntoConstraints="NO" id="8d4-3j-sw3">
-                                <rect key="frame" x="104.5" y="269" width="205" height="259"/>
+                                <rect key="frame" x="104.5" y="269" width="205" height="338.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="سيحقق الطالب الاهداف التالية" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnf-gP-80t">
                                         <rect key="frame" x="0.0" y="0.0" width="205" height="20.5"/>
@@ -675,8 +671,21 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="لتغيير حالة اللعبة " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imP-DZ-55K">
+                                        <rect key="frame" x="0.0" y="318" width="205" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                             </stackView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QAG-Z9-rVB">
+                                <rect key="frame" x="104" y="583" width="51" height="87"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="changeStatus:" destination="bsX-I3-dt4" eventType="valueChanged" id="bwE-Tf-dcZ"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -693,6 +702,7 @@
                         <viewLayoutGuide key="safeArea" id="bgb-zO-dej"/>
                     </view>
                     <connections>
+                        <outlet property="changeLabel" destination="imP-DZ-55K" id="ROj-nH-cYy"/>
                         <outlet property="gameGoals" destination="FiU-tr-pPz" id="7Pj-46-JSU"/>
                         <outlet property="gameInstruction" destination="IEu-KW-4uV" id="47M-Du-QmX"/>
                         <outlet property="gameName" destination="BeW-h2-cIU" id="AR9-Ax-ZPd"/>
@@ -700,11 +710,10 @@
                         <outlet property="switcher" destination="QAG-Z9-rVB" id="lsA-6w-DO4"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oIh-BL-HBw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5773.913043478261" y="-601.33928571428567"/>
         </scene>
-        <!--Created Classroom View Controller-->
+        <!-- إنشاء غرفة دراسية-->
         <scene sceneID="Oa0-gM-24v">
             <objects>
                 <viewController storyboardIdentifier="createdClassroom" id="68k-9p-rGH" customClass="createdClassroomViewController" customModule="HAK_V1" customModuleProvider="target" sceneMemberID="viewController">
@@ -889,7 +898,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="DXj-GO-kHh"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5Ss-yU-Twa"/>
+                    <navigationItem key="navigationItem" title=" إنشاء غرفة دراسية" id="5Ss-yU-Twa"/>
                     <connections>
                         <outlet property="B1" destination="Mqe-jB-eEP" id="2SU-Ub-Zuk"/>
                         <outlet property="B2" destination="dp0-U1-STZ" id="Jay-LY-kff"/>
@@ -1049,7 +1058,4 @@
         <image name="person.circle" catalog="system" width="64" height="60"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="gDM-IC-MrF"/>
-    </inferredMetricsTieBreakers>
 </document>

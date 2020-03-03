@@ -15,7 +15,7 @@ class qrCode : UIViewController {
     func uploadImg(uniqueId : String , userId : String , classId : String ) -> UIImage {
     var URL = ""
     let imageName:String = String("\(uniqueId).png")
-        let image : UIImage = self.generateQRCode(from: uniqueId)!//(from: "\(uniqueId).\(userId).\(classId)")!
+        let image : UIImage = self.generateQRCode(from: "\(userId)@\(classId)")!
         let ref = Storage.storage().reference().child("sciences").child(userId).child(imageName)
         // 1
         let imageData = image.jpegData(compressionQuality: 0.1)!
