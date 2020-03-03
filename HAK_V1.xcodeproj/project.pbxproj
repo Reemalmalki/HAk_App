@@ -10,6 +10,7 @@
 		1005C5C923DE9445000E7891 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1005C5C823DE9445000E7891 /* GoogleService-Info.plist */; };
 		106E0CEB23F28CF80087DA27 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E0CEA23F28CF80087DA27 /* MenuViewController.swift */; };
 		106E0CED23F28DAD0087DA27 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106E0CEC23F28DAD0087DA27 /* BaseViewController.swift */; };
+		109DDBA3240E159D004DF6BD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109DDBA1240E159D004DF6BD /* ProfileViewController.swift */; };
 		10C95CE123E9320D00E80EE9 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C95CE023E9320D00E80EE9 /* Utilities.swift */; };
 		2F85EFF6833A3D6B88F13099 /* Pods_HAK_V1_HAK_V1UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DB5A9926FE875F897F83177 /* Pods_HAK_V1_HAK_V1UITests.framework */; };
 		87FA10D576639278B3111FBC /* Pods_HAK_V1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F41D8C5FF59F5832766B0BD /* Pods_HAK_V1.framework */; };
@@ -57,6 +58,7 @@
 		1005C5C823DE9445000E7891 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		106E0CEA23F28CF80087DA27 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		106E0CEC23F28DAD0087DA27 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		109DDBA1240E159D004DF6BD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		10C95CE023E9320D00E80EE9 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		6CBB82BDD8FB8F41F56CE148 /* Pods-HAK_V1-HAK_V1UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAK_V1-HAK_V1UITests.debug.xcconfig"; path = "Target Support Files/Pods-HAK_V1-HAK_V1UITests/Pods-HAK_V1-HAK_V1UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6F41D8C5FF59F5832766B0BD /* Pods_HAK_V1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HAK_V1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +230,7 @@
 				F8AA963D23FBF62E002A8021 /* NViewController.swift */,
 				F8EB381023FC8FBD009DAF81 /* qrCode.swift */,
 				F8EB381223FD542B009DAF81 /* successViewController.swift */,
+				109DDBA1240E159D004DF6BD /* ProfileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				F80F6AB123EF18900020C81E /* CollectionViewCell.swift in Sources */,
 				106E0CEB23F28CF80087DA27 /* MenuViewController.swift in Sources */,
 				F8E2EA6923DD82D50025DBF4 /* AppDelegate.swift in Sources */,
+				109DDBA3240E159D004DF6BD /* ProfileViewController.swift in Sources */,
 				106E0CED23F28DAD0087DA27 /* BaseViewController.swift in Sources */,
 				F8E2EA9D23DD93120025DBF4 /* signUpViewController.swift in Sources */,
 				F8BDB9FF23E01C0000D5714D /* Styles.swift in Sources */,

@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 
-class signInViewController: UIViewController {
+class signInViewController: BaseViewController {
 
     @IBOutlet weak var email: UITextField!
     
@@ -25,6 +25,7 @@ class signInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addSlideMenuButton()
        
         
      

@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 import FirebaseStorage
-class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, UIPickerViewDataSource  {
+class createdClassroomViewController: BaseViewController,UIPickerViewDelegate, UIPickerViewDataSource  {
     var selectedSubject = ""
     var selectedLevel = ""
     var selectedSeme = ""
@@ -52,6 +52,7 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
     let queue = DispatchQueue.global(qos: .background)
     override func viewDidLoad() {
         super.viewDidLoad()
+          addSlideMenuButton()
         self.errorLabel.text = ""
         self.errorLabel.alpha = 0
         pickerView1.isHidden = true
