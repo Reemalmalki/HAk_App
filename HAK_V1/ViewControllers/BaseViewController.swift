@@ -24,12 +24,12 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
         print("View Controller is : \(topViewController) \n", terminator: "")
         switch(index){
         case 0:
-            print("Home\n", terminator: "")
+            print("Home\n")
 
-            self.openViewControllerBasedOnIdentifier("Home")
+            self.openViewControllerBasedOnIdentifier("HomeVC")
             
             break
-        case 1: 
+        case 1:
             print("Play\n", terminator: "")
             
             self.openViewControllerBasedOnIdentifier("PlayVC")

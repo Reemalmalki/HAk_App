@@ -26,17 +26,9 @@ class signInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        
+       
      
-setUpForm()
     }
-    
-    func setUpForm(){
-        //hide errormsg
-        errorMsg.alpha=0
-        
-    }
-   
    func validateFields() -> String? {
     if email.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || password.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
         return "فضلًا تأكد من تبعئة جميع الخانات" }
@@ -72,7 +64,7 @@ setUpForm()
                 } else {
                     UserDefaults.standard.set(true, forKey: "IsUserSignedIn")
                     UserDefaults.standard.synchronize()
-                    let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.storyboard.homeViewController) as? homeViewController
+                    let homeViewController = self.storyboard?.instantiateViewController(identifier: "navigationBar") as? UIViewController
                     self.view.window?.rootViewController = homeViewController
                     self.view.window?.makeKeyAndVisible()
                 }

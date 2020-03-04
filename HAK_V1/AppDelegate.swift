@@ -16,12 +16,23 @@ var window: UIWindow?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-       /* if UserDefaults.standard.bool(forKey: "IsUserSignedIn") == true {
+        print("b4 IsUserSignedIn")
+        if UserDefaults.standard.bool(forKey: "IsUserSignedIn") == false {
+            print(" IsUserSignedIn = false")
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-        window?.rootViewController = homeViewController()
-        } // end if
-            */
+        window?.rootViewController = signInViewController()
+            
+        } else {
+            print(" IsUserSignedIn = true")
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "navigationBar")
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+            
+        }
+            
         
         return true
     }

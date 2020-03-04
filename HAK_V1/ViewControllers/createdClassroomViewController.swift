@@ -164,47 +164,17 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
                     self.view.addSubview(self.subView)
                     
                     
-                    
-                    
-        /* let showAlert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
-           let imageView = UIImageView(frame: CGRect(x: 10, y: 50, width: 250, height: 230))
-            imageView.image = image  // Your image here...
-            showAlert.view.addSubview(imageView)
-                let imageViewIcone = UIImageView(frame: CGRect(x: 80, y: 0 , width: 100, height: 100))
-               imageViewIcone.image = UIImage(named:"icons8-lock-50")
-               showAlert.view.addSubview(imageViewIcone)
-                    
-                    
-            let height = NSLayoutConstraint(item: showAlert.view, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 320)
-            let width = NSLayoutConstraint(item: showAlert.view, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 250)
-            showAlert.view.addConstraint(height)
-            showAlert.view.addConstraint(width)
-            showAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-                // your actions here...
-            }))
-            self.present(showAlert, animated: true, completion: nil)*/
-            
-            
-            
-            
-      /* let alert = UIAlertController(title: "تم", message: "تم أنشاء الغرفة بنجاح", preferredStyle: .alert)
-             alert.addAction(UIAlertAction(title: "حسناً", style: .default, handler: { action in
-                 let Home = self.storyboard?.instantiateViewController(identifier: Constants.storyboard.homeViewController) as? homeViewController
-                        self.view.window?.rootViewController = Home
-                        self.view.window?.makeKeyAndVisible()
-             }))
-            self.present(alert, animated: true, completion: nil) }*/
+                
             } //end else
             }
         }
     }// end method
   
     @IBAction func moveToHome(_ sender: Any) {
-        // go home
+      let Home = self.storyboard?.instantiateViewController(identifier: "homeVC") as? UIViewController
+        self.view.window?.rootViewController = Home
+        self.view.window?.makeKeyAndVisible()
     }
     
-    
-    }// end class
-    
- 
 
+}

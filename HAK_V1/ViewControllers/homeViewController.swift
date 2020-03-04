@@ -27,7 +27,16 @@ var cellId :[String] = []
     override func viewDidLoad() {
         if UserDefaults.standard.bool(forKey: "IsUserSignedIn") == false {            
 // go login
-        }
+            
+            print("in home ")
+            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc: UIViewController = storyboard.instantiateViewController(withIdentifier: "signInViewController") as UIViewController
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+          
+            
+            
+        }else{
         super.viewDidLoad()
         self.title = "الصفحة الرئيسية"
         self.getData()
@@ -39,7 +48,7 @@ var cellId :[String] = []
         let width = self.calculateWith()
         layout.itemSize = CGSize(width: width, height: width)
         collectionView?.setCollectionViewLayout(layout, animated: true) //was false
-    }
+        }}
     
         func getData(){
             if Auth.auth().currentUser != nil {
@@ -113,12 +122,7 @@ var cellId :[String] = []
       
     
     
-   /* @IBAction func onClick(_ sender: UIButton) {
-        
-        let createdClassroomViewController = self.storyboard?.instantiateViewController(identifier: Constants.storyboard.createdClassroomViewController) as? createdClassroomViewController
-        self.view.window?.rootViewController = createdClassroomViewController
-        self.view.window?.makeKeyAndVisible()
-    }*/
+   
     func calculateWith() -> CGFloat {
         let estimatedWidth = CGFloat(estimateWidth)
         let cellCount = floor(CGFloat(self.view.frame.size.width / estimatedWidth))
@@ -130,5 +134,13 @@ var cellId :[String] = []
     }
     
    
+    
+    
+    @IBAction func logout(_ sender: Any) {
+        print("in B")
+        logOut().logOut()
+    }
+    
+    
 }
 

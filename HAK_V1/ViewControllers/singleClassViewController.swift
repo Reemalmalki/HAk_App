@@ -42,7 +42,7 @@ var userId = ""
             ref.removeValue()
              qrRef.delete()
             print("removed")
-            let Home = self.storyboard?.instantiateViewController(identifier: Constants.storyboard.homeViewController) as? homeViewController
+            let Home = self.storyboard?.instantiateViewController(identifier: "navigationBar") as? UIViewController
                    self.view.window?.rootViewController = Home
                    self.view.window?.makeKeyAndVisible()
         }))
