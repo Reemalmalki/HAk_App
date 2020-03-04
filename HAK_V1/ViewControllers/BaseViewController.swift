@@ -29,7 +29,7 @@ class BaseViewController: UIViewController, SlideMenuDelegate {
             self.openViewControllerBasedOnIdentifier("Home")
             
             break
-        case 1:
+        case 1: 
             print("Play\n", terminator: "")
             
             self.openViewControllerBasedOnIdentifier("PlayVC")
