@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
-class homeViewController: UIViewController, UICollectionViewDelegate ,UICollectionViewDataSource {
+class homeViewController: BaseViewController, UICollectionViewDelegate ,UICollectionViewDataSource {
     var userId = ""
     var estimateWidth = 140.0
     var cellMarginSize = 16.0
@@ -29,8 +29,9 @@ var cellId :[String] = []
 // go login
         }
         super.viewDidLoad()
+        self.title = "الصفحة الرئيسية"
         self.getData()
-        
+        addSlideMenuButton()
        collectionView.delegate = self
        collectionView.dataSource = self
         let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
@@ -112,12 +113,12 @@ var cellId :[String] = []
       
     
     
-    @IBAction func onClick(_ sender: UIButton) {
+   /* @IBAction func onClick(_ sender: UIButton) {
         
         let createdClassroomViewController = self.storyboard?.instantiateViewController(identifier: Constants.storyboard.createdClassroomViewController) as? createdClassroomViewController
         self.view.window?.rootViewController = createdClassroomViewController
         self.view.window?.makeKeyAndVisible()
-    }
+    }*/
     func calculateWith() -> CGFloat {
         let estimatedWidth = CGFloat(estimateWidth)
         let cellCount = floor(CGFloat(self.view.frame.size.width / estimatedWidth))

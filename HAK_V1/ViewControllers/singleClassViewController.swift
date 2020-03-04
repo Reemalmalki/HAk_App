@@ -25,7 +25,7 @@ var userId = ""
         ref.observeSingleEvent(of: DataEventType.value) { (DataSnapshot) in
             let value = DataSnapshot.value as? NSDictionary
             self.classIdLabel.text = value?["uniqueId"] as? String
-    
+            self.title = value?["name"] as? String
             let url = URL(string: (value?["url"] as? String)!)
             let data = try? Data(contentsOf: url!)
             self.QRImg.image = UIImage(data: data!)
