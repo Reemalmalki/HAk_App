@@ -8,7 +8,7 @@
 
 import UIKit
 import FirebaseAuth
-
+import FirebaseDatabase
 class signInViewController: UIViewController {
 
     @IBOutlet weak var email: UITextField!
@@ -60,11 +60,24 @@ setUpForm()
             self.errorMsg.alpha=1
         }
         else{
-            UserDefaults.standard.set(true, forKey: "IsUserSignedIn")
-            UserDefaults.standard.synchronize()
-            let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.storyboard.homeViewController) as? homeViewController
-            self.view.window?.rootViewController = homeViewController
-            self.view.window?.makeKeyAndVisible()
+            let ref = Database.database().reference().child("teachers").child((result?.user.uid)!)
+            ref.observeSingleEvent(of: DataEventType.value) { (DataSnapshot) in
+            let value = DataSnapshot.value as? NSDictionary
+                if value?["type_of_user"] as? String != "teacher" {
+                    
+                    let alert = UIAlertController(title:"لا يمكن الدخول" , message: "عذراً ايها الطالب لا يسمح لك بالدخول لتطبيق المعلمين", preferredStyle: .alert)
+                                            alert.addAction(UIAlertAction(title: "حسناً", style: .default, handler: nil))
+                                          self.present(alert, animated: true, completion: nil)
+                    
+                } else {
+                    UserDefaults.standard.set(true, forKey: "IsUserSignedIn")
+                    UserDefaults.standard.synchronize()
+                    let homeViewController = self.storyboard?.instantiateViewController(identifier: Constants.storyboard.homeViewController) as? homeViewController
+                    self.view.window?.rootViewController = homeViewController
+                    self.view.window?.makeKeyAndVisible()
+                }
+            }
+    
         }
         
     }

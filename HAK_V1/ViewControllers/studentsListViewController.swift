@@ -243,13 +243,12 @@ class studentsListViewController: UIViewController , UICollectionViewDelegate ,U
 
                     for singleUser in self.studentsID{
                         group.enter()
-                         userInfoRef.child(singleUser).observeSingleEvent(of: .value, with: { (snapshot) in
+                        userInfoRef.child(singleUser).observeSingleEvent(of: .value, with: { (snapshot) in
                         // Get user value
                         let value = snapshot.value as? NSDictionary
                         self.studentsNames.append(value?["Name"] as! String)
                         self.studentsScores.append(value?["Points"] as! Double)
-                            self.studentsUniqueID.append(value?["StudentId"] as! String)
-
+                        self.studentsUniqueID.append(value?["StudentId"] as! String)
                         group.leave()
                        }) { (error) in
                         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))

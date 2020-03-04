@@ -26,7 +26,6 @@ var userId = ""
             let value = DataSnapshot.value as? NSDictionary
             self.classIdLabel.text = value?["uniqueId"] as? String
     
-
             let url = URL(string: (value?["url"] as? String)!)
             let data = try? Data(contentsOf: url!)
             self.QRImg.image = UIImage(data: data!)

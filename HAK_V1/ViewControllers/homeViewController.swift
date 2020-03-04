@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
-class homeViewController: BaseViewController, UICollectionViewDelegate ,UICollectionViewDataSource {
+class homeViewController: UIViewController, UICollectionViewDelegate ,UICollectionViewDataSource {
     var userId = ""
     var estimateWidth = 140.0
     var cellMarginSize = 16.0
@@ -29,7 +29,6 @@ var cellId :[String] = []
 // go login
         }
         super.viewDidLoad()
-        addSlideMenuButton()        
         self.getData()
         
        collectionView.delegate = self
@@ -92,9 +91,13 @@ var cellId :[String] = []
             performSegue(withIdentifier: "singleClass", sender: self)
             }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! singleClassViewController
+        
+        if let vc = segue.destination as? singleClassViewController {
+       // vc.modalPresentationStyle = .fullScreen
         vc.classId = self.selectedCell
-        vc.userId = self.userId
+            vc.userId = self.userId
+            
+        }
        
         
     }

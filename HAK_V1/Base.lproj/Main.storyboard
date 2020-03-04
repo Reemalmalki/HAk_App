@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gV7-4s-wA9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1FV-Lb-tK6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -339,7 +339,7 @@
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="9MY-T1-1sW" propertyAccessControl="all"/>
                     <connections>
                         <outlet property="collectionView" destination="PZH-f6-ZeD" id="hDq-y7-y4f"/>
-                        <segue destination="J1h-Gn-pZN" kind="presentation" identifier="singleClass" modalPresentationStyle="fullScreen" id="l3J-em-8di"/>
+                        <segue destination="J1h-Gn-pZN" kind="show" identifier="singleClass" id="U5T-9h-VKJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mI6-pI-8xI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -449,7 +449,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9cZ-v4-xTJ">
-                                <rect key="frame" x="40" y="84" width="334" height="259"/>
+                                <rect key="frame" x="40" y="128" width="334" height="215"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="رقم الغرفة" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPx-8g-Stn">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="20.5"/>
@@ -470,7 +470,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pwx-Zj-QLi">
-                                        <rect key="frame" x="0.0" y="91" width="334" height="168"/>
+                                        <rect key="frame" x="0.0" y="91" width="334" height="124"/>
                                     </imageView>
                                 </subviews>
                             </stackView>
@@ -523,7 +523,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="07g-tN-Rvk"/>
                     </view>
-                    <navigationItem key="navigationItem" title="غرفة دراسية " id="82p-cq-4Es"/>
+                    <navigationItem key="navigationItem" title="غرفة دراسية " id="82p-cq-4Es" userLabel="غرفة دراسية"/>
                     <connections>
                         <outlet property="QRImg" destination="Pwx-Zj-QLi" id="5Qp-6L-3nk"/>
                         <outlet property="classIdLabel" destination="wof-cQ-IcY" id="u9S-cw-oSV"/>
@@ -608,7 +608,6 @@
         <!--Game View Controller-->
         <scene sceneID="efx-2X-kiL">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oIh-BL-HBw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="gameViewController" id="bsX-I3-dt4" customClass="gameViewController" customModule="HAK_V1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5QX-bm-Q5s">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -710,6 +709,7 @@
                         <outlet property="switcher" destination="QAG-Z9-rVB" id="lsA-6w-DO4"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oIh-BL-HBw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5773.913043478261" y="-601.33928571428567"/>
         </scene>
@@ -917,21 +917,24 @@
             </objects>
             <point key="canvasLocation" x="6181.1594202898559" y="95.758928571428569"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--View Controller-->
         <scene sceneID="05a-zk-dEb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" interfaceStyle="light" id="fDy-0j-SGf" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dR9-gh-Zg6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" interfaceStyle="light" id="fDy-0j-SGf" customClass="NViewController" customModule="HAK_V1" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZDh-Nc-7l8">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="UGb-Mb-AVM">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="DaJ-Gv-7tD" kind="relationship" relationship="rootViewController" id="yF9-CG-Vpb"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dR9-gh-Zg6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4457.971014492754" y="96.428571428571431"/>
         </scene>
@@ -1003,7 +1006,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VZ-en-TPD">
-                                                    <rect key="frame" x="8" y="8" width="50" height="50"/>
+                                                    <rect key="frame" x="8" y="8" width="100" height="100"/>
                                                     <state key="normal" backgroundImage="icons8-delete-50"/>
                                                     <connections>
                                                         <action selector="deleteStudent:" destination="f3U-k3-T8U" eventType="touchUpInside" id="RNr-x8-Zvi"/>
@@ -1058,4 +1061,7 @@
         <image name="person.circle" catalog="system" width="64" height="60"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZYI-HE-lul"/>
+    </inferredMetricsTieBreakers>
 </document>

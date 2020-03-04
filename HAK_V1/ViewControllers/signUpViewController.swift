@@ -148,7 +148,7 @@ setUpForm()
         else {
             // User was created successfully, now store the first name and last name
             let ref = Database.database().reference().child("teachers")
-            ref.child(result!.user.uid).setValue(["name":name_, "email":emailText , "nationalID":nationalId_]) { (error, DatabaseReference) in
+            ref.child(result!.user.uid).setValue(["name":name_, "email":emailText , "nationalID":nationalId_, "type_of_user":"teacher"]) { (error, DatabaseReference) in
                               
             if error != nil {
                                   // Show error message
