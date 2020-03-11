@@ -27,7 +27,7 @@ var cellId :[String] = []
     override func viewDidLoad() {
         if UserDefaults.standard.bool(forKey: "IsUserSignedIn") == false {            
 // go login
-            
+        
             print("in home ")
             let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let vc: UIViewController = storyboard.instantiateViewController(withIdentifier: "signInViewController") as UIViewController
@@ -66,6 +66,9 @@ var cellId :[String] = []
                             label.text = "لا يوجد غرف دراسية مضافة"
                             self.view.addSubview(label)
                         }else{
+                            self.data.removeAll()
+                            self.dataImg.removeAll()
+                            self.cellId.removeAll()
                         for case let child as DataSnapshot in snapshot.children {
                         if let value = child.value as? [String:AnyObject]{
                         self.data.append(value["name"] as! String)
@@ -94,9 +97,9 @@ var cellId :[String] = []
   
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
               let cell = collectionView.cellForItem(at: indexPath)
-              cell?.layer.borderColor = UIColor.lightGray.cgColor
-              cell?.layer.borderWidth = 2
-            cell?.layer.borderColor = UIColor.gray.cgColor
+                cell?.layer.borderColor = UIColor.white.cgColor
+                          cell?.layer.borderWidth = 1
+                        cell?.layer.borderColor = UIColor.gray.cgColor
             self.selectedCell = cellId[indexPath.item]
             performSegue(withIdentifier: "singleClass", sender: self)
             }
@@ -132,7 +135,6 @@ var cellId :[String] = []
         
         return width
     }
-    
     
     
 }
