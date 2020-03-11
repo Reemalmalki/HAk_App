@@ -171,9 +171,9 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
     }// end method
   
     @IBAction func moveToHome(_ sender: Any) {
-      let Home = self.storyboard?.instantiateViewController(identifier: "homeVC") as? UIViewController
-        self.view.window?.rootViewController = Home
-        self.view.window?.makeKeyAndVisible()
+      let vc = self.storyboard?.instantiateViewController(identifier: "HomeVC") as? UIViewController
+        vc?.modalPresentationStyle = .fullScreen
+        self.present((vc)!, animated: true, completion: nil)
     }
     
 

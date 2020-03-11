@@ -326,14 +326,6 @@
                                     <outlet property="delegate" destination="DaJ-Gv-7tD" id="0Xj-hl-7lm"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="auU-lp-9AG">
-                                <rect key="frame" x="184" y="700" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="logout:" destination="DaJ-Gv-7tD" eventType="touchUpInside" id="edu-dj-I9w"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.88948884936688277" green="0.88807671211393346" blue="0.92731468780391713" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

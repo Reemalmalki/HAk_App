@@ -133,13 +133,6 @@ var cellId :[String] = []
         return width
     }
     
-   
-    
-    
-    @IBAction func logout(_ sender: Any) {
-        print("in B")
-        logOut().logOut()
-    }
     
     
 }

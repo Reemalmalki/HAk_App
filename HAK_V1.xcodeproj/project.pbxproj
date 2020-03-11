@@ -16,6 +16,7 @@
 		B8A53FB9319C1CD0963E8613 /* Pods_HAK_V1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 809CC4ADB418F69F3C0EA3BF /* Pods_HAK_V1Tests.framework */; };
 		F80F6AB123EF18900020C81E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80F6AB023EF18900020C81E /* CollectionViewCell.swift */; };
 		F80F6AB323F0875A0020C81E /* singleClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80F6AB223F0875A0020C81E /* singleClassViewController.swift */; };
+		F8358FEC24183093000CBA02 /* TestAddClassroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8358FEB24183093000CBA02 /* TestAddClassroom.swift */; };
 		F8BB12A72410164D0048A149 /* logOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BB12A62410164D0048A149 /* logOut.swift */; };
 		F8BC5CDC23FDCEDD00D9345E /* gamesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BC5CDB23FDCEDD00D9345E /* gamesCollectionViewCell.swift */; };
 		F8BC5CDE23FEDFE500D9345E /* gameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BC5CDD23FEDFE500D9345E /* gameViewController.swift */; };
@@ -73,6 +74,7 @@
 		C7F04EB26167AFB89271740F /* Pods-HAK_V1-HAK_V1UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAK_V1-HAK_V1UITests.release.xcconfig"; path = "Target Support Files/Pods-HAK_V1-HAK_V1UITests/Pods-HAK_V1-HAK_V1UITests.release.xcconfig"; sourceTree = "<group>"; };
 		F80F6AB023EF18900020C81E /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		F80F6AB223F0875A0020C81E /* singleClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = singleClassViewController.swift; sourceTree = "<group>"; };
+		F8358FEB24183093000CBA02 /* TestAddClassroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAddClassroom.swift; sourceTree = "<group>"; };
 		F8BB12A62410164D0048A149 /* logOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logOut.swift; sourceTree = "<group>"; };
 		F8BC5CDB23FDCEDD00D9345E /* gamesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gamesCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8BC5CDD23FEDFE500D9345E /* gameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 		F8E2EA7E23DD82D60025DBF4 /* HAK_V1Tests */ = {
 			isa = PBXGroup;
 			children = (
+				F8358FEB24183093000CBA02 /* TestAddClassroom.swift */,
 				F8E2EA7F23DD82D60025DBF4 /* HAK_V1Tests.swift */,
 				F8E2EA8123DD82D60025DBF4 /* Info.plist */,
 			);
@@ -224,12 +227,12 @@
 		F8E2EA9E23DD931F0025DBF4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F8C0595123E9DA3B00D051BE /* createdClassroomViewController.swift */,
 				F8BC5CE223FF18F600D9345E /* studentCollectionViewCell.swift */,
 				F8BC5CDB23FDCEDD00D9345E /* gamesCollectionViewCell.swift */,
 				F8E2EA9C23DD93120025DBF4 /* signUpViewController.swift */,
 				F8E2EA9A23DD92F20025DBF4 /* signInViewController.swift */,
 				F80F6AB023EF18900020C81E /* CollectionViewCell.swift */,
-				F8C0595123E9DA3B00D051BE /* createdClassroomViewController.swift */,
 				F8EB381023FC8FBD009DAF81 /* qrCode.swift */,
 				F80F6AB223F0875A0020C81E /* singleClassViewController.swift */,
 				F8E2EA6C23DD82D50025DBF4 /* ViewController.swift */,
@@ -514,6 +517,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8E2EA8023DD82D60025DBF4 /* HAK_V1Tests.swift in Sources */,
+				F8358FEC24183093000CBA02 /* TestAddClassroom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
