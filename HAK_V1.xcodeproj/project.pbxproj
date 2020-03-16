@@ -19,6 +19,7 @@
 		F86D5706241EBD0300010100 /* testStudentsFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D5705241EBD0300010100 /* testStudentsFunctions.swift */; };
 		F86D5708241EEC5700010100 /* testGamesFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D5707241EEC5700010100 /* testGamesFunctions.swift */; };
 		F86D570C241FE64600010100 /* testBasicFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D570B241FE64600010100 /* testBasicFunctions.swift */; };
+		F86D571424203BC700010100 /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D571324203BC700010100 /* profileViewController.swift */; };
 		F8BB12A72410164D0048A149 /* logOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BB12A62410164D0048A149 /* logOut.swift */; };
 		F8BC5CDC23FDCEDD00D9345E /* gamesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BC5CDB23FDCEDD00D9345E /* gamesCollectionViewCell.swift */; };
 		F8BC5CDE23FEDFE500D9345E /* gameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BC5CDD23FEDFE500D9345E /* gameViewController.swift */; };
@@ -79,6 +80,7 @@
 		F86D5705241EBD0300010100 /* testStudentsFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testStudentsFunctions.swift; sourceTree = "<group>"; };
 		F86D5707241EEC5700010100 /* testGamesFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testGamesFunctions.swift; sourceTree = "<group>"; };
 		F86D570B241FE64600010100 /* testBasicFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testBasicFunctions.swift; sourceTree = "<group>"; };
+		F86D571324203BC700010100 /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
 		F8BB12A62410164D0048A149 /* logOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logOut.swift; sourceTree = "<group>"; };
 		F8BC5CDB23FDCEDD00D9345E /* gamesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gamesCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8BC5CDD23FEDFE500D9345E /* gameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameViewController.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				F8BC5CE023FEEF8900D9345E /* studentsListViewController.swift */,
 				F8E2EA9823DD92CE0025DBF4 /* homeViewController.swift */,
 				F8BB12A62410164D0048A149 /* logOut.swift */,
+				F86D571324203BC700010100 /* profileViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				F8E2EA6923DD82D50025DBF4 /* AppDelegate.swift in Sources */,
 				F8BB12A72410164D0048A149 /* logOut.swift in Sources */,
 				106E0CED23F28DAD0087DA27 /* BaseViewController.swift in Sources */,
+				F86D571424203BC700010100 /* profileViewController.swift in Sources */,
 				F8E2EA9D23DD93120025DBF4 /* signUpViewController.swift in Sources */,
 				F8BC5CDE23FEDFE500D9345E /* gameViewController.swift in Sources */,
 				F8BDB9FF23E01C0000D5714D /* Styles.swift in Sources */,
