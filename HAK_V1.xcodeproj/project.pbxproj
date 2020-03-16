@@ -18,7 +18,7 @@
 		F80F6AB323F0875A0020C81E /* singleClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80F6AB223F0875A0020C81E /* singleClassViewController.swift */; };
 		F86D5706241EBD0300010100 /* testStudentsFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D5705241EBD0300010100 /* testStudentsFunctions.swift */; };
 		F86D5708241EEC5700010100 /* testGamesFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D5707241EEC5700010100 /* testGamesFunctions.swift */; };
-		F86D570A241EFD8800010100 /* testBasicFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D5709241EFD8700010100 /* testBasicFunctions.swift */; };
+		F86D570C241FE64600010100 /* testBasicFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D570B241FE64600010100 /* testBasicFunctions.swift */; };
 		F8BB12A72410164D0048A149 /* logOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BB12A62410164D0048A149 /* logOut.swift */; };
 		F8BC5CDC23FDCEDD00D9345E /* gamesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BC5CDB23FDCEDD00D9345E /* gamesCollectionViewCell.swift */; };
 		F8BC5CDE23FEDFE500D9345E /* gameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BC5CDD23FEDFE500D9345E /* gameViewController.swift */; };
@@ -78,7 +78,7 @@
 		F80F6AB223F0875A0020C81E /* singleClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = singleClassViewController.swift; sourceTree = "<group>"; };
 		F86D5705241EBD0300010100 /* testStudentsFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testStudentsFunctions.swift; sourceTree = "<group>"; };
 		F86D5707241EEC5700010100 /* testGamesFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testGamesFunctions.swift; sourceTree = "<group>"; };
-		F86D5709241EFD8700010100 /* testBasicFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testBasicFunctions.swift; sourceTree = "<group>"; };
+		F86D570B241FE64600010100 /* testBasicFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testBasicFunctions.swift; sourceTree = "<group>"; };
 		F8BB12A62410164D0048A149 /* logOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logOut.swift; sourceTree = "<group>"; };
 		F8BC5CDB23FDCEDD00D9345E /* gamesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gamesCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8BC5CDD23FEDFE500D9345E /* gameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameViewController.swift; sourceTree = "<group>"; };
@@ -225,7 +225,7 @@
 				F8E2EA8C23DD82D60025DBF4 /* Info.plist */,
 				F86D5705241EBD0300010100 /* testStudentsFunctions.swift */,
 				F86D5707241EEC5700010100 /* testGamesFunctions.swift */,
-				F86D5709241EFD8700010100 /* testBasicFunctions.swift */,
+				F86D570B241FE64600010100 /* testBasicFunctions.swift */,
 			);
 			path = HAK_V1UITests;
 			sourceTree = "<group>";
@@ -532,7 +532,7 @@
 			files = (
 				F86D5706241EBD0300010100 /* testStudentsFunctions.swift in Sources */,
 				F86D5708241EEC5700010100 /* testGamesFunctions.swift in Sources */,
-				F86D570A241EFD8800010100 /* testBasicFunctions.swift in Sources */,
+				F86D570C241FE64600010100 /* testBasicFunctions.swift in Sources */,
 				F8E2EA8B23DD82D60025DBF4 /* testClassroomFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
