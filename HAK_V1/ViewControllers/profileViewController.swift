@@ -7,24 +7,42 @@
 //
 
 import UIKit
-
+import FirebaseAuth
+import FirebaseDatabase
 class profileViewController: UIViewController {
 
+    var teacherId = Auth.auth().currentUser?.uid
+
+    @IBOutlet weak var nameLable: UILabel!
+    
+    
+    @IBOutlet weak var emailLable: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+getProfileData()
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getProfileData(){
+        let ref = Database.database().reference().child("teachers").child(!self.teacherId)
+               ref.observeSingleEvent(of: DataEventType.value) { (DataSnapshot) in
+                   let value = DataSnapshot.value as? NSDictionary
+                   self.nameLable.text = value?["name"] as? String
+                   self.emailLable.text = value?["email"] as? String
+        }
+        
     }
-    */
-
+    
+    
+    @IBAction func editName(_ sender: Any) {
+    }
+    
+    @IBAction func editEmail(_ sender: Any) {
+    }
+    
+    @IBAction func editPassword(_ sender: Any) {
+    }
+    
 }

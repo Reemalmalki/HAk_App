@@ -448,16 +448,16 @@
             </objects>
             <point key="canvasLocation" x="4457.971014492754" y="784.82142857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="pSc-ej-4SQ">
             <objects>
-                <viewController id="IiP-WR-4bX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="profile" id="IiP-WR-4bX" customClass="profileViewController" customModule="HAK_V1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uTS-ue-pDi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jui-Dm-YlG">
-                                <rect key="frame" x="97" y="103" width="240" height="157"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="Jui-Dm-YlG">
+                                <rect key="frame" x="78" y="89" width="259" height="171"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="الاسم" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrL-au-eca">
@@ -499,21 +499,34 @@
                                 <rect key="frame" x="341" y="321" width="43" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="pencil.and.ellipsis.rectangle" catalog="system"/>
+                                <connections>
+                                    <action selector="editName:" destination="IiP-WR-4bX" eventType="touchUpInside" id="1BZ-j8-evI"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QD-Rw-8us">
                                 <rect key="frame" x="334" y="473" width="43" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="pencil.and.ellipsis.rectangle" catalog="system"/>
+                                <connections>
+                                    <action selector="editEmail:" destination="IiP-WR-4bX" eventType="touchUpInside" id="LrQ-HS-F0i"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmn-kI-p4n">
                                 <rect key="frame" x="334" y="644" width="43" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="pencil.and.ellipsis.rectangle" catalog="system"/>
+                                <connections>
+                                    <action selector="editPassword:" destination="IiP-WR-4bX" eventType="touchUpInside" id="rJL-EQ-Nee"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="xN1-RK-QIY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailLable" destination="xKX-bO-tqj" id="x3P-zw-79a"/>
+                        <outlet property="nameLable" destination="PJb-0u-29B" id="h7U-x0-uYg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pp7-X3-f37" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -588,7 +601,7 @@
                                         <color key="textColor" red="0.68287991749999999" green="0.15882801730000001" blue="0.13324525000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wof-cQ-IcY">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wof-cQ-IcY">
                                         <rect key="frame" x="0.0" y="55.5" width="334" height="68"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.68287991749999999" green="0.15882801730000001" blue="0.13324525000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1169,8 +1182,9 @@
         <image name="pencil.and.ellipsis.rectangle" catalog="system" width="64" height="40"/>
         <image name="person.circle" catalog="system" width="64" height="60"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
+        <image name="profile" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZYI-HE-lul"/>
+        <segue reference="gDM-IC-MrF"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -29,6 +29,7 @@ class testBasicFunctions: XCTestCase {
 
     func testRegister() {
         
+        
         let app = XCUIApplication()
         app.buttons["مستخدم جديد؟ "].tap()
        
