@@ -12,7 +12,7 @@ class testBasicFunctions: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-
+        super.setUp()
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
 
@@ -23,12 +23,71 @@ class testBasicFunctions: XCTestCase {
     }
 
     override func tearDown() {
+        super.tearDown()
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+    func testRegister() {
+        
+        let app = XCUIApplication()
+        app.buttons["مستخدم جديد؟ "].tap()
+       
+        let nameTextField = app.collectionViews.textFields["الاسم"]
+        nameTextField.tap()
+        nameTextField.typeText("Tester")
+        
+       
+        let emailTextField = app.collectionViews.textFields["البريد الإلكتروني"]
+        nameTextField.tap()
+        emailTextField.typeText("Tester@gmail.com")
+        
+        let IdTextField = app.collectionViews.textFields["رقم الهوية الوطنية/الإقامة"]
+        IdTextField.tap()
+        IdTextField.typeText("1234567890")
+        
+        let secureTextField = app.collectionViews.secureTextFields["كلمة المرور"]
+        secureTextField.tap()
+        secureTextField.typeText("123456")
+        
+        let secureTextField2 = app.collectionViews.secureTextFields["إعادة كلمة المرور"]
+        secureTextField2.tap()
+        secureTextField2.typeText("123456")
+        app.collectionViews.buttons["تسجيل"].tap()
+        sleep(5)
+        let success = app.staticTexts["لا يوجد غرف دراسية مضافة"]
+        XCTAssert(success.exists, "Register fail")
 
+        
+    }
+    
+    
+    func testSignIn(){
+        let app = XCUIApplication()
+        app.textFields["البريد الإلكتروني"].tap()
+        app.textFields["البريد الإلكتروني"].typeText("Tester@gmail.com")
+
+        app.secureTextFields["كلمة المرور"].tap()
+        app.secureTextFields["كلمة المرور"].typeText("123456")
+        
+        app.buttons["تسجيل الدخول"].tap()
+        sleep(5)
+       
+        
+       let success = app.navigationBars["الصفحة الرئيسية"].children(matching: .button).element
+       XCTAssert(success.exists, "SignIn fail")
+        
+    }
+    
+    func testResetPassword(){
+        
+        let app = XCUIApplication()
+        app.buttons["نسيت كلمة المرور ؟"].tap()
+        app.alerts["نسيت كلمةالمرور؟"].scrollViews.otherElements.collectionViews.textFields["********@**"].typeText("Tester@gmail.com")
+        app.alerts["نسيت كلمةالمرور؟"].scrollViews.otherElements.buttons["تأكيد"].tap()
+        let success = app.alerts["تم ارسال الرسالة"].scrollViews.otherElements.buttons["حسناً"]
+        XCTAssert(success.exists, "Reset Password fail")
+        
+    }
+    
+    
 }
