@@ -39,14 +39,14 @@ class studentsListViewController: UIViewController , UICollectionViewDelegate ,U
     
     var userUniqueId = ""
       // alter the user for the user id
-        let alert = UIAlertController(title: "إضافة طالب", message: "الرجاء ادخال رقم الطالب الخاص الذي يتكون من ٥ ارقام فقط باللغة الانجليزية", preferredStyle: .alert)
+        let alert = UIAlertController(title: "إضافة طالب", message: "الرجاء ادخال رقم الطالب الخاص الذي يتكون من ٥ خانات فقط باللغة الانجليزية", preferredStyle: .alert)
         alert.addTextField { (textField) in
-            textField.placeholder = "12345"
+            textField.placeholder = "1D3f5"
         }
         alert.addAction(UIAlertAction(title: "إلغاء", style: .destructive, handler: nil))
         alert.addAction(UIAlertAction(title: "تأكيد", style: .default, handler: { [weak alert] (_) in
             userUniqueId = (alert?.textFields![0].text)!
-            if userUniqueId.elementsEqual("") || userUniqueId.count > 6 {
+            if userUniqueId.elementsEqual("") || userUniqueId.count >= 6 {
                  let alert = UIAlertController(title:"لم تتم الاضافة" , message: "لم تتم الاضافة ، الرجاء المحاولة مرة اخرى", preferredStyle: .alert)
                      alert.addAction(UIAlertAction(title: "حسناً", style: .default, handler: nil))
                 self.present(alert, animated: true, completion: nil) } else {
@@ -74,7 +74,7 @@ class studentsListViewController: UIViewController , UICollectionViewDelegate ,U
                                              }else{
                                              for case let child as DataSnapshot in snapshot.children {
                                              if let value = child.value as? [String:AnyObject]{
-                                                if(value["StudentId"] as! String == userUniqueId){
+                                                if(value["studentID"] as! String == userUniqueId){
                                            let ref = Database.database().reference().child("sciences").child(self.userId).child(self.classId).child("studentsList")
                                                    ref.child(child.key).setValue(["progress" : "0"])}
                                                 self.label.isHidden = true
@@ -248,7 +248,7 @@ class studentsListViewController: UIViewController , UICollectionViewDelegate ,U
                         let value = snapshot.value as? NSDictionary
                         self.studentsNames.append(value?["Name"] as! String)
                         self.studentsScores.append(value?["Points"] as! Double)
-                        self.studentsUniqueID.append(value?["StudentId"] as! String)
+                        self.studentsUniqueID.append(value?["studentID"] as! String)
                         group.leave()
                        }) { (error) in
                         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))

@@ -16,7 +16,9 @@
 		B8A53FB9319C1CD0963E8613 /* Pods_HAK_V1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 809CC4ADB418F69F3C0EA3BF /* Pods_HAK_V1Tests.framework */; };
 		F80F6AB123EF18900020C81E /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80F6AB023EF18900020C81E /* CollectionViewCell.swift */; };
 		F80F6AB323F0875A0020C81E /* singleClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80F6AB223F0875A0020C81E /* singleClassViewController.swift */; };
-		F8358FEC24183093000CBA02 /* TestAddClassroom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8358FEB24183093000CBA02 /* TestAddClassroom.swift */; };
+		F86D5706241EBD0300010100 /* testStudentsFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D5705241EBD0300010100 /* testStudentsFunctions.swift */; };
+		F86D5708241EEC5700010100 /* testGamesFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D5707241EEC5700010100 /* testGamesFunctions.swift */; };
+		F86D570A241EFD8800010100 /* testBasicFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D5709241EFD8700010100 /* testBasicFunctions.swift */; };
 		F8BB12A72410164D0048A149 /* logOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BB12A62410164D0048A149 /* logOut.swift */; };
 		F8BC5CDC23FDCEDD00D9345E /* gamesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BC5CDB23FDCEDD00D9345E /* gamesCollectionViewCell.swift */; };
 		F8BC5CDE23FEDFE500D9345E /* gameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BC5CDD23FEDFE500D9345E /* gameViewController.swift */; };
@@ -32,7 +34,7 @@
 		F8E2EA7223DD82D60025DBF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8E2EA7123DD82D60025DBF4 /* Assets.xcassets */; };
 		F8E2EA7523DD82D60025DBF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8E2EA7323DD82D60025DBF4 /* LaunchScreen.storyboard */; };
 		F8E2EA8023DD82D60025DBF4 /* HAK_V1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA7F23DD82D60025DBF4 /* HAK_V1Tests.swift */; };
-		F8E2EA8B23DD82D60025DBF4 /* HAK_V1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA8A23DD82D60025DBF4 /* HAK_V1UITests.swift */; };
+		F8E2EA8B23DD82D60025DBF4 /* testClassroomFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA8A23DD82D60025DBF4 /* testClassroomFunctions.swift */; };
 		F8E2EA9923DD92CE0025DBF4 /* homeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA9823DD92CE0025DBF4 /* homeViewController.swift */; };
 		F8E2EA9B23DD92F20025DBF4 /* signInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA9A23DD92F20025DBF4 /* signInViewController.swift */; };
 		F8E2EA9D23DD93120025DBF4 /* signUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E2EA9C23DD93120025DBF4 /* signUpViewController.swift */; };
@@ -74,7 +76,9 @@
 		C7F04EB26167AFB89271740F /* Pods-HAK_V1-HAK_V1UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HAK_V1-HAK_V1UITests.release.xcconfig"; path = "Target Support Files/Pods-HAK_V1-HAK_V1UITests/Pods-HAK_V1-HAK_V1UITests.release.xcconfig"; sourceTree = "<group>"; };
 		F80F6AB023EF18900020C81E /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		F80F6AB223F0875A0020C81E /* singleClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = singleClassViewController.swift; sourceTree = "<group>"; };
-		F8358FEB24183093000CBA02 /* TestAddClassroom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAddClassroom.swift; sourceTree = "<group>"; };
+		F86D5705241EBD0300010100 /* testStudentsFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testStudentsFunctions.swift; sourceTree = "<group>"; };
+		F86D5707241EEC5700010100 /* testGamesFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testGamesFunctions.swift; sourceTree = "<group>"; };
+		F86D5709241EFD8700010100 /* testBasicFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testBasicFunctions.swift; sourceTree = "<group>"; };
 		F8BB12A62410164D0048A149 /* logOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logOut.swift; sourceTree = "<group>"; };
 		F8BC5CDB23FDCEDD00D9345E /* gamesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gamesCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8BC5CDD23FEDFE500D9345E /* gameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameViewController.swift; sourceTree = "<group>"; };
@@ -95,7 +99,7 @@
 		F8E2EA7F23DD82D60025DBF4 /* HAK_V1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAK_V1Tests.swift; sourceTree = "<group>"; };
 		F8E2EA8123DD82D60025DBF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8E2EA8623DD82D60025DBF4 /* HAK_V1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HAK_V1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8E2EA8A23DD82D60025DBF4 /* HAK_V1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAK_V1UITests.swift; sourceTree = "<group>"; };
+		F8E2EA8A23DD82D60025DBF4 /* testClassroomFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testClassroomFunctions.swift; sourceTree = "<group>"; };
 		F8E2EA8C23DD82D60025DBF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8E2EA9823DD92CE0025DBF4 /* homeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeViewController.swift; sourceTree = "<group>"; };
 		F8E2EA9A23DD92F20025DBF4 /* signInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInViewController.swift; sourceTree = "<group>"; };
@@ -208,7 +212,6 @@
 		F8E2EA7E23DD82D60025DBF4 /* HAK_V1Tests */ = {
 			isa = PBXGroup;
 			children = (
-				F8358FEB24183093000CBA02 /* TestAddClassroom.swift */,
 				F8E2EA7F23DD82D60025DBF4 /* HAK_V1Tests.swift */,
 				F8E2EA8123DD82D60025DBF4 /* Info.plist */,
 			);
@@ -218,8 +221,11 @@
 		F8E2EA8923DD82D60025DBF4 /* HAK_V1UITests */ = {
 			isa = PBXGroup;
 			children = (
-				F8E2EA8A23DD82D60025DBF4 /* HAK_V1UITests.swift */,
+				F8E2EA8A23DD82D60025DBF4 /* testClassroomFunctions.swift */,
 				F8E2EA8C23DD82D60025DBF4 /* Info.plist */,
+				F86D5705241EBD0300010100 /* testStudentsFunctions.swift */,
+				F86D5707241EEC5700010100 /* testGamesFunctions.swift */,
+				F86D5709241EFD8700010100 /* testBasicFunctions.swift */,
 			);
 			path = HAK_V1UITests;
 			sourceTree = "<group>";
@@ -517,7 +523,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8E2EA8023DD82D60025DBF4 /* HAK_V1Tests.swift in Sources */,
-				F8358FEC24183093000CBA02 /* TestAddClassroom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,7 +530,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8E2EA8B23DD82D60025DBF4 /* HAK_V1UITests.swift in Sources */,
+				F86D5706241EBD0300010100 /* testStudentsFunctions.swift in Sources */,
+				F86D5708241EEC5700010100 /* testGamesFunctions.swift in Sources */,
+				F86D570A241EFD8800010100 /* testBasicFunctions.swift in Sources */,
+				F8E2EA8B23DD82D60025DBF4 /* testClassroomFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

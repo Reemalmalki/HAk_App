@@ -33,8 +33,8 @@ var userId = ""
     } // end method getDate
     
     
-    @IBAction func removeClassroom(_ sender: Any) {
-       let ref = Database.database().reference().child("sciences").child(userId).child(classId)
+@IBAction func removeClassroom(_ sender: Any) {
+   let ref = Database.database().reference().child("sciences").child(userId).child(classId)
     let qrRef = Storage.storage().reference().child("sciences").child(self.userId).child(self.classIdLabel.text!)
         let alert = UIAlertController(title: "تنبيه", message: "هل تريد حذف هذه الغرفة ؟", preferredStyle: .alert)
          alert.addAction(UIAlertAction(title: "إلغاء", style: .destructive, handler: nil))

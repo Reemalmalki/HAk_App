@@ -16,7 +16,6 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
     var selectedSeme = ""
     var uniqueId = ""
     var teacherId = Auth.auth().currentUser?.uid
-    
     @IBOutlet weak var subView: UIView!
     
     @IBOutlet weak var imageView: UIImageView!
@@ -130,7 +129,7 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
     
     
     @IBAction func selectCreate(_ sender: Any) {
-        if self.selectedSubject == "" || self.selectedLevel == "" || self.selectedSeme == "" || className.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""  {
+        if self.selectedSubject == "" || self.selectedLevel == "" || self.selectedSeme == "" || self.className.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""  {
             
             self.errorLabel.text = "الرجاء تعبئة جميع الحقول"
             self.errorLabel.alpha = 1
@@ -142,7 +141,7 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
             var image : UIImage = UIImage()
         //if URL == "" {done = false}
                let ref = Database.database().reference().child("sciences")
-               ref.child(teacherId as! String).childByAutoId().setValue(["id" : "", "subject":selectedSubject ,  "level":selectedLevel,"semester":selectedSeme, "name":className.text as Any ,  "uniqueId" : self.uniqueId , "teacherId":teacherId]) { (Error, DatabaseReference) in
+            ref.child(teacherId as! String).childByAutoId().setValue(["id" : "", "subject":selectedSubject ,  "level":selectedLevel,"semester":selectedSeme, "name": className.text as Any ,  "uniqueId" : self.uniqueId , "teacherId":teacherId]) { (Error, DatabaseReference) in
                    if Error != nil {
                        self.errorLabel.text = "لم يتم إنشاء الغرفة بنجاح"
                     self.errorLabel.alpha = 1

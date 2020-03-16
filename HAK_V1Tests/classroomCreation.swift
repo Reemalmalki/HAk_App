@@ -1,20 +1,16 @@
 //
-//  TestAddClassroom.swift
+//  classroomCreation.swift
 //  HAK_V1Tests
 //
-//  Created by Reem Almalki on 15/07/1441 AH.
+//  Created by Reem Almalki on 17/07/1441 AH.
 //  Copyright © 1441 Reem Almalki. All rights reserved.
 //
 
 import XCTest
-@testable import HAK_V1
 
-class testAddClassroom: XCTestCase {
-    var opject: createdClassroomViewController = createdClassroomViewController()
-    
+class classroomCreation: XCTestCase {
+
     override func setUp() {
-        //opject = createdClassroomViewController()
-       //  opject.
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
@@ -22,7 +18,7 @@ class testAddClassroom: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testaddition() {
+    func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }

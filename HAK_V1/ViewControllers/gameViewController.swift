@@ -57,7 +57,7 @@ class gameViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "إلغاء", style: .destructive, handler: { action in
          self.switcher.setOn(false, animated: true)
         }))
-        alert.addAction(UIAlertAction(title: " تأكيد", style: .default, handler: { action in
+        alert.addAction(UIAlertAction(title: " تأكيد", style: .default, handler: { action in
 
             let ref = Database.database().reference().child("sciences").child(self.userId).child(self.classId).child("gamesList").child(self.gameId)
         let switchStatus:Bool = (sender as AnyObject).isOn
