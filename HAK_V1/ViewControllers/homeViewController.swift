@@ -56,7 +56,7 @@ var cellId :[String] = []
                 userId = user!.uid }
             // db ref
             let ref = Database.database().reference().child("sciences").child(userId)
-              // query + set data
+              // query + set data status != "removed"
                     ref.observe(.value) { snapshot in
                         
                         if snapshot.exists() == false {
@@ -71,9 +71,11 @@ var cellId :[String] = []
                             self.cellId.removeAll()
                         for case let child as DataSnapshot in snapshot.children {
                         if let value = child.value as? [String:AnyObject]{
+                            if (value["status"] as! String).elementsEqual("opened"){
                         self.data.append(value["name"] as! String)
                         self.dataImg.append(UIImage(named:"img1-1")!)
                         self.cellId.append(value["id"] as! String)}
+                            }
                         } // end for
                         }// end else
                         DispatchQueue.main.async{

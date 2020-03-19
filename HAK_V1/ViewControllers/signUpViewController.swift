@@ -111,7 +111,7 @@ setUpForm()
                 returnValue = false
             }
             
-        } catch let error as NSError {
+        } catch _ as NSError {
             returnValue = false
         }
         
@@ -158,7 +158,7 @@ setUpForm()
                 // go to home
                 UserDefaults.standard.set(true, forKey: "IsUserSignedIn")
                 UserDefaults.standard.synchronize()
-                let homeViewController = self.storyboard?.instantiateViewController(identifier: "navigationBar") as? UIViewController
+                let homeViewController = self.storyboard?.instantiateViewController(identifier: "navigationBar")
                            self.view.window?.rootViewController = homeViewController
                            self.view.window?.makeKeyAndVisible()
             }

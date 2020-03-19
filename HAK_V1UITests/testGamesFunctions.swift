@@ -34,7 +34,7 @@ class testGamesFunctions: XCTestCase {
         app.collectionViews.cells.otherElements.containing(.staticText, identifier:"TestUI").element.tap()
         app.buttons["قائمة الالعاب"].tap()
       // start testing view
-        let numberOfGames = app.collectionViews.containing(.staticText, identifier:"الدرس١").cells.count
+        let numberOfGames = app.collectionViews.containing(.staticText, identifier:"الخلية").cells.count
        XCTAssert(numberOfGames != 0 , "Games list is empty")
       }
     
@@ -47,7 +47,7 @@ class testGamesFunctions: XCTestCase {
         app.collectionViews.cells.otherElements.containing(.staticText, identifier:"TestUI").element.tap()
         app.buttons["قائمة الالعاب"].tap()
         sleep(5)
-        app.collectionViews.cells.otherElements.containing(.staticText, identifier:"الدرس١").element.tap()
+        app.collectionViews.cells.otherElements.containing(.staticText, identifier:"الخلية").element.tap()
         // check if info are displayed
         let check = app.staticTexts["سيحقق الطالب الاهداف التالية"]
         XCTAssert(check.exists , "Game info is not displayed ")
@@ -61,7 +61,7 @@ class testGamesFunctions: XCTestCase {
         app.collectionViews.cells.otherElements.containing(.staticText, identifier:"TestUI").element.tap()
         app.buttons["قائمة الالعاب"].tap()
         sleep(5)
-        app.collectionViews.cells.otherElements.containing(.staticText, identifier:"الدرس٢").element.tap()
+        app.collectionViews.cells.otherElements.containing(.staticText, identifier:"الخلية").element.tap()
         // check if info are displayed
         var check = app.staticTexts["لتغيير حالة اللعبة "]
         if check.exists { // the game is closed

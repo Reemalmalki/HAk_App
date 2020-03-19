@@ -35,7 +35,12 @@ class signInViewController: UIViewController {
    return nil
     }
      
+    
+    
+    
+    
     @IBAction func signInTapped(_ sender: Any) {
+        
         let validationError = validateFields()
         if validationError != nil {
             errorMsg.text = validationError
@@ -64,7 +69,7 @@ class signInViewController: UIViewController {
                 } else {
                     UserDefaults.standard.set(true, forKey: "IsUserSignedIn")
                     UserDefaults.standard.synchronize()
-                    let homeViewController = self.storyboard?.instantiateViewController(identifier: "navigationBar") as? UIViewController
+                    let homeViewController = self.storyboard?.instantiateViewController(identifier: "navigationBar")
                     self.view.window?.rootViewController = homeViewController
                     self.view.window?.makeKeyAndVisible()
                 }

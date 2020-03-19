@@ -76,7 +76,15 @@ class studentsListViewController: UIViewController , UICollectionViewDelegate ,U
                                              if let value = child.value as? [String:AnyObject]{
                                                 if(value["studentID"] as! String == userUniqueId){
                                            let ref = Database.database().reference().child("sciences").child(self.userId).child(self.classId).child("studentsList")
-                                                   ref.child(child.key).setValue(["progress" : "0"])}
+                                                   ref.child(child.key).setValue(["progress" : "0"])
+                                    for i in 1...4{
+                                        let ref1 = Database.database().reference().child("sciences").child(self.userId).child(self.classId).child("gamesList").child("game\(i)").child("studentsScores")
+                                         ref1.updateChildValues([child.key: 0])
+                                                    }
+                                                                                                      
+                                                    
+                                                    
+                                                }
                                                 self.label.isHidden = true
                                                 } // end if
                                              }// end for

@@ -35,7 +35,7 @@ class MenuViewController: UIViewController {
     
     @IBAction func profile(_ sender: Any) {
 
-    let vc = self.storyboard?.instantiateViewController(identifier: "profile") as? UIViewController
+        let vc = self.storyboard?.instantiateViewController(identifier: "profile")
     //vc?.modalPresentationStyle = .fullScreen
     self.present((vc)!, animated: true, completion: nil)
     }

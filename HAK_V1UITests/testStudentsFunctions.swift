@@ -33,7 +33,7 @@ class testStudentsFunctions: XCTestCase {
         let app = XCUIApplication()
         sleep(10) // wait to load
         // here start testing the addition " Select the name of classroom before run the test "
-        app.collectionViews.cells.otherElements.containing(.staticText, identifier:"TestStudentFunctions").element.tap()
+        app.collectionViews.cells.otherElements.containing(.staticText, identifier:"TestUI").element.tap()
         app.buttons["قائمة الطلاب"].tap()
         app.buttons["icons8 add 100"].tap()
         // here must add id of existing student
@@ -50,7 +50,7 @@ class testStudentsFunctions: XCTestCase {
           let app = XCUIApplication()
           sleep(10) // wait to load
           // here start testing the reward student with 100 points  " Select the name of classroom before run the test "
-          app.collectionViews.cells.otherElements.containing(.staticText, identifier:"TestAddStudent").element.tap()
+          app.collectionViews.cells.otherElements.containing(.staticText, identifier:"TestUI").element.tap()
           app.buttons["قائمة الطلاب"].tap()
 
            app.collectionViews/*@START_MENU_TOKEN@*/.buttons["كآفئ"]/*[[".cells.buttons[\"كآفئ\"]",".buttons[\"كآفئ\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
@@ -67,7 +67,7 @@ class testStudentsFunctions: XCTestCase {
              let app = XCUIApplication()
              sleep(10) // wait to load
              // here start testing the reward student with 100 points  " Select the name of classroom before run the test "
-             app.collectionViews.cells.otherElements.containing(.staticText, identifier:"TestStudentFunctions").element.tap()
+             app.collectionViews.cells.otherElements.containing(.staticText, identifier:"TestUI").element.tap()
              app.buttons["قائمة الطلاب"].tap()
 
               let successsButton = app.collectionViews/*@START_MENU_TOKEN@*/.buttons["icons8 delete 50"]/*[[".cells.buttons[\"icons8 delete 50\"]",".buttons[\"icons8 delete 50\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
@@ -87,11 +87,13 @@ class testStudentsFunctions: XCTestCase {
     let app = XCUIApplication()
     sleep(10) // wait to load
     // here start testing the delete student  " Select the name of classroom before run the test "
-    app.collectionViews.cells.otherElements.containing(.staticText, identifier:"TestStudentFunctions").element.tap()
+    app.collectionViews.cells.otherElements.containing(.staticText, identifier:"TestUI").element.tap()
     app.buttons["قائمة الطلاب"].tap()
        app.collectionViews/*@START_MENU_TOKEN@*/.buttons["icons8 delete 50"]/*[[".cells.buttons[\"icons8 delete 50\"]",".buttons[\"icons8 delete 50\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
         app.alerts["تنبيه"].scrollViews.otherElements.buttons[" تأكيد"].tap()
+        sleep(3)
         let successAlert  =  app.alerts["تم حذف الطالب"].scrollViews.otherElements.buttons["حسنا"]
+        
         XCTAssert(successAlert.exists, "student did Not removed")
     }
     

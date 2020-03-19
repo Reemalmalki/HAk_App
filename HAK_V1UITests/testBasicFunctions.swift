@@ -79,6 +79,14 @@ class testBasicFunctions: XCTestCase {
         
     }
     
+    
+  
+    
+    
+    
+    
+    
+    
     func testResetPassword(){
         
         let app = XCUIApplication()
@@ -89,6 +97,19 @@ class testBasicFunctions: XCTestCase {
         XCTAssert(success.exists, "Reset Password fail")
         
     }
+   
+    func testSignOut(){
+        
+        let app = XCUIApplication()
+        app.navigationBars["الصفحة الرئيسية"].children(matching: .button).element.tap()
+        app.buttons["logOut"].tap()
+        app.textFields["البريد الإلكتروني"].tap()
+        let success =   app.textFields["البريد الإلكتروني"]
+        XCTAssert(success.exists, "testSignOut fail")
+          
+          
+          
+      }
     
-    
+
 }

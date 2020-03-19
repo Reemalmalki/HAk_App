@@ -35,14 +35,11 @@ var userId = ""
     
 @IBAction func removeClassroom(_ sender: Any) {
    let ref = Database.database().reference().child("sciences").child(userId).child(classId)
-    let qrRef = Storage.storage().reference().child("sciences").child(self.userId).child(self.classIdLabel.text!)
         let alert = UIAlertController(title: "تنبيه", message: "هل تريد حذف هذه الغرفة ؟", preferredStyle: .alert)
          alert.addAction(UIAlertAction(title: "إلغاء", style: .destructive, handler: nil))
         alert.addAction(UIAlertAction(title: " تأكيد", style: .default, handler: { action in
-            ref.removeValue()
-             qrRef.delete()
-            print("removed")
-            let Home = self.storyboard?.instantiateViewController(identifier: "navigationBar") as? UIViewController
+            ref.updateChildValues(["status" : "removed"])
+            let Home = self.storyboard?.instantiateViewController(identifier: "navigationBar")
                    self.view.window?.rootViewController = Home
                    self.view.window?.makeKeyAndVisible()
         }))

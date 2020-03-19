@@ -54,6 +54,10 @@ class profileViewController: UIViewController {
                   let ref = Database.database().reference().child("teachers").child(self.teacherId!)
                     ref.updateChildValues(["name" : newName])
                     self.nameLable.text = newName
+                    let alert = UIAlertController(title:"تم تعديل الإسم", message:"", preferredStyle: .alert)
+                                       alert.addAction(UIAlertAction(title: "حسناً", style: .default, handler: nil))
+                                        self.present(alert, animated: true, completion: nil)
+                    
                 }
         }))
         self.present(alert, animated: true, completion: nil)
@@ -87,6 +91,9 @@ class profileViewController: UIViewController {
                             let ref = Database.database().reference().child("teachers").child(self.teacherId!)
                                                ref.updateChildValues(["name" : newEmail])
                                                self.emailLable.text = newEmail
+                            let alert = UIAlertController(title:"تم تعديل البريد الإلكتروني", message:"", preferredStyle: .alert)
+                                                                  alert.addAction(UIAlertAction(title: "حسناً", style: .default, handler: nil))
+                                                                   self.present(alert, animated: true, completion: nil)
                         }
                         
                     } }
@@ -117,7 +124,7 @@ class profileViewController: UIViewController {
                                     self.present(alert, animated: true, completion: nil)
                                    
                                }else{
-                                let alert = UIAlertController(title:"تم التعديل", message: "يمكنك استخدام كلمة المرور الجديدة عند تسجيل الدخول مرة اخرى", preferredStyle: .alert)
+                                let alert = UIAlertController(title:"تم التعديل كلمة المرور", message: "يمكنك استخدام كلمة المرور الجديدة عند تسجيل الدخول مرة اخرى", preferredStyle: .alert)
                                 alert.addAction(UIAlertAction(title: "حسناً", style: .default, handler: nil))
                                  self.present(alert, animated: true, completion: nil)
                                 

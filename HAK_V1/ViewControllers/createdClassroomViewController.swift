@@ -136,23 +136,21 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
             
             
         } else {
-       var done = false
        let qr = qrCode()
             var image : UIImage = UIImage()
         //if URL == "" {done = false}
                let ref = Database.database().reference().child("sciences")
-            ref.child(teacherId as! String).childByAutoId().setValue(["id" : "", "subject":selectedSubject ,  "level":selectedLevel,"semester":selectedSeme, "name": className.text as Any ,  "uniqueId" : self.uniqueId , "teacherId":teacherId]) { (Error, DatabaseReference) in
+            ref.child(teacherId!).childByAutoId().setValue(["id" : "", "subject":selectedSubject ,  "level":selectedLevel,"semester":selectedSeme, "name": className.text as Any ,  "uniqueId" : self.uniqueId , "status":"opened","teacherId":teacherId as Any]) { (Error, DatabaseReference) in
                    if Error != nil {
                        self.errorLabel.text = "لم يتم إنشاء الغرفة بنجاح"
                     self.errorLabel.alpha = 1
-                    done = false
                    }else {
                   
                        DatabaseReference.updateChildValues(["uniqueId" : self.uniqueId ])
                        DatabaseReference.updateChildValues(["id" : DatabaseReference.key!  ])
                        ref.updateChildValues(["idIncremental" : self.uniqueId ])
                     image = qr.uploadImg(uniqueId: self.uniqueId , userId : self.teacherId! , classId : DatabaseReference.key!)
-                   for i in 1..<6 {
+                   for i in 1..<5 {
                     DatabaseReference.child("gamesList").child("game\(i)").child("status").setValue("closed")
                     
                                   } // end for
@@ -170,7 +168,7 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
     }// end method
   
     @IBAction func moveToHome(_ sender: Any) {
-      let vc = self.storyboard?.instantiateViewController(identifier: "HomeVC") as? UIViewController
+        let vc = self.storyboard?.instantiateViewController(identifier: "HomeVC")
         vc?.modalPresentationStyle = .fullScreen
         self.present((vc)!, animated: true, completion: nil)
     }

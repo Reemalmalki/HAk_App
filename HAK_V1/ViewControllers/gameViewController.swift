@@ -78,6 +78,15 @@ class gameViewController: UIViewController {
     
     
     
+    @IBAction func moveToGame(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(identifier: "gameStatistics") as? gameStatisticsViewController
+       // vc?.modalPresentationStyle = .fullScreen
+        vc?.classId = self.classId
+        vc?.gameid = self.gameId
+        self.present((vc)!, animated: true, completion: nil)
+        
+        
+    }
     
   
     

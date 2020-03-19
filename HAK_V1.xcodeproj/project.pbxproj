@@ -20,6 +20,10 @@
 		F86D5708241EEC5700010100 /* testGamesFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D5707241EEC5700010100 /* testGamesFunctions.swift */; };
 		F86D570C241FE64600010100 /* testBasicFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D570B241FE64600010100 /* testBasicFunctions.swift */; };
 		F86D571424203BC700010100 /* profileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D571324203BC700010100 /* profileViewController.swift */; };
+		F86D5750242062D600010100 /* testProfileFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D574F242062D600010100 /* testProfileFunctions.swift */; };
+		F86D5752242172E700010100 /* gameStatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D5751242172E700010100 /* gameStatisticsViewController.swift */; };
+		F86D5754242181FC00010100 /* gameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D5753242181FC00010100 /* gameTableViewCell.swift */; };
+		F873541D2423643D00327491 /* colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F873541C2423643D00327491 /* colors.xcassets */; };
 		F8BB12A72410164D0048A149 /* logOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BB12A62410164D0048A149 /* logOut.swift */; };
 		F8BC5CDC23FDCEDD00D9345E /* gamesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BC5CDB23FDCEDD00D9345E /* gamesCollectionViewCell.swift */; };
 		F8BC5CDE23FEDFE500D9345E /* gameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BC5CDD23FEDFE500D9345E /* gameViewController.swift */; };
@@ -81,6 +85,10 @@
 		F86D5707241EEC5700010100 /* testGamesFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testGamesFunctions.swift; sourceTree = "<group>"; };
 		F86D570B241FE64600010100 /* testBasicFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testBasicFunctions.swift; sourceTree = "<group>"; };
 		F86D571324203BC700010100 /* profileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileViewController.swift; sourceTree = "<group>"; };
+		F86D574F242062D600010100 /* testProfileFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testProfileFunctions.swift; sourceTree = "<group>"; };
+		F86D5751242172E700010100 /* gameStatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameStatisticsViewController.swift; sourceTree = "<group>"; };
+		F86D5753242181FC00010100 /* gameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameTableViewCell.swift; sourceTree = "<group>"; };
+		F873541C2423643D00327491 /* colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = colors.xcassets; sourceTree = "<group>"; };
 		F8BB12A62410164D0048A149 /* logOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logOut.swift; sourceTree = "<group>"; };
 		F8BC5CDB23FDCEDD00D9345E /* gamesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gamesCollectionViewCell.swift; sourceTree = "<group>"; };
 		F8BC5CDD23FEDFE500D9345E /* gameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameViewController.swift; sourceTree = "<group>"; };
@@ -205,6 +213,7 @@
 				F8E2EA6A23DD82D50025DBF4 /* SceneDelegate.swift */,
 				F8E2EA6E23DD82D50025DBF4 /* Main.storyboard */,
 				F8E2EA7123DD82D60025DBF4 /* Assets.xcassets */,
+				F873541C2423643D00327491 /* colors.xcassets */,
 				F8E2EA7323DD82D60025DBF4 /* LaunchScreen.storyboard */,
 				F8E2EA7623DD82D60025DBF4 /* Info.plist */,
 			);
@@ -228,6 +237,7 @@
 				F86D5705241EBD0300010100 /* testStudentsFunctions.swift */,
 				F86D5707241EEC5700010100 /* testGamesFunctions.swift */,
 				F86D570B241FE64600010100 /* testBasicFunctions.swift */,
+				F86D574F242062D600010100 /* testProfileFunctions.swift */,
 			);
 			path = HAK_V1UITests;
 			sourceTree = "<group>";
@@ -252,6 +262,8 @@
 				F8E2EA9823DD92CE0025DBF4 /* homeViewController.swift */,
 				F8BB12A62410164D0048A149 /* logOut.swift */,
 				F86D571324203BC700010100 /* profileViewController.swift */,
+				F86D5751242172E700010100 /* gameStatisticsViewController.swift */,
+				F86D5753242181FC00010100 /* gameTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -368,6 +380,7 @@
 				F8E2EA7523DD82D60025DBF4 /* LaunchScreen.storyboard in Resources */,
 				F8E2EA7223DD82D60025DBF4 /* Assets.xcassets in Resources */,
 				1005C5C923DE9445000E7891 /* GoogleService-Info.plist in Resources */,
+				F873541D2423643D00327491 /* colors.xcassets in Resources */,
 				F8E2EAA023DDB1490025DBF4 /* config_file_icon_72dp@2x.png in Resources */,
 				F8E2EA7023DD82D50025DBF4 /* Main.storyboard in Resources */,
 			);
@@ -504,6 +517,7 @@
 				F8BB12A72410164D0048A149 /* logOut.swift in Sources */,
 				106E0CED23F28DAD0087DA27 /* BaseViewController.swift in Sources */,
 				F86D571424203BC700010100 /* profileViewController.swift in Sources */,
+				F86D5754242181FC00010100 /* gameTableViewCell.swift in Sources */,
 				F8E2EA9D23DD93120025DBF4 /* signUpViewController.swift in Sources */,
 				F8BC5CDE23FEDFE500D9345E /* gameViewController.swift in Sources */,
 				F8BDB9FF23E01C0000D5714D /* Styles.swift in Sources */,
@@ -513,6 +527,7 @@
 				F8EB381523FDC175009DAF81 /* gamesListViewController.swift in Sources */,
 				F8E2EA6B23DD82D50025DBF4 /* SceneDelegate.swift in Sources */,
 				F80F6AB323F0875A0020C81E /* singleClassViewController.swift in Sources */,
+				F86D5752242172E700010100 /* gameStatisticsViewController.swift in Sources */,
 				F8BC5CE123FEEF8900D9345E /* studentsListViewController.swift in Sources */,
 				F8BDB9FD23E017F900D5714D /* Constants.swift in Sources */,
 				10C95CE123E9320D00E80EE9 /* Utilities.swift in Sources */,
@@ -538,6 +553,7 @@
 				F86D5708241EEC5700010100 /* testGamesFunctions.swift in Sources */,
 				F86D570C241FE64600010100 /* testBasicFunctions.swift in Sources */,
 				F8E2EA8B23DD82D60025DBF4 /* testClassroomFunctions.swift in Sources */,
+				F86D5750242062D600010100 /* testProfileFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
