@@ -14,11 +14,18 @@ protocol SlideMenuDelegate {
 
 class MenuViewController: UIViewController {
 
+    @IBOutlet weak var innerView: UIView!
+    @IBOutlet weak var navMenu: UIView!
     var btnMenu :UIButton!
  var delegate : SlideMenuDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        navMenu.setGradientBackground(colorOne: Colors.purple, colorTwo: Colors.pink)
+        AppDelegate.setCornerRadiusOf(targetView: navMenu, radius: 20)
+
+        
 
         // Do any additional setup after loading the view.
     }

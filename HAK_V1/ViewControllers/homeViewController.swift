@@ -44,9 +44,9 @@ var cellId :[String] = []
        collectionView.delegate = self
        collectionView.dataSource = self
         let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.sectionInset = UIEdgeInsets(top: 10,left: 5,bottom: 2,right: 5 )
+        layout.sectionInset = UIEdgeInsets(top: 40,left: 40,bottom: 15,right: 40 )
         let width = self.calculateWith()
-        layout.itemSize = CGSize(width: width, height: width)
+        layout.itemSize = CGSize(width: 140, height: 180)
         collectionView?.setCollectionViewLayout(layout, animated: true) //was false
         }}
     
@@ -73,7 +73,7 @@ var cellId :[String] = []
                         if let value = child.value as? [String:AnyObject]{
                             if (value["status"] as! String).elementsEqual("opened"){
                         self.data.append(value["name"] as! String)
-                        self.dataImg.append(UIImage(named:"img1-1")!)
+                        self.dataImg.append(UIImage(named:"microscope")!)
                         self.cellId.append(value["id"] as! String)}
                             }
                         } // end for
@@ -92,7 +92,7 @@ var cellId :[String] = []
         cell.layer.borderColor = UIColor.white.cgColor
         cell.layer.borderWidth = 0.5
         cell.layer.borderColor = UIColor.gray.cgColor
-        cell.layer.cornerRadius = 18
+        cell.layer.cornerRadius = 20
          cell.layer.masksToBounds = true
         return cell
     }

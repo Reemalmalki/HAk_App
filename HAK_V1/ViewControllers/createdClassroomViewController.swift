@@ -16,7 +16,7 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
     var selectedSeme = ""
     var uniqueId = ""
     var teacherId = Auth.auth().currentUser?.uid
-    @IBOutlet weak var subView: UIView!
+  
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -59,7 +59,15 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
     let queue = DispatchQueue.global(qos: .background)
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.subView.isHidden = true
+        
+        
+        if (className != nil){
+                      AppDelegate.setCornerRadiusOf(targetView: className, radius: 20)
+                    className.layer.sublayerTransform = CATransform3DMakeTranslation(-20, 0, 0)
+                      }
+        
+        
+     //   self.subView.isHidden = true
         self.errorLabel.text = ""
         self.errorLabel.alpha = 0
         pickerView1.isHidden = true
@@ -155,10 +163,10 @@ class createdClassroomViewController:  UIViewController , UIPickerViewDelegate, 
                     
                                   } // end for
               
-                    self.subView.isHidden = false
+              /*      self.subView.isHidden = false
                     self.imageView.image = image
                     self.classroomID.text = self.uniqueId
-                    self.view.addSubview(self.subView)
+                    self.view.addSubview(self.subView)*/
                     
                     
                 

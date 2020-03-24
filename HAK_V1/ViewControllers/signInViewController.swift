@@ -25,10 +25,30 @@ class signInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-       
+       //CornerRadius()
+        if (email != nil){
+        AppDelegate.setCornerRadiusOf(targetView: email, radius: 20)
+            email.layer.sublayerTransform = CATransform3DMakeTranslation(-20, 0, 0)
+        
+
+        }
+        if (password != nil){
+              AppDelegate.setCornerRadiusOf(targetView: password, radius: 20)
+            password.layer.sublayerTransform = CATransform3DMakeTranslation(-20, 0, 0)
+              }
+     if (signInB != nil){
+                AppDelegate.setCornerRadiusOf(targetView: signInB, radius: 20)
+          
+                }
+
+                    
      
     }
+    
+    
+  
+       
+    
    func validateFields() -> String? {
     if email.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || password.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
         return "فضلًا تأكد من تبعئة جميع الخانات" }
@@ -115,7 +135,8 @@ class signInViewController: UIViewController {
           return email.count > 0 && NSPredicate(format: "self matches %@", "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,64}").evaluate(with: email)
       }
 
-        
+  
+    
     }
         
      

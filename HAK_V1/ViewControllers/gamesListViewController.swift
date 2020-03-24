@@ -25,10 +25,11 @@ getData()
         collectionView.delegate = self
               collectionView.dataSource = self
                let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-               layout.sectionInset = UIEdgeInsets(top: 10,left: 5,bottom: 2,right: 5 )
+               layout.sectionInset = UIEdgeInsets(top: 40,left: 40,bottom: 15,right: 40 )
                let width = self.calculateWith()
-               layout.itemSize = CGSize(width: width, height: width)
+               layout.itemSize = CGSize(width: 160, height: 180)
                collectionView?.setCollectionViewLayout(layout, animated: true)
+
 
 }
     
@@ -76,10 +77,10 @@ getData()
                                        status = value["status"] as! String
                                        if status.elementsEqual("closed") {
                                       //cellIdStatus.append(status)
-                                        self.dataImg.append(UIImage(named:"icons8-lock-50")!)
+                                        self.dataImg.append(UIImage(named:"lock")!)
                                        }else {
                                         //cellIdStatus.append(status)
-                                        self.dataImg.append(UIImage(named:"icons8-padlock-50")!)
+                                        self.dataImg.append(UIImage(named:"unlock")!)
                                        }
                                        
                 }} // end for

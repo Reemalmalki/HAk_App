@@ -30,9 +30,50 @@ class signUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       CornerRadius()
 setUpForm()
         // Do any additional setup after loading the view.
     }
+    
+   func CornerRadius(){
+          
+    
+    if (name != nil){
+                 AppDelegate.setCornerRadiusOf(targetView: name, radius: 20)
+               name.layer.sublayerTransform = CATransform3DMakeTranslation(-20, 0, 0)
+                 }
+    
+    if (email != nil){
+                  AppDelegate.setCornerRadiusOf(targetView: email, radius: 20)
+                email.layer.sublayerTransform = CATransform3DMakeTranslation(-20, 0, 0)
+                  }
+    
+    if (nationalId != nil){
+                  AppDelegate.setCornerRadiusOf(targetView: nationalId, radius: 20)
+                nationalId.layer.sublayerTransform = CATransform3DMakeTranslation(-20, 0, 0)
+                  }
+    
+    if (password != nil){
+                    AppDelegate.setCornerRadiusOf(targetView: password, radius: 20)
+                  password.layer.sublayerTransform = CATransform3DMakeTranslation(-20, 0, 0)
+                    }
+    
+    if (confirmPassword != nil){
+                  AppDelegate.setCornerRadiusOf(targetView: confirmPassword, radius: 20)
+                confirmPassword.layer.sublayerTransform = CATransform3DMakeTranslation(-20, 0, 0)
+                  }
+    
+    if (signUp != nil){
+                  AppDelegate.setCornerRadiusOf(targetView: signUp, radius: 20)
+               
+                  }
+    
+    
+    
+    
+    
+    
+       }
     
     func setUpForm(){
         //hide error msg
